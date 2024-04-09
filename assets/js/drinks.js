@@ -85,10 +85,10 @@ function animateInLove() {
 }
 
 
-// setInterval(animateHappy, 50);
-// setInterval(animateSad, 50);
-// setInterval(animateAngry, 50);
-// setInterval(animateExhausted, 50);
-// setInterval(animateInLove, 50);
+//setInterval(animateHappy, 50);
+//setInterval(animateSad, 50);
+//setInterval(animateAngry, 50);
+//setInterval(animateExhausted, 50);
+//setInterval(animateInLove, 50);
 
 
