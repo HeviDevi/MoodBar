@@ -1,6 +1,8 @@
-const myModal = new bootstrap.Modal("#exampleModal");
-
-window.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+    const myModal = new bootstrap.Modal(document.getElementById('dobModal'), {
+        backdrop: 'static',
+        keyboard: false
+    });
     myModal.show();
 });
 
@@ -25,7 +27,8 @@ window.addEventListener('DOMContentLoaded', function() {
 
         age.addEventListener("click", checkAge);
 
-        // For Happy Face
+
+// For Happy Face
 for (let  i= 0;  i<=50; +i++) {
     let happyFace = document.createElement('div');
     happyFace.classList.add('happy');
