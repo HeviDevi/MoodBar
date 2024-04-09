@@ -61,4 +61,20 @@
     color: red;
 }
 
+/* Exhausted Face Icons */
+.exhausted {
+    position: absolute;
+    color: #222;
+}
+
+.exhausted::before {
+    font-family: "Font Awesome 6 Pro";
+    content: '\e39e';
+    font-weight: 100;
+}
+
+.exhausted.animate {
+    color: gray;
+}
+
 
