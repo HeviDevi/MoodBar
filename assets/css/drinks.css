@@ -30,6 +30,15 @@
     color: yellow;
 }
 
+/* Happy Cards */
+.cardHappy {
+    background-color: yellow;
+}
+
+.optionHappy {
+    border: 4px solid yellow;
+}
+
 /* Sad Face Icons */
 .sad {
     position: absolute;
@@ -44,6 +53,15 @@
 
 .sad.animate {
     color: lightblue;
+}
+
+/* Sad Cards */
+.cardSad {
+    background-color: lightblue;
+}
+
+.optionSad {
+    border: 4px solid lightblue;
 }
 
 /* Angry Face Icons */
@@ -62,6 +80,15 @@
     color: red;
 }
 
+/* Angry Cards */
+.cardAngry {
+    background-color: red;
+}
+
+.optionAngry {
+    border: 4px solid red;
+}
+
 /* Exhausted Face Icons */
 .exhausted {
     position: absolute;
@@ -76,6 +103,15 @@
 
 .exhausted.animate {
     color: gray;
+}
+
+/* Exhausted Cards */
+.cardExhausted {
+    background-color: gray;
+}
+
+.optionExhausted {
+    border: 4px solid gray;
 }
 
 /* In Love Face */
@@ -94,38 +130,7 @@
     color: pink;
 }
 
-.cardHappy {
-    background-color: yellow;
-}
-
-.optionHappy {
-    border: 4px solid yellow;
-}
-
-.cardSad {
-    background-color: lightblue;
-}
-
-.optionSad {
-    border: 4px solid lightblue;
-}
-
-.cardAngry {
-    background-color: red;
-}
-
-.optionAngry {
-    border: 4px solid red;
-}
-
-.cardExhausted {
-    background-color: gray;
-}
-
-.optionExhausted {
-    border: 4px solid gray;
-}
-
+/* In Love Cards */
 .cardInLove {
     background-color: pink;
 }
