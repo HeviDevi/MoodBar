@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.background {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-color: #222;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Happy Face Icons */
+.happy {
+    position: absolute;
+    color:#222;
+}
+
+.happy::before {
+    font-family: "Font Awesome 6 Pro";
+    content: '\f118';
+    font-weight: 100;
+}
+
+.happy.animate {
+    color: yellow;
+}
+
+/* Sad Face Icons */
+.sad {
+    position: absolute;
+    color: #222;
+}
+
+.sad::before {
+    font-family: "Font Awesome 6 Pro";
+    content: '\e376';
+    font-weight: 100;
+}
+
+.sad.animate {
+    color: blue;
+}
+
+/* Angry Face Icons */
+.angry {
+    position: absolute;
+    color: #222;
+}
+
+.angry::before {
+    font-family: "Font Awesome 6 Pro";
+    content: '\f556';
+    font-weight: 100;
+}
+
+.angry.animate {
+    color: red;
+}
+
+
