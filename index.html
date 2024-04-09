@@ -14,11 +14,30 @@
 <body>
 
     <!-- testing the MinAge function -->
-    <form>
-        <textarea id="ageSelector"></textarea>
-    </form>
-
-    <button class="button" id="btn">Submit</button>
+    <section class="section">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-4 is-offset-4">
+                    <!-- Enhanced form with a date submission feature -->
+                    <form>
+                        <!-- Existing age selector textarea -->
+                        <textarea id="ageSelector" class="textarea" placeholder="Enter your age"></textarea>
+    
+                        <!-- New date input field for date selection -->
+                        <div class="field">
+                            <label class="label">Select Date</label>
+                            <div class="control">
+                                <input class="input" type="date" id="dateSelector">
+                            </div>
+                        </div>
+    
+                        <!-- Submit button -->
+                        <button class="button is-block is-fullwidth" id="btn" type="button">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 
