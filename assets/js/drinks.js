@@ -1,18 +1,18 @@
 // For Happy Face
 for (let  i= 0;  i<=75; +i++) {
-    let happyFace = document.createElement('div');
-    happyFace.classList.add('happy');
+    let exhaustedFace = document.createElement('div');
+    exhaustedFace.classList.add('happy');
     let size = Math.random() * 15;
-    happyFace.style.fontSize = 3 + size + 'px';
-    happyFace.style.right = Math.random() * + innerWidth + 'px';
-    happyFace.style.top = Math.random() * + innerHeight + 'px';
-    document.querySelector('.background').appendChild(happyFace);
+    exhaustedFace.style.fontSize = 3 + size + 'px';
+    exhaustedFace.style.right = Math.random() * + innerWidth + 'px';
+    exhaustedFace.style.top = Math.random() * + innerHeight + 'px';
+    document.querySelector('.background').appendChild(exhaustedFace);
 }
 
 function animateHappy() {
-    let allHappy = document.querySelectorAll('.happy')
-    let num = Math.floor(Math.random()* allHappy.length);
-    allHappy[num].classList.toggle('animate');
+    let allExhausted = document.querySelectorAll('.happy')
+    let num = Math.floor(Math.random()* allExhausted.length);
+    allExhausted[num].classList.toggle('animate');
 }
 
 // For Sad Face
@@ -50,7 +50,27 @@ function animateAngry() {
     allAngry[num3].classList.toggle('animate');
 }
 
+// For Exhausted Face
+for (let  i= 0;  i<=50; +i++) {
+    let exhaustedFace = document.createElement('div');
+    exhaustedFace.classList.add('exhausted');
+    let size = Math.random() * 15;
+    exhaustedFace.style.fontSize = 3 + size + 'px';
+    exhaustedFace.style.right = Math.random() * + innerWidth + 'px';
+    exhaustedFace.style.top = Math.random() * + innerHeight + 'px';
+    document.querySelector('.background').appendChild(exhaustedFace);
+}
+
+function animateExhausted() {
+    let allExhausted = document.querySelectorAll('.exhausted')
+    let num = Math.floor(Math.random()* allExhausted.length);
+    allExhausted[num].classList.toggle('animate');
+}
+
+
+
 
 // setInterval(animateHappy, 50);
 // setInterval(animateSad, 50);
 // setInterval(animateAngry, 50);
+// setInterval(animateExhausted, 50);
