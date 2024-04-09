@@ -13,24 +13,37 @@
 <body>
 
     <main>
+        <!-- Modal -->
         <section class="container-fluid">
             <div class="modal" tabindex="-1" id="exampleModal">
                 <div class="modal-dialog modal-lg modal-dialog-centered">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Modal title</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                        <!-- Modal Header -->
+                        <div class="modal-header justify-content-center">
+                            <h1 class="modal-title">ID Please.</h1>
                         </div>
+
+                        <!-- Modal Body -->
                         <div class="modal-body">
-                            <p>Modal body text goes here.</p>
+                            <div class="row justify-content-center">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="dobDate" class="col-form-label">Date of Birth</label>
+                                        <input autocomplete="off" type="text" id="dobDate" class="form-control"
+                                            min="2000-01-01" />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        
+                        <!-- Modal Button -->
                         <div class="modal-footer justify-content-center">
                             <button type="button" class="btn btn-dark" id="btn">Submit</button>
                         </div>
                     </div>
+
                 </div>
-        
-            </div>
         </section>
     </main>
 
