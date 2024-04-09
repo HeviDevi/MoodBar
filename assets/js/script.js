@@ -1,13 +1,13 @@
 
 //  date required for minimal age (21yrs old)
 
-const today = dayjs();
-const minAge = today.subtract(21, year).format (MM-DD-YYYY);
-let enteredAge = document.getElementById("age").value;
-let age = document.getElementById("age");  //replace with the id in the index.html
+let today = dayjs();
+const minAge = today.subtract(21, 'year').format('MM-DD-YYYY');
+let age = document.getElementById('#btn'); 
 
 // function that determintes if over or under 21yes of age
 function checkAge() {
+    let enteredAge = dayjs(document.getElementById('#btn').value, 'MM-DD-YYYY');
     if (enteredAge.isAfter(minAge)) {
         window.alert("Under Age");
     } else {
@@ -15,6 +15,6 @@ function checkAge() {
     }
 }
 
-age.addEventListener("click", checkAge());
+age.addEventListener("click", checkAge);
 
 
