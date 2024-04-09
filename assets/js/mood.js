@@ -10,7 +10,7 @@ for (let  i= 0;  i<=50; +i++) {
 }
 
 function animateHappy() {
-    let allHappy = document.querySelectorAll('.happy')
+    let allHappy = document.querySelectorAll('.happy');
     let num = Math.floor(Math.random()* allHappy.length);
     allHappy[num].classList.toggle('animate');
 }
@@ -28,8 +28,8 @@ for(let i=0; i<=50; i++) {
 
 
 function animateSad() {
-    let allSad = document.querySelectorAll('.sad')
-    let num2 = Math.floor(Math.random()*allSad.length)
+    let allSad = document.querySelectorAll('.sad');
+    let num2 = Math.floor(Math.random()*allSad.length);
     allSad[num2].classList.toggle('animate');
 }
 
