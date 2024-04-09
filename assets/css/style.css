@@ -4,6 +4,18 @@
 }
 
 body {
-    background-color: #222;
+    background-color: #ffffff;
 }
 
+.modal {
+    background-color: black;
+}
+
+.modal-content {
+    background-color: white;
+    height: 400px;
+    width: 80%;
+    margin: 15% auto;
+    padding: 20px;
+    border: 4px solid #888;
+}

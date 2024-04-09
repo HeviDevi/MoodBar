@@ -4,54 +4,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/1.0.0/css/bulma.min.css"
-        integrity="sha512-+oEiKVGJRHutsibRYkkTIfjI0kspDtgJtkIlyPCNTCFCdhy+nSe25nvrCw7UpHPwNbdmNw9AkgGA+ptQxcjPug=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Mood Bar</title>
 </head>
 
 <body>
 
-    <!-- testing the MinAge function -->
-    <section class="section">
-        <div class="container">
-            <div class="columns is-vcentered">
-                <div class="column is-4 is-offset-4">
-                    <!-- Enhanced form with a date submission feature -->
-                    <form>
-                        <!-- Existing age selector textarea -->
-                        <textarea id="ageSelector" class="textarea" placeholder="Enter your age"></textarea>
-    
-                        <!-- New date input field for date selection -->
-                        <div class="field">
-                            <label class="label">Select Date</label>
-                            <div class="control">
-                                <input class="input" type="date" id="dateSelector">
+    <main>
+        <!-- Modal -->
+        <section class="container-fluid">
+            <div class="modal" tabindex="-1" id="exampleModal">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header justify-content-center">
+                            <h1 class="modal-title">ID Please.</h1>
+                        </div>
+
+                        <!-- Modal Body -->
+                        <div class="modal-body">
+                            <div class="row justify-content-center">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="dobDate" class="col-form-label just">Date of Birth</label>
+                                        <input autocomplete="off" type="text" id="dobDate" class="form-control"
+                                            min="2000-01-01" />
+                                    </div>
+                                </div>
                             </div>
                         </div>
-    
-                        <!-- Submit button -->
-                        <button class="button is-block is-fullwidth" id="btn" type="button">Submit</button>
-                    </form>
+                        
+                        <!-- Modal Button -->
+                        <div class="modal-footer justify-content-center">
+                            <button type="button" class="btn btn-dark" id="btn">Submit</button>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+        integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
     <script src="./assets/js/logic.js"></script>
 
-
-
-    <script 
-        src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-        integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-        crossorigin="anonymous">
-    </script> 
-
-<script src="./assets/js/script.js"></script>
 </body>
 
 </html>
