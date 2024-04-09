@@ -15,6 +15,8 @@ window.addEventListener('DOMContentLoaded', function() {
             let enteredAge = dayjs(document.getElementById('ageSelector').value, 'MM-DD-YYYY');
             if (enteredAge.isAfter(minAge)) {
                 window.alert('Under Age');
+            } else if (enteredAge.isValid() === false) {
+                window.alert('Please enter a valid date');
             } else {
                 window.location.href = 'MoodSelection.html';
             }
