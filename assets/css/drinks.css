@@ -77,4 +77,18 @@
     color: gray;
 }
 
+/* In Love Face */
+.inLove {
+    position: absolute;
+    color: #222;
+}
 
+.inLove::before {
+    font-family: "Font Awesome 6 Pro";
+    content: '\e390';
+    font-weight: 100;
+}
+
+.inLove.animate {
+    color: pink;
+}
