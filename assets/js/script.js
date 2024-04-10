@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(function () {
                 // Show the mood container with a transition
                 $('.mood-container').addClass('show-form').css('opacity', '1');
-            }, 800); // Adjust this timeout to match transition
-        }, 600); // Adjust this timeout to match the animation duration
+            }, 500); // Adjust transition
+        }, 400); // Adjust animation duration
     }
 
     // function that determines if over or under 21 years of age
