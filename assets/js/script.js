@@ -85,3 +85,4 @@ function animateSad() {
 
 setInterval(animateHappy, 50);
 setInterval(animateSad, 50);
+ 
