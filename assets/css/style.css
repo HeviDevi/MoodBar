@@ -24,7 +24,7 @@ body {
 
 .modal {
     background-color: black;
-}
+} 
 
 .modal-content {
     background-color: white;
@@ -35,7 +35,7 @@ body {
     border: 4px solid #888;
     /* Ensure the animation doesn't play immediately */
     animation-name: spinWipeOut;
-    animation-duration: 0.8s;
+    animation-duration: 8s;
     animation-fill-mode: forwards;
     animation-play-state: paused; /* Animation is paused until triggered by JS */
 }

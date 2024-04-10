@@ -25,7 +25,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 storedUserAge.push(enteredAge.format('MM-DD-YYYY'));
                 localStorage.setItem('storedAge', JSON.stringify(storedUserAge))
             }
-        }
+            $('#dobModal').modal('hide'); // Bootstrap's method to hide the modal
+        setTimeout(function () {
+            // Show the mood container with a transition
+            $('.mood-container').addClass('show-form').css('opacity', '1');
+        }, 800); // Adjust this timeout to match transition
+    }
+        
 
 
         submitEl.addEventListener("click", checkAge);
@@ -79,3 +85,4 @@ function animateSad() {
 
 setInterval(animateHappy, 50);
 setInterval(animateSad, 50);
+ 
