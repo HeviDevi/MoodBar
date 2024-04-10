@@ -4,12 +4,21 @@
     box-sizing: border-box;
 }
 
+
+/* Drink Background */
+.drinkBackground {
+    position: relative;
+    z-index: 0;
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
 /* Face Background */
 .background-faces {
     display: flex;
     justify-content: center;
     position: relative;
-    background-color: #222;
+    background-color: #0d0d0d;
     min-height: 100vh;
     overflow: hidden;
 } 
@@ -17,7 +26,7 @@
 /* Happy Face Icons */
 .happy {
     position: absolute;
-    color:#222;
+    color:#0d0d0d;
 }
 
 .happy::before {
@@ -42,7 +51,7 @@
 /* Sad Face Icons */
 .sad {
     position: absolute;
-    color: #222;
+    color: #0d0d0d;
 }
 
 .sad::before {
@@ -67,7 +76,7 @@
 /* Angry Face Icons */
 .angry {
     position: absolute;
-    color: #222;
+    color: #0d0d0d;
 }
 
 .angry::before {
@@ -92,7 +101,7 @@
 /* Exhausted Face Icons */
 .exhausted {
     position: absolute;
-    color: #222;
+    color: #0d0d0d;
 }
 
 .exhausted::before {
@@ -117,7 +126,7 @@
 /* In Love Face */
 .inLove {
     position: absolute;
-    color: #222;
+    color: #0d0d0d;
 }
 
 .inLove::before {
