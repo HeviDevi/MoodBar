@@ -50,6 +50,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Immediately calls the function to check local storage when the document is ready
     $(document).ready(checkStoredAge);
+
+    $('.btnSubmit').click(function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        $('.mood-container, .container').fadeOut(600, function() {
+            $('.loading').show(); // Show the shaker
+            $('.shaker').addClass('animate__animated animate__shakeY').css('animation-duration', '4s'); // Apply shaking animation
+
+            setTimeout(function () {
+                window.location.href = 'drinks.html'; // Redirect to drinks.html after the shaker animation
+            }, 4000); // Delay to match the animation duration
+        });
+    });
 });
 
 

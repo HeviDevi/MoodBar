@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -63,12 +64,6 @@ body {
   /* Helper class to control the form's visibility */
 .show-form {
     opacity: 1 !important;
-  }
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 /* Face Background */
@@ -163,5 +158,18 @@ body {
 
 /* Shaker */
 .loading {
-    z-index: 1;
+    display: none; /* Hidden by default, will be displayed on form submission */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1050; /* High z-index to ensure it's above other content */
+}
+
+.loading .shaker {
+    width: 100vw; /* Set appropriate size */
+    height: auto;
+    max-width: 600px;
+    display:block;
+    animation-duration: 4s; /* Duration set directly via JavaScript */
 }
