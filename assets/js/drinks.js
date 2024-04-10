@@ -25,7 +25,7 @@ for(let i=0; i<=75; i++) {
     sadFace.style.top = Math.random() * + innerHeight + 'px';
     document.querySelector('.background-faces').appendChild(sadFace);
 }
-
+ 
 
 function animateSad() {
     let allSad = document.querySelectorAll('.sad')
