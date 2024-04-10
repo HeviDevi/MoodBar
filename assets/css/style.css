@@ -6,6 +6,21 @@
 body {
     background-color: #ffffff;
 }
+/* spin wipe transition */
+@keyframes spinWipeOut {
+    0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(0.5) rotate(720deg); /* Increase mid-animation scaling and rotation */
+        opacity: 0.5;
+      }
+      100% {
+        transform: scale(0) rotate(1440deg); /* Finish with an even larger rotation */
+        opacity: 0;
+      }
+    }
 
 .modal {
     background-color: black;
@@ -18,7 +33,22 @@ body {
     margin: 15% auto;
     padding: 20px;
     border: 4px solid #888;
+    /* Ensure the animation doesn't play immediately */
+    animation-name: spinWipeOut;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused; /* Animation is paused until triggered by JS */
 }
+
+.mood-container {
+    opacity: 0; /* Start invisible if it's supposed to appear after the modal */
+    transition: opacity 0.8s ease-in-out;
+  }
+
+  /* Helper class to control the form's visibility */
+.show-form {
+    opacity: 1 !important;
+  }
 
 * {
     margin: 0;
