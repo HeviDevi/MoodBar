@@ -143,8 +143,7 @@ body {
     font-size: 80px;
     color: #0d0d0d;
     text-shadow: 0 0 5px white,
-    0 0 10px #cc99ff,
-    0 0 20px #cc99ff;
+    0 0 10px #cc99ff;
 }
 
 .container p {
@@ -160,6 +159,7 @@ body {
 
 .btnSubmit {
     border: 2px solid #cc99ff;
+    width: 35%;
 }
 
 /* Shaker */
