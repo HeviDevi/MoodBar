@@ -1,3 +1,4 @@
+// For Modal
 document.addEventListener('DOMContentLoaded', function () {
     const myModal = new bootstrap.Modal(document.getElementById('dobModal'), {
         backdrop: 'static',
@@ -32,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 800); // Adjust this timeout to match transition
     }
         
-
 
         submitEl.addEventListener("click", checkAge);
         
