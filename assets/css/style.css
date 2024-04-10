@@ -4,8 +4,19 @@
 }
 
 body {
-    background-color: #ffffff;
+    background-color: #0d0d0d;
 }
+
+
+  h1 {
+    font-family: "Oleo Script", system-ui;
+} 
+  
+  p {
+    font-family: "Roboto", sans-serif;
+}
+
+
 /* spin wipe transition */
 @keyframes spinWipeOut {
     0% {
@@ -23,11 +34,11 @@ body {
     }
 
 .modal {
-    background-color: #f9f5ec;
+    background-color: black;
 } 
 
 .modal-content {
-    background-color: #f9f5ec;
+    background-color: white;
     height: 400px;
     width: 80%;
     margin: 15% auto;
@@ -123,7 +134,28 @@ body {
     max-width: 600px;
 }
 
+.container h1 {
+    font-size: 80px;
+    color: #0d0d0d;
+    text-shadow: 0 0 5px white,
+    0 0 10px #cc99ff,
+    0 0 20px #cc99ff;
+}
 
+.container p {
+    font-size: 16px;
+    color: #f9f6ec;
+}
+
+.form-select {
+    background-color: #f9f6ec;
+    color: grey;
+    text-align: center;
+}
+
+.btnSubmit {
+    border: 2px solid #cc99ff;
+}
 
 /* Shaker */
 .loading {
