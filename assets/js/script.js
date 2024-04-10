@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(function () {
                 // Show the mood container with a transition
                 $('.mood-container').addClass('show-form').css('opacity', '1');
-            }, 800); // Adjust this timeout to match transition
-        }, 600); // Adjust this timeout to match the animation duration
+            }, 500); // Adjust transition
+        }, 400); // Adjust animation duration
     }
 
     // function that determines if over or under 21 years of age
@@ -50,6 +50,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Immediately calls the function to check local storage when the document is ready
     $(document).ready(checkStoredAge);
+
+    $('.btnSubmit').click(function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        $('.mood-container, .container').fadeOut(600, function() {
+            $('.loading').show(); // Show the shaker
+            $('.shaker').addClass('animate__animated animate__shakeY').css('animation-duration', '4s'); // Apply shaking animation
+
+            setTimeout(function () {
+                window.location.href = 'drinks.html'; // Redirect to drinks.html after the shaker animation
+            }, 4000); // Delay to match the animation duration
+        });
+    });
 });
 
 
