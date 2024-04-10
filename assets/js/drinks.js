@@ -92,3 +92,55 @@ function animateInLove() {
 //setInterval(animateInLove, 50);
 
 
+// Decides what category the quote will be from based on which emotion
+//is chosen on index.htmml 
+//(might need to move this whole snippet to logic.js???)
+
+function quoteParameter(){
+    //sets category as blank and then alters it based on user input
+    //(element ID needs to be changed to match the input dropdown on index.html)
+    let category = ''
+    let userInput = document.getElementById('userInput').value;
+    // Happy = happiness, Sad = happiness, Angry=anger, Exhausted=future, In Love=love
+    if (userInput === 'Happy') {
+        category === 'happiness'
+} else if (userInput == 'Sad') {
+    category === 'happiness'
+} else if (userInput == 'Angry') {
+    category === 'anger'
+} else if (userInput == 'Exhausted'){
+    category === 'future'
+} else if (userInput == 'In Love') {
+    category === 'love'
+}
+
+//returns category as output so we can use it later in the ajax api call
+return category
+}
+
+let category = quoteParameter();
+
+$.ajax({
+    method: 'GET',
+    url: 'https://api.api-ninjas.com/v1/quotes?category=' + category,
+    headers: { 'X-Api-Key': 'lbuDF/d/4FN0Qtt3UdYKZw==0Y6n8GL3b39NEA5m'},
+    contentType: 'application/json',
+    success: function(result) {
+        console.log(result);
+        console.log(result[0].quote)
+    },
+    error: function ajaxError(jqXHR) {
+        console.error('Error: ', jqXHR.responseText);
+    }
+});
+
+// let url = 'https://api.api-ninjas.com/v1/quotes?category='
+
+// fetch(url + category)
+// .then(response => response.json())
+// .then(data => {
+//     let quote = data[0].quote;
+//     console.log(quote)
+//     console.log(data[0])
+//     console.log()
+// })
