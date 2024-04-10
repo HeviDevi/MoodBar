@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
         //  date required for minimal age (21yrs old)
         let today = dayjs();
         const minAge = today.subtract(21, 'year').format('MM-DD-YYYY');
-        let age = document.getElementById('btn'); 
+        let submitEl = document.getElementById('btn');
+        let storedUserAge = JSON.parse(localStorage.getItem('storedAge')) || []; 
 
 
         // function that determines if over or under 21 years of age
@@ -22,11 +23,24 @@ document.addEventListener('DOMContentLoaded', function () {
             } else if (enteredAge.isValid() === false) {
                 window.alert('Please enter a valid date');
             } else {
-                window.location.href = 'MoodSelection.html';
+                storedUserAge.push(enteredAge.format('MM-DD-YYYY'));
+                localStorage.setItem('storedAge', JSON.stringify(storedUserAge))
             }
         }
 
-        age.addEventListener("click", checkAge);
+
+        submitEl.addEventListener("click", checkAge);
+        
+        function checkStoredAge(){
+            if (storedUserAge.length > 0){
+                console.log('Welcome')
+            }
+}
+$(document).ready(function () { 
+    checkStoredAge()
+});
+
+
 
 
 // For Happy Face
