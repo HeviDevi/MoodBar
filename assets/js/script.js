@@ -5,53 +5,51 @@ document.addEventListener('DOMContentLoaded', function () {
         keyboard: false
     });
     myModal.show();
-});
 
+    //  Date required for minimal age (21 years old)
+    let today = dayjs();
+    const minAge = today.subtract(21, 'year').format('MM-DD-YYYY');
+    let submitEl = document.getElementById('btn');
+    let storedUserAge = JSON.parse(localStorage.getItem('storedAge')) || []; 
 
-        //  date required for minimal age (21yrs old)
-        let today = dayjs();
-        const minAge = today.subtract(21, 'year').format('MM-DD-YYYY');
-        let submitEl = document.getElementById('btn');
-        let storedUserAge = JSON.parse(localStorage.getItem('storedAge')) || []; 
-
-
-        /// Function that closes the Modal, we can call this function later so we have DRY code
-        function acceptAge(){
+    /// Function that closes the Modal, we can call this function later so we have DRY code
+    function acceptAge(){
+        const modalContent = document.querySelector('.modal-content');
+        modalContent.style.animation = 'spinWipeOut 0.6s forwards';
+        setTimeout(function () {
             $('#dobModal').modal('hide'); // Bootstrap's method to hide the modal
             setTimeout(function () {
                 // Show the mood container with a transition
                 $('.mood-container').addClass('show-form').css('opacity', '1');
             }, 800); // Adjust this timeout to match transition
+        }, 600); // Adjust this timeout to match the animation duration
+    }
+
+    // function that determines if over or under 21 years of age
+    function checkAge() {
+        let enteredAge = dayjs(document.getElementById('ageSelector').value, 'MM-DD-YYYY');
+        if (enteredAge.isAfter(minAge)) {
+            window.alert('Under Age');
+        } else if (enteredAge.isValid() === false) {
+            window.alert('Please enter a valid date');
+        } else {
+            storedUserAge.push(enteredAge.format('MM-DD-YYYY'));
+            localStorage.setItem('storedAge', JSON.stringify(storedUserAge));
+            acceptAge(); // Calls function to close modal if minAge is met
         }
+    }
 
-        // function that determines if over or under 21 years of age
-        function checkAge() {
-            let enteredAge = dayjs(document.getElementById('ageSelector').value, 'MM-DD-YYYY');
-            if (enteredAge.isAfter(minAge)) {
-                window.alert('Under Age');
-            } else if (enteredAge.isValid() === false) {
-                window.alert('Please enter a valid date');
-            } else {
-                storedUserAge.push(enteredAge.format('MM-DD-YYYY'));
-                localStorage.setItem('storedAge', JSON.stringify(storedUserAge))
-                //calls function to close modal if minAge is met
-           acceptAge();
-    }
-    }
-        
+    submitEl.addEventListener("click", checkAge);
 
-        submitEl.addEventListener("click", checkAge);
-        
-        //Only acceptable ages are stored to local storage, therfore if the storedAge array is not empty, the modal dissapears
-        function checkStoredAge(){
-            //checks to ensure that the array is longer than 0, if it is, we call the modal closing function
-            if (storedUserAge.length > 0){
-        acceptAge();
+    // Only acceptable ages are stored to local storage, therefore if the storedAge array is not empty, the modal disappears
+    function checkStoredAge(){
+        if (storedUserAge.length > 0){
+            acceptAge(); // Automatically close the modal if age is already stored
+        }
     }
-}
-// immideietnly calls the function to check local storage when the document is ready
-$(document).ready(function () { 
-    checkStoredAge()
+
+    // Immediately calls the function to check local storage when the document is ready
+    $(document).ready(checkStoredAge);
 });
 
 
