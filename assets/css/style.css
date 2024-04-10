@@ -23,11 +23,11 @@ body {
     }
 
 .modal {
-    background-color: #f9f5ec;
+    background-color: black;
 } 
 
 .modal-content {
-    background-color: #f9f5ec;
+    background-color: white;
     height: 400px;
     width: 80%;
     margin: 15% auto;
