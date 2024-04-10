@@ -81,7 +81,7 @@ body {
 /* Happy Face Icons */
 .happy {
     position: absolute;
-    color: #222;
+    color: #0d0d0d;
 }
 
 .happy::before {
@@ -98,7 +98,7 @@ body {
 /* Sad Face Icons */
 .sad {
     position: absolute;
-    color: #222;
+    color: #0d0d0d;
 }
 
 .sad::before {
@@ -118,7 +118,7 @@ body {
     z-index: 0;
 }
 
-/* Modal */
+/* Mood Selector */
 .container {
     position: absolute;
     top: 50%;
