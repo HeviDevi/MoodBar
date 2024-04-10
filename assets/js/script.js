@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-
         submitEl.addEventListener("click", checkAge);
         
         function checkStoredAge(){
