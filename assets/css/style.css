@@ -124,10 +124,10 @@ body {
     left: 50%; 
     transform: translate(-50%, -50%);
     z-index: 1000;
-    background-color: #0d0d0d;
+    background-color: #151515;
     color: #ffffff;
     border-radius: 8px;
-    box-shadow: #cc99ff 0px 0px 20px;
+    box-shadow: #cc99ff 0px 0px 15px;
     padding: 20px;
     width: 80%;
     max-width: 600px;
@@ -137,7 +137,7 @@ body {
     font-size: 80px;
     color: #0d0d0d;
     text-shadow: 0 0 5px white,
-    0 0 10px #cc99ff;
+    0 0 5px #cc99ff;
 }
 
 .container p {
@@ -152,7 +152,7 @@ body {
 }
 
 .btnSubmit {
-    border: 2px solid #cc99ff;
+    border: 1px solid #cc99ff;
     width: 35%;
 }
 
