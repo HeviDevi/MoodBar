@@ -4,6 +4,46 @@
     box-sizing: border-box;
 }
 
+/* Navbar */
+.animated-icon2 span:nth-child(1) {
+    top: 0px;
+    }
+    
+    .animated-icon2 span:nth-child(2),
+    .animated-icon2 span:nth-child(3) {
+    top: 10px;
+    }
+    
+    .animated-icon2 span:nth-child(4) {
+    top: 20px;
+    }
+    
+    .animated-icon2.open span:nth-child(1) {
+    top: 11px;
+    width: 0%;
+    left: 50%;
+    }
+    
+    .animated-icon2.open span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    }
+    
+    .animated-icon2.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    }
+    
+    .animated-icon2.open span:nth-child(4) {
+    top: 11px;
+    width: 0%;
+    left: 50%;
+    }
+
 
 /* Drink Background */
 .drinkBackground {
@@ -36,16 +76,16 @@
 }
 
 .happy.animate {
-    color: yellow;
+    color: #e3c760;
 }
 
 /* Happy Cards */
 .cardHappy {
-    background-color: yellow;
+    background-color: #e3c760;
 }
 
 .optionHappy {
-    border: 4px solid yellow;
+    border: 4px solid #e3c760;
 }
 
 /* Sad Face Icons */
@@ -61,16 +101,16 @@
 }
 
 .sad.animate {
-    color: lightblue;
+    color: #2f9db7;
 }
 
 /* Sad Cards */
 .cardSad {
-    background-color: lightblue;
+    background-color: #2f9db7;
 }
 
 .optionSad {
-    border: 4px solid lightblue;
+    border: 4px solid #2f9db7;
 }
 
 /* Angry Face Icons */
@@ -86,16 +126,16 @@
 }
 
 .angry.animate {
-    color: red;
+    color: #914949;
 }
 
 /* Angry Cards */
 .cardAngry {
-    background-color: red;
+    background-color: #914949;
 }
 
 .optionAngry {
-    border: 4px solid red;
+    border: 4px solid #914949;
 }
 
 /* Exhausted Face Icons */
@@ -136,14 +176,14 @@
 }
 
 .inLove.animate {
-    color: pink;
+    color: #efb0ba;
 }
 
 /* In Love Cards */
 .cardInLove {
-    background-color: pink;
+    background-color: #efb0ba;
 }
 
 .optionInLove {
-    border: 4px solid pink;
+    border: 4px solid #efb0ba;
 }
