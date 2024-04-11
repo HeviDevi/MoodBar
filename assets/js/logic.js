@@ -35,7 +35,7 @@ function ingredientParameter(){
     // sets category as blank
     let ingredientCategory = ''
     //TODO: Collect user's input
-    //TODO: Look over ingredients available in the API and make decisoons on what to leverage. we will have to be careful to format the new value correctly for the URL
+    //TODO: Look over ingredients available in the API and make decisoons on what to leverage. We will have to be careful to format the new value correctly for the URL
     let moodInput = 'Happy'
 
     if (moodInput === 'Happy') {
@@ -60,18 +60,46 @@ let ingredientCategory = ingredientParameter();
 //STYLE TEAM: create an HTML element to display the quote on the page.
 //STYLE TEAM: add "bartender's advice" button to drinks.html
 //CODE TEAM: event listener for quote button aaand a function that will display the quote on the page.. some kind of appendChild thing??
-$.ajax({
+
+
+// function chooseRandomDrink(){
+    $.ajax({
     method: 'GET',
-    url: 'https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=' + ingredientCategory + ',' + spiritCategory,
+    url: 'https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=' + spiritCategory + ',' +  ingredientCategory,
     success: function(result) {
-        ///Display function goes here
+        // sets drinkId as the id of the chosen drink
+        //TODO: update this code to randomly pick a drink from the array, rather than hard coding a specific one like i've done here
+        let drinkId = result.drinks[5].idDrink
+        //just logs the name of the drink
         console.log(result.drinks[5].strDrink)
+        //passes the Id of the chosen drink to the DrinkDetails function
+        getDrinkDetails(drinkId)
     },
     error: function ajaxError(jqXHR) {
         console.error('Error: ', jqXHR.responseText);
     }
+  
 });
 
+// }
+/// Study Promises in AJAX functions
+function getDrinkDetails(drinkId){
+    $.ajax({
+        method:' GET',
+        url: 'https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=' + drinkId,
+
+        success: function(result){
+            ///Display function goes here
+            console.log(result.drinks[0].strDrink)
+            console.log(result.drinks[0].strInstructions)
+            console.log(result.drinks[0].strIngredient1)
+            console.log(result.drinks[0].strIngredient2)
+            console.log(result.drinks[0].strIngredient3)
+            console.log(result.drinks[0].strIngredient4)
+        }
+    })
+
+}
 
 
 
@@ -144,7 +172,7 @@ $.ajax({
     contentType: 'application/json',
     success: function(result) {
         ///Display function goes here
-        console.log(result[0].author + 'once said' + '"' + result[0].quote + '"')
+        console.log(result[0].author + ' once said ' + '"' + result[0].quote + '"')
     },
     error: function ajaxError(jqXHR) {
         console.error('Error: ', jqXHR.responseText);
