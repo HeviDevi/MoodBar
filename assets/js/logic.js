@@ -86,12 +86,12 @@ function chooseRandomCocktail () {
         })
         .then(result=> {
                         
-            // let drinkName = (result.drinks[randomDrink].strDrink);
-            // let drinkItructions = (result.drinks[randomDrink].strDrink)
-            // let drinkIng1 = (result.drinks[0].strIngredient1)
-            // let drinkIng2 = (result.drinks[0].strIngredient1)
-            // let drinkIng3 = (result.drinks[0].strIngredient3)
-            // let drinkIng4 = (result.drinks[0].strIngredient4)
+            let drinkName = (result.drinks[randomDrink].strDrink);
+            let drinkItructions = (result.drinks[randomDrink].strDrink)
+            let drinkIng1 = (result.drinks[0].strIngredient1)
+            let drinkIng2 = (result.drinks[0].strIngredient1)
+            let drinkIng3 = (result.drinks[0].strIngredient3)
+            let drinkIng4 = (result.drinks[0].strIngredient4)
 
                         console.log(result.drinks[0].strInstructions)
                         console.log(result.drinks[0].strIngredient1)
@@ -99,6 +99,18 @@ function chooseRandomCocktail () {
                         console.log(result.drinks[0].strIngredient3)
                         console.log(result.drinks[0].strIngredient4)
 
+        // TODO: review the HTML to let it appear
+        const drinkInfoHTML = `
+                <H2>${drinkName}</H2> 
+                <p>${drinkInstructions}</p>
+                <ul>
+                    <li>${drinkIng1}</li>
+                    <li>${drinkIng2}</li>
+                    <li>${drinkIng3}</li>
+                    <li>${drinkIng4}</li>
+                </ul>`;
+        const drinkInfoElement = document.getElementById('drinkInfoHTML');
+        drinkInfoElement.innerHTML = drinkInfoHTML;
         })
     }
 
