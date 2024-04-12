@@ -67,8 +67,9 @@ function chooseRandomCocktail () {
         return response.json();
     })
 
+    
     .then(result =>{
-        let randomDrink = Math.floor(Math.random() * result.drinks.length);
+            let randomDrink = Math.floor(Math.random() * result.drinks.length);
                 // sets drinkId as the id of the randomly chosen drink
                 //TODO: update this code to randomly pick a drink from the array, rather than hard coding a specific one like i've done here
                 let drinkId = result.drinks[randomDrink].idDrink
@@ -84,6 +85,14 @@ function chooseRandomCocktail () {
             return response.json();
         })
         .then(result=> {
+                        
+            // let drinkName = (result.drinks[randomDrink].strDrink);
+            // let drinkItructions = (result.drinks[randomDrink].strDrink)
+            // let drinkIng1 = (result.drinks[0].strIngredient1)
+            // let drinkIng2 = (result.drinks[0].strIngredient1)
+            // let drinkIng3 = (result.drinks[0].strIngredient3)
+            // let drinkIng4 = (result.drinks[0].strIngredient4)
+
                         console.log(result.drinks[0].strInstructions)
                         console.log(result.drinks[0].strIngredient1)
                         console.log(result.drinks[0].strIngredient2)
