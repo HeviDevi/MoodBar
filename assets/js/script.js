@@ -28,10 +28,15 @@ document.addEventListener('DOMContentLoaded', function () {
     // function that determines if over or under 21 years of age
     function checkAge() {
         let enteredAge = dayjs(document.getElementById('ageSelector').value, 'MM-DD-YYYY');
+        let invalidMessageElement = document.querySelector('.invalid'); //Made variable to store the invalid message element
+
+        // Clear the invalid message element when not needed
+        invalidMessageElement.innerHTML = '';
+        
         if (enteredAge.isAfter(minAge)) {
-            document.querySelector('.invalid').innerHTML += `<span style="color: red;"> Under Age </span>`;
+            invalidMessageElement.innerHTML += `<span style="color: red;"> Under Age </span>`;
         } else if (enteredAge.isValid() === false) {
-            document.querySelector('.invalid').innerHTML += `<span style="color: red;"> Invalid Date </span>`;
+            invalidMessageElement.innerHTML += `<span style="color: red;"> Invalid Date </span>`;
         } else {
             storedUserAge.push(enteredAge.format('MM-DD-YYYY'));
             localStorage.setItem('storedAge', JSON.stringify(storedUserAge));
