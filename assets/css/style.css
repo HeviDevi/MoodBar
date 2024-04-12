@@ -17,9 +17,6 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
-body {
-    background-color:#0d0d0d;
-}
 
 /* spin wipe transition */
 @keyframes spinWipeOut {
