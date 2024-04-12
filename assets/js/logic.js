@@ -100,17 +100,17 @@ function chooseRandomCocktail () {
                         console.log(result.drinks[0].strIngredient4)
 
         // TODO: review the HTML to let it appear
-        const drinkInfoHTML = `
-                <H2>${drinkName}</H2> 
-                <p>${drinkInstructions}</p>
-                <ul>
-                    <li>${drinkIng1}</li>
-                    <li>${drinkIng2}</li>
-                    <li>${drinkIng3}</li>
-                    <li>${drinkIng4}</li>
-                </ul>`;
-        const drinkInfoElement = document.getElementById('drinkInfoHTML');
-        drinkInfoElement.innerHTML = drinkInfoHTML;
+        // const drinkInfoHTML = `
+        //         <H2>${drinkName}</H2> 
+        //         <p>${drinkInstructions}</p>
+        //         <ul>
+        //             <li>${drinkIng1}</li>
+        //             <li>${drinkIng2}</li>
+        //             <li>${drinkIng3}</li>
+        //             <li>${drinkIng4}</li>
+        //         </ul>`;
+        // const drinkInfoElement = document.getElementById('drinkInfoHTML');
+        // drinkInfoElement.innerHTML = drinkInfoHTML;
         })
     }
 
