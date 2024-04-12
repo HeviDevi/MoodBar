@@ -6,7 +6,7 @@ function spiritParameter(){
     let spiritCategory = ''
 
     //TODO: collect user input
-    let spiritInput = 'Gin'
+    let spiritInput = 'Vodka'
     
   // Here the user's chosen input is assigned to a Spirit 
   //We be adding this new value to the end of the URL in our ajax API call
@@ -14,80 +14,76 @@ function spiritParameter(){
     if (spiritInput === 'Gin') {
         spiritCategory = 'Gin'
 } else if (spiritInput === 'Rum') {
-    spiritCategory = 'Rum'
-} else if (spiritInput === 'Whiskey') {
-    spiritCategory = 'Whiskey'
-} else if (spiritInput === 'Vodka'){
-    spiritCategory = 'Vodka'
-} else if (spiritInput === 'Scotch') {
-    spiritCategory = 'Scotch'
+        spiritCategory = 'light_rum'
+}  else if (spiritInput === 'Vodka'){
+        spiritCategory = 'Vodka'
 } else if (spiritInput === 'Tequila') {
-    spiritCategory = 'Tequila'
-} else if (spiritInput === 'Bourbon') {
-    spiritCategory = ' Bourbon'
-}
+        spiritCategory = 'Tequila'
+};
 
 //returns spiritCategory as output of function so we can use it later in the ajax api call
 return spiritCategory
 };
 
 function ingredientParameter(){
-    // // sets category as blank
-    // let ingredientCategory = ''
-    // //TODO: Collect user's input
-    // //TODO: Look over ingredients available in the API and make decisoons on what to leverage. We will have to be careful to format the new value correctly for the URL
-    // let moodInput = 'Happy'
-
-    // if (moodInput === 'Happy') {
-    //     ingredientCategory = 'Lemon_juice'
-    // } else if (moodInput === 'Sad') {
-    //     ingredientCategory = 'Vermouth'
-    // } else if (moodInput === 'Angry') {
-    //     ingredientCategory = 'Bitters'
-    // } else if (moodInput === 'Exhausted') {
-    //    ingredientCategory = 'Orange'
-    // } else if (moodInput === 'In Love') {
-    //     ingredientCategory = 'Sweet Vermouth'
-    // }
-    // return ingredientCategory
-
-    let chosenIngredientArray;
-    
+    // sets category as blank
+    let ingredientCategory = ''
     //TODO: Collect user's input
     //TODO: Look over ingredients available in the API and make decisoons on what to leverage. We will have to be careful to format the new value correctly for the URL
-    let moodInput = 'Happy'
-
-    let happyArray = ['lemon_juice','sweet_vermouth','grenadine']
-    let sadArray = ['lime_juice','angostura_bitters','mint']
-    let angryArray = ['Triple_Sec','orange_peel','lime']
-    let exhaustedArray = ['sugar','orange_bitters','lemon']
-    let loveArray = ['orange_juice','cherry','sugar_cube']
-
+    let moodInput = 'In Love'
 
     if (moodInput === 'Happy') {
-       let randomIndex = Math.floor(Math.random() * happyArray.length);
-       chosenIngredientArray = happyArray[randomIndex]
+        ingredientCategory = 'orange_juice'
     } else if (moodInput === 'Sad') {
-        let randomIndex = Math.floor(Math.random() * sadArray.length);
-       chosenIngredientArray = sadArray[randomIndex]
+        ingredientCategory = 'triple_sec'
     } else if (moodInput === 'Angry') {
-        let randomIndex = Math.floor(Math.random() * angryArray.length );
-       chosenIngredientArray = angryArray[randomIndex]
+        ingredientCategory = 'lemon_juice'
     } else if (moodInput === 'Exhausted') {
-        let randomIndex = Math.floor(Math.random() * exhaustedArray.length);
-        chosenIngredientArray = exhaustedArray[randomIndex]
+       ingredientCategory = 'coca-cola'
     } else if (moodInput === 'In Love') {
-        let randomIndex = Math.floor(Math.random() * loveArray.length);
-        chosenIngredientArray = loveArray[randomIndex]
+        ingredientCategory = 'lime_juice'
     }
-    
-    return chosenIngredientArray
+    return ingredientCategory
 };
+    
+    //OLD CODE FOR FOR RANDOMIZED INGREDIENTS (FAILED)
+    // let chosenIngredientArray;
+    
+    // //TODO: Collect user's input
+    // //TODO: Look over ingredients available in the API and make decisoons on what to leverage. We will have to be careful to format the new value correctly for the URL
+    // let moodInput = 'In Love'
+
+//     let happyArray = ['lemon_juice','sweet_vermouth','grenadine']
+//     let sadArray = ['lime_juice','angostura_bitters','mint'] 
+//     let angryArray = ['Triple_Sec','orange_peel','lime',]
+//     let exhaustedArray = ['sugar','orange_bitters','lemon']
+//     let loveArray = ['orange_juice','cherry','sugar_cube']
+
+
+//     if (moodInput === 'Happy') {
+//        let randomIndex = Math.floor(Math.random() * happyArray.length)
+//        chosenIngredientArray = happyArray[randomIndex]
+//     } else if (moodInput === 'Sad') {
+//         let randomIndex = Math.floor(Math.random() * sadArray.length)
+//        chosenIngredientArray = sadArray[randomIndex]
+//     } else if (moodInput === 'Angry') {
+//         let randomIndex = Math.floor(Math.random() * angryArray.length )
+//        chosenIngredientArray = angryArray[randomIndex]
+//     } else if (moodInput === 'Exhausted') {
+//         let randomIndex = Math.floor(Math.random() * exhaustedArray.length)
+//         chosenIngredientArray = exhaustedArray[randomIndex]
+//     } else if (moodInput === 'In Love') {
+//         let randomIndex = Math.floor(Math.random() * loveArray.length)
+//         chosenIngredientArray = loveArray[randomIndex]
+//     }
+    
+//     return chosenIngredientArray
+// };
 
 
 // Sets spiritCategory as the output of the spiritParameter function does likewise for the ingredientCategory ... or at least it should??
 let spiritCategory = spiritParameter();
-
+let chosenIngredientArray = ingredientParameter();
 // ajax api call to pull a quote from the api based on category
 //TODO// 
 //STYLE TEAM: create an HTML element to display the quote on the page.
@@ -95,8 +91,7 @@ let spiritCategory = spiritParameter();
 //CODE TEAM: event listener for quote button aaand a function that will display the quote on the page.. some kind of appendChild thing??
 
 function chooseRandomCocktail () {
-    let chosenIngredientArray = ingredientParameter();
-    ingredientParameter();
+    
     fetch ('https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=' + spiritCategory + ',' +  chosenIngredientArray,)
     .then(response => {
         return response.json();
@@ -106,7 +101,6 @@ function chooseRandomCocktail () {
     .then(result =>{
             let randomDrink = Math.floor(Math.random() * result.drinks.length);
                 // sets drinkId as the id of the randomly chosen drink
-                //TODO: update this code to randomly pick a drink from the array, rather than hard coding a specific one like i've done here
                 let drinkId = result.drinks[randomDrink].idDrink
                 //just logs the name of the drink
                 console.log(result.drinks[randomDrink].strDrink)
@@ -121,12 +115,12 @@ function chooseRandomCocktail () {
         })
         .then(result=> {
                         
-            let drinkName = (result.drinks[randomDrink].strDrink);
-            let drinkItructions = (result.drinks[randomDrink].strDrink)
-            let drinkIng1 = (result.drinks[0].strIngredient1)
-            let drinkIng2 = (result.drinks[0].strIngredient1)
-            let drinkIng3 = (result.drinks[0].strIngredient3)
-            let drinkIng4 = (result.drinks[0].strIngredient4)
+            // let drinkName = (result.drinks[randomDrink].strDrink);
+            // let drinkItructions = (result.drinks[randomDrink].strDrink)
+            // let drinkIng1 = (result.drinks[0].strIngredient1)
+            // let drinkIng2 = (result.drinks[0].strIngredient1)
+            // let drinkIng3 = (result.drinks[0].strIngredient3)
+            // let drinkIng4 = (result.drinks[0].strIngredient4)
 
                         console.log(result.drinks[0].strInstructions)
                         console.log(result.drinks[0].strIngredient1)
@@ -149,6 +143,8 @@ function chooseRandomCocktail () {
         })
     }
 
+
+    //ATTEMPT AT AJAX INSTEAD OF FETCH (FAILED)
 // function chooseRandomDrink(){
 //     $.ajax({
 //     method: 'GET',
