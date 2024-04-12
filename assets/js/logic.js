@@ -185,11 +185,11 @@ function quoteParameter(){
     if (moodInput === 'Happy') {
         quoteCategory = 'happiness'
 } else if (moodInput === 'Sad') {
-    quoteCategory = 'happiness'
+    quoteCategory = 'inspirational'
 } else if (moodInput === 'Angry') {
     quoteCategory = 'anger'
 } else if (moodInput === 'Exhausted'){
-    quoteCategory = 'future'
+    quoteCategory = 'success'
 } else if (moodInput === 'In Love') {
     quoteCategory = 'love'
 }
