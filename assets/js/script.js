@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // For Happy Face Background Animation
-for (let  i= 0;  i<=50; +i++) {
+for (let  i= 0;  i<=50; i++) {
     let happyFace = document.createElement('div');
     happyFace.classList.add('happy');
     let size = Math.random() * 15;

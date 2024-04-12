@@ -1,5 +1,5 @@
 // For Happy Face
-for (let i = 0; i <= 75; +i++) {
+for (let i = 0; i <= 75; i++) {
   let happyFace = document.createElement("div");
   happyFace.classList.add("happy");
   let size = Math.random() * 15;
@@ -50,7 +50,7 @@ function animateAngry() {
 }
 
 // For Exhausted Face
-for (let i = 0; i <= 75; +i++) {
+for (let i = 0; i <= 75; i++) {
   let exhaustedFace = document.createElement("div");
   exhaustedFace.classList.add("exhausted");
   let size = Math.random() * 15;
@@ -67,7 +67,7 @@ function animateExhausted() {
 }
 
 // For In Love Face
-for (let i = 0; i <= 75; +i++) {
+for (let i = 0; i <= 75; i++) {
   let inLoveFace = document.createElement("div");
   inLoveFace.classList.add("inLove");
   let size = Math.random() * 15;
