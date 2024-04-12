@@ -64,9 +64,9 @@ body {
 }
 
   /* Helper class to control the form's visibility */
-.show-form {
+   .show-form {
     opacity: 1 !important;
-}
+    }
 
 /* Navbar UL */
 ul {
@@ -166,6 +166,7 @@ a:link {
 }
 
 .btnSubmit {
+    position: relative;
     border: 1px solid #cc99ff;
     width: 35%;
 }

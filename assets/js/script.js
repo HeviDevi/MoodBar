@@ -55,19 +55,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Immediately calls the function to check local storage when the document is ready
     $(document).ready(checkStoredAge);
-
-    $('.btnSubmit').click(function(event) {
-        event.preventDefault(); // Prevent the default form submission
-        $('.mood-container, .container').fadeOut(600, function() {
-            $('.loading').show(); // Show the shaker
-            $('.shaker').addClass('animate__animated animate__shakeY').css('animation-duration', '4s'); // Apply shaking animation
-
-            setTimeout(function () {
-                window.location.href = 'drinks.html'; // Redirect to drinks.html after the shaker animation
-            }, 4000); // Delay to match the animation duration
+// form submit function
+    $(document).ready(function() {
+        $('#submit').click(function(event) {
+            event.preventDefault();
+            let userMood = $('#userMood').val();
+            let userSpirit = $('#userSpirit').val();
+    //checks for selections, NEED TO CHANGE FROM ALERT
+            if (userMood === "Select your mood" || userSpirit === "Select your Spirit") {
+                alert("Please select valid options for both mood and spirit.");
+                return;
+            }
+//hides containers and starts animation
+            $('.mood-container, .container').fadeOut(600, function() {
+                $(this).hide();
+                $('.loading').show();
+                $('.shaker').addClass('animate__animated animate__shakeY').css('animation-duration', '4s');
+    //stores selection, and redirects after animation
+                setTimeout(function () {
+                    localStorage.setItem('userMood', userMood);
+                    localStorage.setItem('userSpirit', userSpirit);
+                    window.location.href = 'Drinks.html';
+                }, 4000);  // Ensure this matches the duration of animations
+            });
         });
     });
-});
+    });
 
 
 
