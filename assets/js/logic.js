@@ -23,7 +23,7 @@ function spiritParameter(){
     spiritCategory = 'Scotch'
 } else if (spiritInput === 'Tequila') {
     spiritCategory = 'Tequila'
-} else if (spiritInup === 'Bourbon') {
+} else if (spiritIpuy === 'Bourbon') {
     spiritCategory = ' Bourbon'
 }
 
@@ -32,25 +32,58 @@ return spiritCategory
 };
 
 function ingredientParameter(){
-    // sets category as blank
-    let ingredientCategory = ''
+    // // sets category as blank
+    // let ingredientCategory = ''
+    // //TODO: Collect user's input
+    // //TODO: Look over ingredients available in the API and make decisoons on what to leverage. We will have to be careful to format the new value correctly for the URL
+    // let moodInput = 'Happy'
+
+    // if (moodInput === 'Happy') {
+    //     ingredientCategory = 'Lemon_juice'
+    // } else if (moodInput === 'Sad') {
+    //     ingredientCategory = 'Vermouth'
+    // } else if (moodInput === 'Angry') {
+    //     ingredientCategory = 'Bitters'
+    // } else if (moodInput === 'Exhausted') {
+    //    ingredientCategory = 'Orange'
+    // } else if (moodInput === 'In Love') {
+    //     ingredientCategory = 'Sweet Vermouth'
+    // }
+    // return ingredientCategory
+
+    let chosenIngredientArray;
+    
     //TODO: Collect user's input
     //TODO: Look over ingredients available in the API and make decisoons on what to leverage. We will have to be careful to format the new value correctly for the URL
     let moodInput = 'Happy'
 
+    let happyArray = ['lemon_juice','sweet_vermouth','grenadine']
+    let sadArray = ['lime_juice','angostura_bitters','mint']
+    let angryArray = ['Triple_Sec','orange_peel','lime']
+    let exhaustedArray = ['sugar','orange_bitters','lemon']
+    let loveArray = ['orange_juice','cherry','sugar_cube']
+
+
     if (moodInput === 'Happy') {
-        ingredientCategory = 'Lemon_juice'
+       let randomIndex = Math.floor(Math.random() * happyArray.length);
+       chosenIngredientArray = happyArray[randomIndex]
     } else if (moodInput === 'Sad') {
-        ingredientCategory = 'Vermouth'
+        let randomIndex = Math.floor(Math.random() * sadArray.length);
+       chosenIngredientArray = sadArray[randomIndex]
     } else if (moodInput === 'Angry') {
-        ingredientCategory = 'Bitters'
+        let randomIndex = Math.floor(Math.random() * angryArray.length );
+       chosenIngredientArray = angryArray[randomIndex]
     } else if (moodInput === 'Exhausted') {
-       ingredientCategory = 'Orange'
+        let randomIndex = Math.floor(Math.random() * exhaustedArray.length);
+        chosenIngredientArray = exhaustedArray[randomIndex]
     } else if (moodInput === 'In Love') {
-        ingredientCategory = 'Sweet Vermouth'
+        let randomIndex = Math.floor(Math.random() * loveArray.length);
+        chosenIngredientArray = loveArray[randomIndex]
     }
+    let ingredientCategory = chosenIngredientArray
     return ingredientCategory
 };
+
 
 // Sets spiritCategory as the output of the spiritParameter function does likewise for the ingredientCategory ... or at least it should??
 let spiritCategory = spiritParameter();
@@ -62,6 +95,7 @@ let ingredientCategory = ingredientParameter();
 //CODE TEAM: event listener for quote button aaand a function that will display the quote on the page.. some kind of appendChild thing??
 
 function chooseRandomCocktail () {
+    ingredientParameter();
     fetch ('https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=' + spiritCategory + ',' +  ingredientCategory,)
     .then(response => {
         return response.json();
