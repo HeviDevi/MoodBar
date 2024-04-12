@@ -93,7 +93,52 @@ function animateInLove() {
 
 
 
+const displayCard = function (data) {
+    const forecastCards = document.querySelector(".mainCard");
+    forecastCards.innerHTML = "";
+  
+    for (let i = 0; i < 1; i++) {
+        const drinkPhoto = ''//call for drink photo goes here
+  
+      const card = document.createElement("div");
+      card.classList.add("card", "m-3");
+      card.style.width = "48rem";
+  
+      const cardBody = document.createElement("div");
+      cardBody.classList.add("card-body");
 
+      const adviceButton = document.createElement("button");
+      adviceButton.classList.add("btn", "btn-primary");
+      adviceButton.textContent = "Bartender's Advice";
+      // adviceButton.addEventListener("click", function () {
+        // call for quote goes here    
+
+      const photo = document.createElement("img");
+      icon.src = drinkPhoto;
+      icon.alt = "Drink Photo";
+  
+      const cardTitle = document.createElement("h5");
+      cardTitle.classList.add("card-title");
+      cardTitle.textContent = ``//call for drink name goes here;
+  
+      const cardIngredients = document.createElement("p");
+      cardIngredients1.classList.add("ingredients");
+      cardIngredients.textContent = ``//call for drink ingredients goes here;
+  
+      const cardHowTo = document.createElement("p");
+      cardHowTo.classList.add("how-to");
+      cardHowTo.textContent = ``//call for drink instructions goes here;
+  
+      cardBody.appendChild(adviceButton);
+      cardBody.appendChild(photo);
+      cardBody.appendChild(cardTitle);
+      cardBody.appendChild(cardIngredients);
+      cardBody.appendChild(cardHowTo);
+      card.appendChild(cardBody);
+  
+      forecastCards.appendChild(card);
+    }
+  };
 
 
 // let url = 'https://api.api-ninjas.com/v1/quotes?category='

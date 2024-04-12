@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-// For Happy Face
+// For Happy Face Background Animation
 for (let  i= 0;  i<=50; +i++) {
     let happyFace = document.createElement('div');
     happyFace.classList.add('happy');
@@ -84,7 +84,7 @@ function animateHappy() {
     allHappy[num].classList.toggle('animate');
 }
 
-// For Sad Face
+// For Sad Face Background Animation
 for(let i=0; i<=50; i++) {
     let sadFace = document.createElement('div');
     sadFace.classList.add('sad');
