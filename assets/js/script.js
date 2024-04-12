@@ -29,9 +29,9 @@ document.addEventListener('DOMContentLoaded', function () {
     function checkAge() {
         let enteredAge = dayjs(document.getElementById('ageSelector').value, 'MM-DD-YYYY');
         if (enteredAge.isAfter(minAge)) {
-            window.alert('Under Age');
+            document.querySelector('.invalid').innerHTML += `<span style="color: red;">Under Age</span>`;
         } else if (enteredAge.isValid() === false) {
-            window.alert('Please enter a valid date');
+            document.querySelector('.invalid').innerHTML += `<span style="color: red;">Invalid Date</span>`;
         } else {
             storedUserAge.push(enteredAge.format('MM-DD-YYYY'));
             localStorage.setItem('storedAge', JSON.stringify(storedUserAge));
