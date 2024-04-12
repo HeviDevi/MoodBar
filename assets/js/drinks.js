@@ -122,7 +122,7 @@ const displayCard = function (data) {
       cardTitle.textContent = ``//call for drink name goes here;
   
       const cardIngredients = document.createElement("p");
-      cardIngredients1.classList.add("ingredients");
+      cardIngredients.classList.add("ingredients");
       cardIngredients.textContent = ``//call for drink ingredients goes here;
   
       const cardHowTo = document.createElement("p");
