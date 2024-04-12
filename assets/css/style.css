@@ -18,7 +18,7 @@ body {
 }
 
 
-/* spin wipe transition */
+/* Spin wipe transition for modal */
 @keyframes spinWipeOut {
     0% {
         transform: scale(1) rotate(0deg);
@@ -34,6 +34,8 @@ body {
       }
     }
 
+
+/* Modal */
 .modal {
     background-color: #0d0d0d;
 } 
@@ -59,12 +61,13 @@ body {
 .mood-container {
     opacity: 0; 
     transition: opacity 0.6s ease-in-out;
-  }
+}
 
   /* Helper class to control the form's visibility */
 .show-form {
     opacity: 1 !important;
 }
+
 
 /* Drink Background */
 .drinkBackground {
@@ -84,8 +87,6 @@ body {
     overflow: hidden;
 }
 
-
-
 /* Happy Face Icons */
 .happy {
     position: absolute;
@@ -101,7 +102,6 @@ body {
 .happy.animate {
     color: rgb(217, 221, 117);
 }
-
 
 /* Sad Face Icons */
 .sad {
@@ -119,9 +119,7 @@ body {
     color:rgb(217, 221, 117);
 }
 
-
-
-/* Mood Selector */
+/* Mood Selector Container */
 .container {
     position: absolute;
     top: 50%;
@@ -150,6 +148,7 @@ body {
     color: #f9f6ec;
 }
 
+/* Mood Selector Form */
 .form-select {
     background-color: #f9f6ec;
     color: grey;
