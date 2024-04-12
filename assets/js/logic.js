@@ -23,7 +23,7 @@ function spiritParameter(){
     spiritCategory = 'Scotch'
 } else if (spiritInput === 'Tequila') {
     spiritCategory = 'Tequila'
-} else if (spiritIpuy === 'Bourbon') {
+} else if (spiritInput === 'Bourbon') {
     spiritCategory = ' Bourbon'
 }
 
