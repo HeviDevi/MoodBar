@@ -130,16 +130,38 @@ const displayCard = function (data) {
       cardHowTo.textContent = ``//call for drink instructions goes here;
   
       cardBody.appendChild(adviceButton);
-      cardBody.appendChild(photo);
+      cardBody.appendChild(drinkPhoto);
       cardBody.appendChild(cardTitle);
       cardBody.appendChild(cardIngredients);
       cardBody.appendChild(cardHowTo);
       card.appendChild(cardBody);
-  
       forecastCards.appendChild(card);
     }
   };
 
+  const optionCard = function (data) {
+    const forecastCards = document.querySelector(".drinkOptionCards");
+    forecastCards.innerHTML = "";
+  
+    for (let i = 0; i < 4; i++) {
+        const drinkPhoto2 = ''//call for drink photo goes here
+  
+      const card = document.createElement("div");
+      card.classList.add("cardOptions", "m-3");
+      card.style.width = "10rem";
+  
+      const cardBody = document.createElement("div");
+      cardBody.classList.add("card-body2");
+
+      const photo = document.createElement("img");
+      icon.src = drinkPhoto2;
+      icon.alt = "Drink Photo";
+  
+      cardBody.appendChild(drinkPhoto2);
+      card.appendChild(cardBody);
+      forecastCards.appendChild(card);
+    }
+  };
 
 // let url = 'https://api.api-ninjas.com/v1/quotes?category='
 
