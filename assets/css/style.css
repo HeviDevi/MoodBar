@@ -71,6 +71,11 @@ body {
 /* Navbar UL */
 ul {
     list-style-type: none;
+    color: gray;
+}
+
+a:link {
+    text-decoration: none;
 }
 
 
