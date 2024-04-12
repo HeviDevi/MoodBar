@@ -13,6 +13,10 @@ ul {
     list-style-type: none;
 }
 
+a:link {
+    text-decoration: none;
+}
+
 
 /* Drink Background */
 .drinkBackground {
