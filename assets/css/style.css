@@ -17,6 +17,20 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
+body {
+    background-image: url("/assets/images/newdrinks.png");
+    background-repeat: repeat;
+    background-size: auto;
+}
+
+
+/* Drink Background */
+.drinkBackground {
+    position: relative;
+    z-index: 0;
+}
+
+
 
 /* spin wipe transition */
 @keyframes spinWipeOut {
@@ -111,11 +125,6 @@ body {
 }
 
 
-/* Drink Background */
-.drinkBackground {
-    position: relative;
-    z-index: 0;
-}
 
 /* Mood Selector */
 .container {
@@ -171,6 +180,6 @@ body {
     width: 100vw; /* Set appropriate size */
     height: auto;
     max-width: 700px;
-    display:block;
+    display: block;
     animation-duration: 4s; /* Duration set directly via JavaScript */
 }

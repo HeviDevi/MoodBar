@@ -67,6 +67,7 @@ let ingredientCategory = ingredientParameter();
     method: 'GET',
     url: 'https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=' + spiritCategory + ',' +  ingredientCategory,
     success: function(result) {
+        
         // sets drinkId as the id of the chosen drink
         //TODO: update this code to randomly pick a drink from the array, rather than hard coding a specific one like i've done here
         let drinkId = result.drinks[5].idDrink
@@ -88,7 +89,7 @@ function getDrinkDetails(drinkId){
         method:' GET',
         url: 'https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=' + drinkId,
 
-        success: function(result){
+        success: function(result) {
             ///Display function goes here
             console.log(result.drinks[0].strDrink)
             console.log(result.drinks[0].strInstructions)
