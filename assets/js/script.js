@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
             let userSpirit = $('#userSpirit').val();
     //checks for selections, NEED TO CHANGE FROM ALERT
             if (userMood === "Select your mood" || userSpirit === "Select your Spirit") {
-                alert("Please select valid options for both mood and spirit.");
+                document.querySelector('.invalidDrink').innerHTML = '<span style="color: red;">Please select a mood and spirit.</span>';
                 return;
             }
 //hides containers and starts animation
