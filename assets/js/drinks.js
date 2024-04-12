@@ -89,7 +89,7 @@ function animateInLove() {
 // setInterval(animateExhausted, 50);
 // setInterval(animateInLove, 50);
 
-const displayCard = function (data) {
+const displayCard = function () {
   const mainCard = document.querySelector(".mainCard");
   mainCard.innerHTML = "";
 
@@ -151,7 +151,7 @@ const displayCard = function (data) {
 
 displayCard();
 
-const optionCard = function (data) {
+const optionCard = function () {
   const drinkOptions = document.querySelector(".drinkOptionCards");
   drinkOptions.innerHTML = "";
 
