@@ -21,6 +21,26 @@
 
     <main>
 
+
+        <!-- Navbar -->
+        <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
+            <div class="p-2">
+                <ul>
+                    <li><a class="text-body" href="#home">HOME</a></li>
+                    <li><a class="text-body" href="#author">Contributors</li></span>
+                </ul>
+            </div>
+        </div>
+        <nav class="navbar navbar-dark">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+
         <!-- Modal -->
         <section class="container-fluid">
             <div class="modal" tabindex="-1" id="dobModal">
@@ -40,7 +60,7 @@
                                         <label for="dobDate" class="col-form-label just">Date of Birth</label>
                                         <input autocomplete="off" type="text" placeholder="MM-DD-YYYY" id="ageSelector"
                                             class="form-control" min="2000-01-01" />
-                                            <div class="invalid"></div>
+                                        <div class="invalid"></div>
                                     </div>
                                 </div>
                             </div>
@@ -56,7 +76,7 @@
         </section>
 
         <!-- Smiley Background - ANYTHING ADDED TO THIS PAGE NEEDS TO INSIDE THIS SECTION -->
-        
+        <section id="home">
             <section class="background"> <!--Please create new class instead of adding to this one-->
 
                 <img class="drinkBackground" src="./assets/images/drinkFinal.png" alt="neon colored drinks" />
@@ -107,10 +127,10 @@
 
 
 
-            </section>   <!-- End Background Section -->
-        
-        
-           
+            </section> <!-- End Background Section -->
+        </section>
+
+
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"

@@ -68,6 +68,11 @@ body {
     opacity: 1 !important;
 }
 
+/* Navbar UL */
+ul {
+    list-style-type: none;
+}
+
 
 /* Drink Background */
 .drinkBackground {
