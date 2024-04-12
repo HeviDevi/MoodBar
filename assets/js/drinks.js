@@ -89,93 +89,93 @@ function animateInLove() {
 // setInterval(animateExhausted, 50);
 // setInterval(animateInLove, 50);
 
-const displayCard = function () {
-  const mainCard = document.querySelector(".mainCard");
-  mainCard.innerHTML = "";
+// const displayCard = function () {
+//   const mainCard = document.querySelector(".mainCard");
+//   mainCard.innerHTML = "";
 
-  for (let i = 0; i < 1; i++) {
-    const drinkPhoto = ""; //call for drink photo goes here
-    const cardAdvice = ""; //call for drink advice goes here
-    const cardDrinkName = ""; //call for drink name goes here
-    const cardIngredientsText = ""; //call for drink ingredients goes here
-    const cardHowToText = ""; //call for drink instructions goes here
+//   for (let i = 0; i < 1; i++) {
+//     const drinkPhoto = ""; //call for drink photo goes here
+//     const cardAdvice = ""; //call for drink advice goes here
+//     const cardDrinkName = ""; //call for drink name goes here
+//     const cardIngredientsText = ""; //call for drink ingredients goes here
+//     const cardHowToText = ""; //call for drink instructions goes here
 
-    const card = document.createElement("div");
-    card.classList.add("card", "m-3");
-    card.style.width = "48rem";
+//     const card = document.createElement("div");
+//     card.classList.add("card", "m-3");
+//     card.style.width = "48rem";
 
-    const cardBody = document.createElement("div");
-    cardBody.classList.add("card-body");
+//     const cardBody = document.createElement("div");
+//     cardBody.classList.add("card-body");
 
-    const adviceButton = document.createElement("button");
-    adviceButton.classList.add("btn", "btn-primary");
-    adviceButton.textContent = "Bartender's Advice";
+//     const adviceButton = document.createElement("button");
+//     adviceButton.classList.add("btn", "btn-primary");
+//     adviceButton.textContent = "Bartender's Advice";
 
-    const adviceContent = document.createElement("div");
-    adviceContent.classList.add("advice-content");
-    adviceContent.style.display = "none";
-    adviceContent.textContent = cardAdvice;
+//     const adviceContent = document.createElement("div");
+//     adviceContent.classList.add("advice-content");
+//     adviceContent.style.display = "none";
+//     adviceContent.textContent = cardAdvice;
 
-    const photo = document.createElement("img");
-    photo.src = drinkPhoto;
-    photo.alt = "Drink Photo";
+//     const photo = document.createElement("img");
+//     photo.src = drinkPhoto;
+//     photo.alt = "Drink Photo";
 
-    const cardTitle = document.createElement("h1");
-    cardTitle.classList.add("card-title");
-    cardTitle.textContent = cardDrinkName;
+//     const cardTitle = document.createElement("h1");
+//     cardTitle.classList.add("card-title");
+//     cardTitle.textContent = cardDrinkName;
 
-    const cardIngredients = document.createElement("p");
-    cardIngredients.classList.add("ingredients");
-    cardIngredients.textContent = cardIngredientsText;
+//     const cardIngredients = document.createElement("p");
+//     cardIngredients.classList.add("ingredients");
+//     cardIngredients.textContent = cardIngredientsText;
 
-    const cardHowTo = document.createElement("p");
-    cardHowTo.classList.add("how-to");
-    cardHowTo.textContent = cardHowToText;
+//     const cardHowTo = document.createElement("p");
+//     cardHowTo.classList.add("how-to");
+//     cardHowTo.textContent = cardHowToText;
 
-    adviceButton.addEventListener("click", function () {
-      card.classList.toggle("open");
-      adviceContent.style.display =
-      adviceContent.style.display === "none" ? "block" : "none";
-    });
+//     adviceButton.addEventListener("click", function () {
+//       card.classList.toggle("open");
+//       adviceContent.style.display =
+//       adviceContent.style.display === "none" ? "block" : "none";
+//     });
 
-    cardBody.appendChild(adviceButton);
-    cardBody.appendChild(drinkPhoto);
-    cardBody.appendChild(cardTitle);
-    cardBody.appendChild(cardIngredients);
-    cardBody.appendChild(cardHowTo);
-    cardBody.appendChild(adviceContent);
-    card.appendChild(cardBody);
-    mainCard.appendChild(card);
-  }
-};
+//     cardBody.appendChild(adviceButton);
+//     cardBody.appendChild(drinkPhoto);
+//     cardBody.appendChild(cardTitle);
+//     cardBody.appendChild(cardIngredients);
+//     cardBody.appendChild(cardHowTo);
+//     cardBody.appendChild(adviceContent);
+//     card.appendChild(cardBody);
+//     mainCard.appendChild(card);
+//   }
+// };
 
-displayCard();
+// displayCard();
 
-const optionCard = function () {
-  const drinkOptions = document.querySelector(".drinkOptionCards");
-  drinkOptions.innerHTML = "";
+// const optionCard = function () {
+//   const drinkOptions = document.querySelector(".drinkOptionCards");
+//   drinkOptions.innerHTML = "";
 
-  for (let i = 0; i < 4; i++) {
-    const drinkPhoto2 = ""; //call for drink photo goes here
+//   for (let i = 0; i < 4; i++) {
+//     const drinkPhoto2 = ""; //call for drink photo goes here
 
-    const card = document.createElement("div");
-    card.classList.add("cardOptions", "m-3");
-    card.style.width = "10rem";
+//     const card = document.createElement("div");
+//     card.classList.add("cardOptions", "m-3");
+//     card.style.width = "10rem";
 
-    const cardBody = document.createElement("div");
-    cardBody.classList.add("card-body2");
+//     const cardBody = document.createElement("div");
+//     cardBody.classList.add("card-body2");
 
-    const photo2 = document.createElement("img");
-    photo2.src = drinkPhoto2;
-    photo2.alt = "Drink Photo";
+//     const photo2 = document.createElement("img");
+//     photo2.src = drinkPhoto2;
+//     photo2.alt = "Drink Photo";
 
-    cardBody.appendChild(photo2);
-    card.appendChild(cardBody);
-    drinkOptions.appendChild(card);
-  }
-};
+//     cardBody.appendChild(photo2);
+//     card.appendChild(cardBody);
+//     drinkOptions.appendChild(card);
+//   }
+// };
 
-optionCard();
+// optionCard();
 
 
 // let url = 'https://api.api-ninjas.com/v1/quotes?category='
@@ -188,3 +188,60 @@ optionCard();
 //     console.log(data[0])
 //     console.log()
 // })
+
+//card generator
+document.addEventListener('DOMContentLoaded', function() {
+  // Retrieve stored inputs
+  let userMood = localStorage.getItem('userMood');
+  let userSpirit = localStorage.getItem('userSpirit');
+
+  if (userMood && userSpirit) {
+      // Fetch drink data and display card
+      chooseRandomCocktail(userSpirit, userMood);
+  } else {
+      console.error('No mood or spirit data found.');
+  }
+});
+
+function chooseRandomCocktail(spirit, mood) {
+  fetch(`https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${spirit},${mood}`)
+  .then(response => response.json())
+  .then(data => {
+      if (data.drinks && data.drinks.length > 0) {
+          displayCard(data.drinks[0]); // Display the first drink
+      } else {
+          console.error("No drinks found for the selected mood and spirit.");
+          alert("No drinks available for the selected options. Please try again.");
+      }
+  })
+  .catch(error => {
+      console.error('Failed to fetch drinks:', error);
+      alert("Failed to load drinks. Please check your internet connection and try again.");
+  });
+}
+
+function displayCard(drink) {
+  const mainCard = document.querySelector(".mainCard");
+  mainCard.innerHTML = '';
+
+  const card = document.createElement("div");
+  card.classList.add("card", "m-3");
+  card.style.width = "100%";
+
+  const cardBody = document.createElement("div");
+  cardBody.classList.add("card-body");
+
+  const photo = document.createElement("img");
+  photo.src = drink.strDrinkThumb;
+  photo.alt = "Drink Photo";
+  photo.classList.add("card-img-top");
+
+  const cardTitle = document.createElement("h5");
+  cardTitle.classList.add("card-title");
+  cardTitle.textContent = drink.strDrink;
+
+  cardBody.appendChild(photo);
+  cardBody.appendChild(cardTitle);
+  card.appendChild(cardBody);
+  mainCard.appendChild(card);
+}
