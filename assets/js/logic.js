@@ -80,14 +80,14 @@ function ingredientParameter(){
         let randomIndex = Math.floor(Math.random() * loveArray.length);
         chosenIngredientArray = loveArray[randomIndex]
     }
-    let ingredientCategory = chosenIngredientArray
-    return ingredientCategory
+    
+    return chosenIngredientArray
 };
 
 
 // Sets spiritCategory as the output of the spiritParameter function does likewise for the ingredientCategory ... or at least it should??
 let spiritCategory = spiritParameter();
-let ingredientCategory = ingredientParameter();
+
 // ajax api call to pull a quote from the api based on category
 //TODO// 
 //STYLE TEAM: create an HTML element to display the quote on the page.
@@ -95,8 +95,9 @@ let ingredientCategory = ingredientParameter();
 //CODE TEAM: event listener for quote button aaand a function that will display the quote on the page.. some kind of appendChild thing??
 
 function chooseRandomCocktail () {
+    let chosenIngredientArray = ingredientParameter();
     ingredientParameter();
-    fetch ('https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=' + spiritCategory + ',' +  ingredientCategory,)
+    fetch ('https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=' + spiritCategory + ',' +  chosenIngredientArray,)
     .then(response => {
         return response.json();
     })
