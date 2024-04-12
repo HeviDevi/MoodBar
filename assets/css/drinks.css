@@ -4,53 +4,11 @@
     box-sizing: border-box;
 }
 
-/* Navbar */
-.animated-icon2 span:nth-child(1) {
-    top: 0px;
-    }
-    
-    .animated-icon2 span:nth-child(2),
-    .animated-icon2 span:nth-child(3) {
-    top: 10px;
-    }
-    
-    .animated-icon2 span:nth-child(4) {
-    top: 20px;
-    }
-    
-    .animated-icon2.open span:nth-child(1) {
-    top: 11px;
-    width: 0%;
-    left: 50%;
-    }
-    
-    .animated-icon2.open span:nth-child(2) {
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-    }
-    
-    .animated-icon2.open span:nth-child(3) {
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    }
-    
-    .animated-icon2.open span:nth-child(4) {
-    top: 11px;
-    width: 0%;
-    left: 50%;
-    }
-
-
 /* Drink Background */
 .drinkBackground {
-    position: relative;
-    z-index: 0;
-    background-repeat: repeat;
-    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
 }
 
 /* Face Background */
