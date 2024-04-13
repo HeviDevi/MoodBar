@@ -8,13 +8,22 @@ body {
     background-color: #0d0d0d;
 }
 
-/* Navbar UL */
+/* Navbar */
+.navbar {
+    background-color: #0d0d0d;
+
+}
 ul {
     list-style-type: none;
 }
 
 a:link {
     text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-decoration-color: #cc99ff;
 }
 
 

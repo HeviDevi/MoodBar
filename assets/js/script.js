@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
             event.preventDefault();
             let userMood = $('#userMood').val();
             let userSpirit = $('#userSpirit').val();
-    //checks for selections, NEED TO CHANGE FROM ALERT
+            
             if (userMood === "Select your mood" || userSpirit === "Select your Spirit") {
                 document.querySelector('.invalidDrink').innerHTML = '<span style="color: red;">Please select a mood and spirit.</span>';
                 return;
