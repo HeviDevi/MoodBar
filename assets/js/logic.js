@@ -30,7 +30,7 @@ function ingredientParameter(){
     let ingredientCategory = ''
     //TODO: Collect user's input
     //TODO: Look over ingredients available in the API and make decisoons on what to leverage. We will have to be careful to format the new value correctly for the URL
-    let moodInput = 'In Love'
+    let moodInput = 'Happy'
 
     if (moodInput === 'Happy') {
         ingredientCategory = 'orange_juice'
@@ -39,7 +39,7 @@ function ingredientParameter(){
     } else if (moodInput === 'Angry') {
         ingredientCategory = 'lemon_juice'
     } else if (moodInput === 'Exhausted') {
-       ingredientCategory = 'coca-cola'
+       ingredientCategory = 'coca-cola' 
     } else if (moodInput === 'In Love') {
         ingredientCategory = 'lime_juice'
     }
