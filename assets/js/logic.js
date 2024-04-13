@@ -1,4 +1,5 @@
 //// CocktailDB API MANIPULATION////
+let spiritInput = localStorage.getItem('userSpirit');
 
 function spiritParameter(){
    
@@ -6,18 +7,18 @@ function spiritParameter(){
     let spiritCategory = ''
 
     //TODO: collect user input
-    let spiritInput = 'Vodka'
+   
     
   // Here the user's chosen input is assigned to a Spirit 
   //We be adding this new value to the end of the URL in our ajax API call
   //TODO: We need to look at our options for spirits in the API and assign them accordingly
-    if (spiritInput === 'Gin') {
+    if (spiritInput === 'gin') {
         spiritCategory = 'Gin'
-} else if (spiritInput === 'Rum') {
+} else if (spiritInput === 'rum') {
         spiritCategory = 'light_rum'
-}  else if (spiritInput === 'Vodka'){
+}  else if (spiritInput === 'vodka'){
         spiritCategory = 'Vodka'
-} else if (spiritInput === 'Tequila') {
+} else if (spiritInput === 'tequila') {
         spiritCategory = 'Tequila'
 }
 
@@ -25,12 +26,14 @@ function spiritParameter(){
 return spiritCategory
 };
 
+let moodInput = localStorage.getItem('userMood');
+
 function ingredientParameter(){
     // sets category as blank
     let ingredientCategory = ''
     //TODO: Collect user's input
     //TODO: Look over ingredients available in the API and make decisoons on what to leverage. We will have to be careful to format the new value correctly for the URL
-    let moodInput = 'Happy'
+    
 
     if (moodInput === 'Happy') {
         ingredientCategory = 'orange_juice'
@@ -82,16 +85,16 @@ function ingredientParameter(){
 
 
 // Sets spiritCategory as the output of the spiritParameter function does likewise for the ingredientCategory ... or at least it should??
-let spiritCategory = spiritParameter();
+let chosenSpirit = spiritParameter();
 let chosenIngredient = ingredientParameter();
 
 //STYLE TEAM: create an HTML element to display the quote on the page.
 //STYLE TEAM: add "bartender's advice" button to drinks.html
 //CODE TEAM: event listener for quote button aaand a function that will display the quote on the page.. some kind of appendChild thing??
 
-function chooseRandomCocktail () {
+function chooseRandomCocktailOne () {
     
-    fetch ('https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=' + spiritCategory + ',' +  chosenIngredient)
+    fetch ('https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=' + chosenSpirit + ',' +  chosenIngredient)
     .then(response => {
         return response.json();
     })
@@ -105,6 +108,7 @@ function chooseRandomCocktail () {
                 console.log(result.drinks[randomDrink].strDrink)
                 //passes the Id of the chosen drink to the DrinkDetails function
                 getDrinkDetails(drinkId);
+                return drinkId
     })
 }
     function getDrinkDetails(drinkId){
@@ -220,7 +224,7 @@ function quoteParameter(){
 
     // let moodInput = document.getElementById('userMood').value;
     //TODO: Change this to the user input either my element Value or via local storage
-    let moodInput = 'Sad'
+    let moodInput = localStorage.getItem('userInput');
     // Here I have chosen various categories of quotes from the API and assigned them to our different moods
     //TODO: Look through available moods with group for final decisions on category assignment 
     // Happy = happiness, Sad = happiness, Angry=anger, Exhausted=future, In Love=love
