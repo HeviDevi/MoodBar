@@ -256,10 +256,11 @@ function switchMood(mood) {
   if (mood === 'Happy') {
     setInterval(animateHappy, 50);
     moodSelection.className = 'cardHappy';
-  } else if (mood === 'sad') {
-    animateSad();
+  } else if (mood === 'Sad') {
+    setInterval(animateSad, 50);
+    moodSelection.className = 'cardSad';
   } else if (mood === 'angry') {
-    animateAngry();
+    setInterval(animateAngry, 50);
   } else if (mood === 'exhausted') {
     animateExhausted();
   } else if (mood === 'inLove') {
