@@ -28,10 +28,15 @@ document.addEventListener('DOMContentLoaded', function () {
     // function that determines if over or under 21 years of age
     function checkAge() {
         let enteredAge = dayjs(document.getElementById('ageSelector').value, 'MM-DD-YYYY');
+        let invalidMessageElement = document.querySelector('.invalid'); //Made variable to store the invalid message element
+
+        // Clear the invalid message element when not needed
+        invalidMessageElement.innerHTML = '';
+        
         if (enteredAge.isAfter(minAge)) {
-            document.querySelector('.invalid').innerHTML += `<span style="color: red;">Under Age</span>`;
+            invalidMessageElement.innerHTML += `<span style="color: red;"> Under Age </span>`;
         } else if (enteredAge.isValid() === false) {
-            document.querySelector('.invalid').innerHTML += `<span style="color: red;">Invalid Date</span>`;
+            invalidMessageElement.innerHTML += `<span style="color: red;"> Invalid Date </span>`;
         } else {
             storedUserAge.push(enteredAge.format('MM-DD-YYYY'));
             localStorage.setItem('storedAge', JSON.stringify(storedUserAge));
@@ -50,25 +55,38 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Immediately calls the function to check local storage when the document is ready
     $(document).ready(checkStoredAge);
-
-    $('.btnSubmit').click(function(event) {
-        event.preventDefault(); // Prevent the default form submission
-        $('.mood-container, .container').fadeOut(600, function() {
-            $('.loading').show(); // Show the shaker
-            $('.shaker').addClass('animate__animated animate__shakeY').css('animation-duration', '4s'); // Apply shaking animation
-
-            setTimeout(function () {
-                window.location.href = 'drinks.html'; // Redirect to drinks.html after the shaker animation
-            }, 4000); // Delay to match the animation duration
+// form submit function
+    $(document).ready(function() {
+        $('#submit').click(function(event) {
+            event.preventDefault();
+            let userMood = $('#userMood').val();
+            let userSpirit = $('#userSpirit').val();
+            
+            if (userMood === "Select your mood" || userSpirit === "Select your Spirit") {
+                document.querySelector('.invalidDrink').innerHTML = '<span style="color: red;">Please select a mood and spirit.</span>';
+                return;
+            }
+//hides containers and starts animation
+            $('.mood-container, .container').fadeOut(600, function() {
+                $(this).hide();
+                $('.loading').show();
+                $('.shaker').addClass('animate__animated animate__shakeY').css('animation-duration', '4s');
+    //stores selection, and redirects after animation
+                setTimeout(function () {
+                    localStorage.setItem('userMood', userMood);
+                    localStorage.setItem('userSpirit', userSpirit);
+                    window.location.href = 'Drinks.html';
+                }, 4000);  // Ensure this matches the duration of animations
+            });
         });
     });
-});
+    });
 
 
 
 
 // For Happy Face Background Animation
-for (let  i= 0;  i<=50; +i++) {
+for (let  i= 0;  i<=50; i++) {
     let happyFace = document.createElement('div');
     happyFace.classList.add('happy');
     let size = Math.random() * 15;

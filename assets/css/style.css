@@ -64,13 +64,27 @@ body {
 }
 
   /* Helper class to control the form's visibility */
-.show-form {
+   .show-form {
     opacity: 1 !important;
+    }
+
+/* Navbar */
+.navbar {
+    background-color: #0d0d0d;
 }
 
-/* Navbar UL */
 ul {
     list-style-type: none;
+    color: gray;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-decoration-color: #cc99ff;
 }
 
 
@@ -161,6 +175,7 @@ ul {
 }
 
 .btnSubmit {
+    position: relative;
     border: 1px solid #cc99ff;
     width: 35%;
 }
