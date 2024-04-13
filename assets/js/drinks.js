@@ -134,7 +134,6 @@ function animateInLove() {
 
 //     adviceButton.addEventListener("click", function () {
 //       card.classList.toggle("open");
-//       adviceContent.style.display =
 //       adviceContent.style.display === "none" ? "block" : "none";
 //     });
 
