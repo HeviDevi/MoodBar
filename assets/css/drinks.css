@@ -4,6 +4,20 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #0d0d0d;
+}
+
+/* Navbar UL */
+ul {
+    list-style-type: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+
 /* Drink Background */
 .drinkBackground {
     width: 100vw;
