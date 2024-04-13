@@ -36,7 +36,7 @@ function animateSad() {
 for (let i = 0; i <= 75; i++) {
   let angryFace = document.createElement("div");
   angryFace.classList.add("angry");
-  let size = Math.random() * 20;
+  let size = Math.random() * 15;
   angryFace.style.fontSize = 3 + size + "px";
   angryFace.style.right = Math.random() * +innerWidth + "px";
   angryFace.style.top = Math.random() * +innerHeight + "px";
@@ -259,12 +259,15 @@ function switchMood(mood) {
   } else if (mood === 'Sad') {
     setInterval(animateSad, 50);
     moodSelection.className = 'cardSad';
-  } else if (mood === 'angry') {
+  } else if (mood === 'Angry') {
     setInterval(animateAngry, 50);
-  } else if (mood === 'exhausted') {
-    animateExhausted();
-  } else if (mood === 'inLove') {
-    animateInLove();
+    moodSelection.className = 'cardAngry';
+  } else if (mood === 'Exhausted') {
+    setInterval(animateExhausted, 50);
+    moodSelection.className = 'cardExhausted';
+  } else if (mood === 'In Love') {
+    setInterval(animateInLove, 50);
+    moodSelection.className = 'cardInLove';
   }
 }
 
