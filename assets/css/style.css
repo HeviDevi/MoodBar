@@ -68,7 +68,11 @@ body {
     opacity: 1 !important;
     }
 
-/* Navbar UL */
+/* Navbar */
+.navbar {
+    background-color: #0d0d0d;
+}
+
 ul {
     list-style-type: none;
     color: gray;
@@ -76,6 +80,11 @@ ul {
 
 a:link {
     text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-decoration-color: #cc99ff;
 }
 
 
