@@ -19,7 +19,7 @@ function spiritParameter(){
         spiritCategory = 'Vodka'
 } else if (spiritInput === 'Tequila') {
         spiritCategory = 'Tequila'
-};
+}
 
 //returns spiritCategory as output of function so we can use it later in the ajax api call
 return spiritCategory
@@ -77,22 +77,21 @@ function ingredientParameter(){
 //         chosenIngredientArray = loveArray[randomIndex]
 //     }
     
-//     return chosenIngredientArray
+//     return chosenIngredientArray     
 // };
 
 
 // Sets spiritCategory as the output of the spiritParameter function does likewise for the ingredientCategory ... or at least it should??
 let spiritCategory = spiritParameter();
-let chosenIngredientArray = ingredientParameter();
-// ajax api call to pull a quote from the api based on category
-//TODO// 
+let chosenIngredient = ingredientParameter();
+
 //STYLE TEAM: create an HTML element to display the quote on the page.
 //STYLE TEAM: add "bartender's advice" button to drinks.html
 //CODE TEAM: event listener for quote button aaand a function that will display the quote on the page.. some kind of appendChild thing??
 
 function chooseRandomCocktail () {
     
-    fetch ('https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=' + spiritCategory + ',' +  chosenIngredientArray,)
+    fetch ('https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=' + spiritCategory + ',' +  chosenIngredient)
     .then(response => {
         return response.json();
     })
