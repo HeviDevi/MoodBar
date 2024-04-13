@@ -244,3 +244,28 @@ function displayCard(drink) {
   card.appendChild(cardBody);
   mainCard.appendChild(card);
 }
+
+
+// mood switch method
+
+const moodSelection = document.querySelector('.moodSelection');
+
+function switchMood(mood) {
+  localStorage.setItem('userMood', mood);  // will select the mood from local storage
+  
+  if (mood === 'Happy') {
+    setInterval(animateHappy, 50);
+    moodSelection.className = 'cardHappy';
+  } else if (mood === 'sad') {
+    animateSad();
+  } else if (mood === 'angry') {
+    animateAngry();
+  } else if (mood === 'exhausted') {
+    animateExhausted();
+  } else if (mood === 'inLove') {
+    animateInLove();
+  }
+}
+
+// Call switchMood with the mood from local storage
+switchMood(localStorage.getItem('userMood'));
