@@ -6,10 +6,46 @@
 
 body {
     background-color: #0d0d0d;
+background-image: url(../images/newdrinks.png);
+
 }
 
 
   h1 {
     font-family: "Oleo Script", system-ui;
-    
+    text-shadow: 4px 4px rgb(150, 79, 150);
+color:white;
+text-align:center;
+margin:30px
+
+
+
+}
+main {
+
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+margin-left: 110px;
+margin-right: 110px;
+
+
+}
+.card{
+margin: 20px;
+background-color: #151515;
+color: #ffffff;
+border-radius: 8px;
+box-shadow: #cc99ff 0px 0px 15px,
+#cc99ff 0px 0px 10px
+
+}
+.githubbtn{
+    border: 1px solid #cc99ff;
+
+
+}
+.card-img-top{
+    background-color: #151515;
+
 }
