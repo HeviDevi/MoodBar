@@ -265,3 +265,23 @@ $.ajax({
         console.error('Error: ', jqXHR.responseText);
     }
 });
+
+
+//bartnder image randomizer
+const bartender = document.querySelector('.theBartender');
+
+
+function bartenderRandomizer() {
+    const bartenderImages = [
+        './assets/images/Alex.png',
+        './assets/images/Alex.png',
+        './assets/images/Clarissa.png',
+        './assets/images/Devon.png',
+        './assets/images/Eddie.png',
+        './assets/images/Roger.png'];
+
+    let randomIndex = Math.floor(Math.random() * bartenderImages.length);
+    return bartenderImages[randomIndex];
+}
+const RandomBartender = bartenderRandomizer();
+console.log(RandomBartender);
