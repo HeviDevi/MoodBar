@@ -34,14 +34,14 @@ function spiritParameter(){
 return spiritCategory
 };
 
+///assigns an ingredient based on the user's chosen mood
 let moodInput = localStorage.getItem('userMood');
 
 function ingredientParameter(){
     // sets category as blank
     let ingredientCategory = ''
-    //TODO: Collect user's input
-    //TODO: Look over ingredients available in the API and make decisoons on what to leverage. We will have to be careful to format the new value correctly for the URL
-    
+  
+
 
     if (moodInput === 'Happy') {
         ingredientCategory = 'orange_juice'
@@ -50,7 +50,9 @@ function ingredientParameter(){
     } else if (moodInput === 'Angry') {
         ingredientCategory = 'lemon_juice'
     } else if (moodInput === 'Exhausted') {
-       ingredientCategory = 'coca-cola' 
+        let exhaustedArray = ['coca-cola', 'grenadine','powdered_sugar'] 
+        let randomIndex = Math.floor(Math.random() * exhaustedArray.length)
+        ingredientCategory = exhaustedArray[randomIndex]
     } else if (moodInput === 'In Love') {
         ingredientCategory = 'lime_juice'
     }
@@ -94,14 +96,10 @@ function ingredientParameter(){
 
 // Sets spiritCategory as the output of the spiritParameter function does likewise for the ingredientCategory ... or at least it should??
 let chosenSpirit = spiritParameter();
-let chosenIngredient = ingredientParameter();
-
-//STYLE TEAM: create an HTML element to display the quote on the page.
-//STYLE TEAM: add "bartender's advice" button to drinks.html
-//CODE TEAM: event listener for quote button aaand a function that will display the quote on the page.. some kind of appendChild thing??
 
 function chooseRandomCocktailOne () {
-    
+    let chosenIngredient = ingredientParameter();
+    ingredientParameter();
     fetch ('https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=' + chosenSpirit + ',' +  chosenIngredient)
     .then(response => {
         return response.json();
