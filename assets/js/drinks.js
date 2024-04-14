@@ -249,27 +249,31 @@ function displayCard(drink) {
 // mood switch method
 
 const moodSelection = document.querySelector('.background-faces');
+const cardMood = document.querySelector('.cardMood');
+const optionMood = document.querySelector('.optionMoodCard');
 
 function switchMood(mood) {
   localStorage.setItem('userMood', mood);  // will select the mood from local storage
       // when functions pulls mood from local storage, it'll change the way its stored, i.e. "inLove = In Love"
   if (mood === 'Happy') {
-    setInterval(animateHappy, 50);
-    moodSelection.className = 'cardHappy';
-    
+      setInterval(animateHappy, 50);
+      // moodSelection.className = 'cardHappy';  ---intervals will activate background.
+      cardMood.className = 'cardHappy';
+      optionMood.className = 'optionHappy';
 
-  } else if (mood === 'Sad') {
-    setInterval(animateSad, 50);
-    moodSelection.className = 'cardSad';
-  } else if (mood === 'Angry') {
-    setInterval(animateAngry, 50);
-    moodSelection.className = 'cardAngry';
-  } else if (mood === 'Exhausted') {
-    setInterval(animateExhausted, 50);
-    moodSelection.className = 'cardExhausted';
-  } else if (mood === 'In Love') {
-    setInterval(animateInLove, 50);
-    moodSelection.className = 'cardInLove';
+
+    } else if (mood === 'Sad') {
+      // moodSelection.className = 'cardSad';
+      setInterval(animateSad, 50);
+    } else if (mood === 'Angry') {
+      // moodSelection.className = 'cardAngry';
+      setInterval(animateAngry, 50);
+    } else if (mood === 'Exhausted') {
+      // moodSelection.className = 'cardExhausted';
+      setInterval(animateExhausted, 50);
+    } else if (mood === 'In Love') {
+      // moodSelection.className = 'cardInLove';
+      setInterval(animateInLove, 50);
   }
 }
 
