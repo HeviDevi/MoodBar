@@ -220,7 +220,7 @@ function chooseRandomCocktail(spirit, mood) {
 
 
 function displayCard(drink) {
-  const mainCard = document.querySelector(".mainCard");
+  const mainCard = document.querySelector(".drinkOptionCards");
   mainCard.innerHTML = '';
 
   const card = document.createElement("div");
