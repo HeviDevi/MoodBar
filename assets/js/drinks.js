@@ -89,66 +89,66 @@ function animateInLove() {
 // setInterval(animateExhausted, 50);
 // setInterval(animateInLove, 50);
 
-// const displayCard = function () {
-//   const mainCard = document.querySelector(".mainCard");
-//   mainCard.innerHTML = "";
+const displayCard = function () {
+  const mainCard = document.querySelector(".mainCard");
+  mainCard.innerHTML = "";
 
-//   for (let i = 0; i < 1; i++) {
-//     const drinkPhoto = ""; //call for drink photo goes here
-//     const cardAdvice = ""; //call for drink advice goes here
-//     const cardDrinkName = ""; //call for drink name goes here
-//     const cardIngredientsText = ""; //call for drink ingredients goes here
-//     const cardHowToText = ""; //call for drink instructions goes here
+  for (let i = 0; i < 1; i++) {
+    const drinkPhoto = ""; //call for drink photo goes here
+    const cardAdvice = ""; //call for drink advice goes here
+    const cardDrinkName = ""; //call for drink name goes here
+    const cardIngredientsText = ""; //call for drink ingredients goes here
+    const cardHowToText = ""; //call for drink instructions goes here
 
-//     const card = document.createElement("div");
-//     card.classList.add("card", "m-3");
-//     card.style.width = "48rem";
+    const card = document.createElement("div");
+    card.classList.add("card", "m-3");
+    card.style.width = "48rem";
 
-//     const cardBody = document.createElement("div");
-//     cardBody.classList.add("card-body");
+    const cardBody = document.createElement("div");
+    cardBody.classList.add("card-body");
 
-//     const adviceButton = document.createElement("button");
-//     adviceButton.classList.add("btn", "btn-primary");
-//     adviceButton.textContent = "Bartender's Advice";
+    const adviceButton = document.createElement("button");
+    adviceButton.classList.add("btn", "btn-primary");
+    adviceButton.textContent = "Bartender's Advice";
 
-//     const adviceContent = document.createElement("div");
-//     adviceContent.classList.add("advice-content");
-//     adviceContent.style.display = "none";
-//     adviceContent.textContent = cardAdvice;
+    const adviceContent = document.createElement("div");
+    adviceContent.classList.add("advice-content");
+    adviceContent.style.display = "none";
+    adviceContent.textContent = cardAdvice;
 
-//     const photo = document.createElement("img");
-//     photo.src = drinkPhoto;
-//     photo.alt = "Drink Photo";
+    const photo = document.createElement("img");
+    photo.src = drinkPhoto;
+    photo.alt = "Drink Photo";
 
-//     const cardTitle = document.createElement("h1");
-//     cardTitle.classList.add("card-title");
-//     cardTitle.textContent = cardDrinkName;
+    const cardTitle = document.createElement("h1");
+    cardTitle.classList.add("card-title");
+    cardTitle.textContent = cardDrinkName;
 
-//     const cardIngredients = document.createElement("p");
-//     cardIngredients.classList.add("ingredients");
-//     cardIngredients.textContent = cardIngredientsText;
+    const cardIngredients = document.createElement("p");
+    cardIngredients.classList.add("ingredients");
+    cardIngredients.textContent = cardIngredientsText;
 
-//     const cardHowTo = document.createElement("p");
-//     cardHowTo.classList.add("how-to");
-//     cardHowTo.textContent = cardHowToText;
+    const cardHowTo = document.createElement("p");
+    cardHowTo.classList.add("how-to");
+    cardHowTo.textContent = cardHowToText;
 
-//     adviceButton.addEventListener("click", function () {
-//       card.classList.toggle("open");
-//       adviceContent.style.display === "none" ? "block" : "none";
-//     });
+    adviceButton.addEventListener("click", function () {
+      card.classList.toggle("open");
+      adviceContent.style.display === "none" ? "block" : "none";
+    });
 
-//     cardBody.appendChild(adviceButton);
-//     cardBody.appendChild(drinkPhoto);
-//     cardBody.appendChild(cardTitle);
-//     cardBody.appendChild(cardIngredients);
-//     cardBody.appendChild(cardHowTo);
-//     cardBody.appendChild(adviceContent);
-//     card.appendChild(cardBody);
-//     mainCard.appendChild(card);
-//   }
-// };
+    cardBody.appendChild(adviceButton);
+    cardBody.appendChild(drinkPhoto);
+    cardBody.appendChild(cardTitle);
+    cardBody.appendChild(cardIngredients);
+    cardBody.appendChild(cardHowTo);
+    cardBody.appendChild(adviceContent);
+    card.appendChild(cardBody);
+    mainCard.appendChild(card);
+  }
+};
 
-// displayCard();
+displayCard();
 
 // const optionCard = function () {
 //   const drinkOptions = document.querySelector(".drinkOptionCards");
