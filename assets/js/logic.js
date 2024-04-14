@@ -1,3 +1,11 @@
+// Erase stored age from local storage
+const eraseAge =document.getElementById('eraseAge');
+eraseAge.addEventListener('click', function(){
+    localStorage.removeItem('storedAge');
+    location.reload();
+    window.location.href = 'index.html';
+});
+
 //// CocktailDB API MANIPULATION////
 let spiritInput = localStorage.getItem('userSpirit');
 
@@ -285,3 +293,8 @@ function bartenderRandomizer() {
 
 const RandomBartender = bartenderRandomizer();
 bartender.src = RandomBartender;
+
+
+
+
+// 
