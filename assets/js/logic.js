@@ -217,7 +217,7 @@ function chooseRandomCocktailOne () {
 
 function quoteParameter(){
     //sets category as blank and then alters it based on user input
-    
+   
    //sets category as blank
     let quoteCategory = ''
     //collcets chosen mood from index.html dropdown
