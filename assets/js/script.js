@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-
+// BACKGROUND FACE ANIMATIONS//
 
 // For Happy Face Background Animation
 for (let  i= 0;  i<=50; i++) {
@@ -120,6 +120,24 @@ function animateSad() {
     allSad[num2].classList.toggle('animate');
 }
 
+
+// For Angry Face Background Animation
+// for (let  i= 0;  i<=50; i++) {
+//     let angryFace = document.createElement('div');
+//     angryFace.classList.add('angry');
+//     let size = Math.random() * 15;
+//     angryFace.style.fontSize = 3 + size + 'px';
+//     angryFace.style.right = Math.random() * + innerWidth + 'px';
+//     angryFace.style.top = Math.random() * + innerHeight + 'px';
+//     document.querySelector('.background').appendChild(angryFace);
+// }
+
+// function animateAngry() {
+//     let allAngry = document.querySelectorAll('.angry');
+//     let num3 = Math.floor(Math.random()* allAngry.length);
+//     allAngry[num3].classList.toggle('animate');
+// }
+
 setInterval(animateHappy, 50);
 setInterval(animateSad, 50);
- 
+// setInterval(animateAngry, 50);

@@ -6,6 +6,9 @@
 
 body {
     background-color: #0d0d0d;
+    background-image: url(../images/drinkFinal.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* Navbar */
@@ -39,7 +42,7 @@ a:hover {
     display: flex;
     justify-content: center;
     position: relative;
-    background-color: #0d0d0d;
+    /* background-color: #0d0d0d; ------this was causing the background from*/
     min-height: 100vh;
     overflow: hidden;
 } 
@@ -168,3 +171,22 @@ a:hover {
 .optionInLove {
     border: 4px solid #efb0ba;
 }
+
+
+
+/* bartender parameters */
+.theBartender {
+    width: 250px;
+    margin: 20px;
+    background-color: #151515;
+    color: #ffffff;
+    border-radius: 8px;
+    box-shadow: #cc99ff 0px 0px 15px,
+    #cc99ff 0px 0px 10px
+    
+}
+
+/* main card, need asistance setting it up liek the wireframe */
+/* .mainCard {
+    height: 300px;
+} */ 

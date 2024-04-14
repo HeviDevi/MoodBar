@@ -36,7 +36,7 @@ function animateSad() {
 for (let i = 0; i <= 75; i++) {
   let angryFace = document.createElement("div");
   angryFace.classList.add("angry");
-  let size = Math.random() * 20;
+  let size = Math.random() * 15;
   angryFace.style.fontSize = 3 + size + "px";
   angryFace.style.right = Math.random() * +innerWidth + "px";
   angryFace.style.top = Math.random() * +innerHeight + "px";
@@ -217,7 +217,7 @@ function chooseRandomCocktail(spirit, mood) {
       console.error('Failed to fetch drinks:', error);
       alert("Failed to load drinks. Please check your internet connection and try again.");
   });
-}
+
 
 function displayCard(drink) {
   const mainCard = document.querySelector(".mainCard");
@@ -244,3 +244,53 @@ function displayCard(drink) {
   card.appendChild(cardBody);
   mainCard.appendChild(card);
 }
+}
+
+
+// mood switch method
+
+// const moodSelection = document.querySelector('.background-faces');---- intervals within if/elseIf will cause animation to activate
+const cardMood = document.querySelector('.cardMood');
+const optionMood = document.querySelector('.optionEmotion');
+
+function switchMood(mood) {
+  localStorage.setItem('userMood', mood);  // will select the mood from local storage
+      // when functions pulls mood from local storage, it'll change the way its stored, i.e. "inLove = In Love"
+  if (mood === 'Happy') {
+      setInterval(animateHappy, 50);
+      // moodSelection.className = 'cardHappy';  ---intervals will activate background.
+      cardMood.className = 'cardHappy';
+      optionMood.className = 'optionHappy';
+
+    } else if (mood === 'Sad') {
+      // moodSelection.className = 'cardSad';
+      setInterval(animateSad, 50);
+      cardMood.className = 'cardSad';
+      optionMood.className = 'optionSad';
+
+    } else if (mood === 'Angry') {
+      // moodSelection.className = 'cardAngry';
+      setInterval(animateAngry, 50);
+      cardMood.className = 'cardAngry';
+      optionMood.className = 'optionAngry';
+
+    } else if (mood === 'Exhausted') {
+      // moodSelection.className = 'cardExhausted';
+      setInterval(animateExhausted, 50);
+      cardMood.className = 'cardExhausted';
+      optionMood.className = 'optionExhausted';
+
+    } else if (mood === 'In Love') {
+      // moodSelection.className = 'cardInLove';
+      setInterval(animateInLove, 50);
+      cardMood.className = 'cardInLove';
+      optionMood.className = 'optionInLove';
+
+  }
+}
+
+// Call switchMood with the mood from local storage
+switchMood(localStorage.getItem('userMood'));
+
+
+
