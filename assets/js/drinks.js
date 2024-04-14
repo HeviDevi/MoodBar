@@ -219,9 +219,10 @@ function chooseRandomCocktail(spirit, mood) {
   });
 
 
+
 function displayCard(drink) {
-  const mainCard = document.querySelector(".drinkOptionCards");
-  mainCard.innerHTML = '';
+  const optionCards = document.querySelector(".drinkOptionCards");
+  optionCards.innerHTML = '';
 
   const card = document.createElement("div");
   card.classList.add("card", "m-3");
@@ -242,7 +243,7 @@ function displayCard(drink) {
   cardBody.appendChild(photo);
   cardBody.appendChild(cardTitle);
   card.appendChild(cardBody);
-  mainCard.appendChild(card);
+  optionCards.appendChild(card);
 }
 }
 
@@ -291,6 +292,5 @@ function switchMood(mood) {
 
 // Call switchMood with the mood from local storage
 switchMood(localStorage.getItem('userMood'));
-
 
 
