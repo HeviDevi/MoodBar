@@ -217,7 +217,7 @@ function chooseRandomCocktail(spirit, mood) {
       console.error('Failed to fetch drinks:', error);
       alert("Failed to load drinks. Please check your internet connection and try again.");
   });
-}
+
 
 function displayCard(drink) {
   const mainCard = document.querySelector(".mainCard");
@@ -244,13 +244,14 @@ function displayCard(drink) {
   card.appendChild(cardBody);
   mainCard.appendChild(card);
 }
+}
 
 
 // mood switch method
 
-const moodSelection = document.querySelector('.background-faces');
+// const moodSelection = document.querySelector('.background-faces');---- intervals within if/elseIf will cause animation to activate
 const cardMood = document.querySelector('.cardMood');
-const optionMood = document.querySelector('.optionMoodCard');
+const optionMood = document.querySelector('.optionEmotion');
 
 function switchMood(mood) {
   localStorage.setItem('userMood', mood);  // will select the mood from local storage
@@ -261,19 +262,30 @@ function switchMood(mood) {
       cardMood.className = 'cardHappy';
       optionMood.className = 'optionHappy';
 
-
     } else if (mood === 'Sad') {
       // moodSelection.className = 'cardSad';
       setInterval(animateSad, 50);
+      cardMood.className = 'cardSad';
+      optionMood.className = 'optionSad';
+
     } else if (mood === 'Angry') {
       // moodSelection.className = 'cardAngry';
       setInterval(animateAngry, 50);
+      cardMood.className = 'cardAngry';
+      optionMood.className = 'optionAngry';
+
     } else if (mood === 'Exhausted') {
       // moodSelection.className = 'cardExhausted';
       setInterval(animateExhausted, 50);
+      cardMood.className = 'cardExhausted';
+      optionMood.className = 'optionExhausted';
+
     } else if (mood === 'In Love') {
       // moodSelection.className = 'cardInLove';
       setInterval(animateInLove, 50);
+      cardMood.className = 'cardInLove';
+      optionMood.className = 'optionInLove';
+
   }
 }
 
