@@ -248,14 +248,16 @@ function displayCard(drink) {
 
 // mood switch method
 
-const moodSelection = document.querySelector('.moodSelection');
+const moodSelection = document.querySelector('.background-faces');
 
 function switchMood(mood) {
   localStorage.setItem('userMood', mood);  // will select the mood from local storage
-  
+      // when functions pulls mood from local storage, it'll change the way its stored, i.e. "inLove = In Love"
   if (mood === 'Happy') {
     setInterval(animateHappy, 50);
     moodSelection.className = 'cardHappy';
+    
+
   } else if (mood === 'Sad') {
     setInterval(animateSad, 50);
     moodSelection.className = 'cardSad';
