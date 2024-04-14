@@ -210,14 +210,6 @@ function chooseRandomCocktailOne () {
 
 
 
-
-
-
-
-
-
-
-
 /////////QUOTE API//////////////
 
 // Decides what category the quote will be from based on which emotion
@@ -225,7 +217,7 @@ function chooseRandomCocktailOne () {
 
 function quoteParameter(){
     //sets category as blank and then alters it based on user input
-   
+    
    //sets category as blank
     let quoteCategory = ''
     //collcets chosen mood from index.html dropdown
