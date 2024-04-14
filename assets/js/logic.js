@@ -270,7 +270,6 @@ $.ajax({
 //bartnder image randomizer
 const bartender = document.querySelector('.theBartender');
 
-
 function bartenderRandomizer() {
     const bartenderImages = [
         './assets/images/Alex.png',
@@ -283,5 +282,6 @@ function bartenderRandomizer() {
     let randomIndex = Math.floor(Math.random() * bartenderImages.length);
     return bartenderImages[randomIndex];
 }
+
 const RandomBartender = bartenderRandomizer();
-console.log(RandomBartender);
+bartender.src = RandomBartender;

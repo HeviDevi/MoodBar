@@ -168,3 +168,10 @@ a:hover {
 .optionInLove {
     border: 4px solid #efb0ba;
 }
+
+
+
+/* added the randomized bartender parameters */
+.theBartender {
+    width: 200px;
+}
