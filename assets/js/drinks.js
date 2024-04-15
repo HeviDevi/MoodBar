@@ -207,19 +207,19 @@ const displayDrink = function (drink) {
   //   Background color based on mood
   switch (localStorage.getItem("userMood")) {
     case "Happy":
-      card.classList.add("cardHappy"); // Set background color to gold for Happy mood
+      card.classList.add("cardHappy");
       break;
     case "Sad":
-      card.classList.add("cardSad"); // Set background color to slate gray for Sad mood
+      card.classList.add("cardSad"); 
       break;
     case "Angry":
-      card.classList.add("cardAngry"); // Set background color to tomato for Angry mood
+      card.classList.add("cardAngry");
       break;
     case "Exhausted":
-      card.classList.add("cardExhausted"); // Set background color to steel blue for Exhausted mood
+      card.classList.add("cardExhausted");
       break;
     case "In Love":
-      card.classList.add("cardInLove"); // Set background color to hot pink for In Love mood
+      card.classList.add("cardInLove"); 
       break;
     default:
       // Default background color
