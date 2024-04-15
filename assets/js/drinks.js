@@ -164,8 +164,8 @@ function chooseRandomCocktail(spirit, mood) {
 }
 
 // Main Drink Card
-const displayDrink = function (drinks) {
-  if (!drinks) {
+const displayDrink = function (drink) {
+  if (!drink) {
     console.error("No drink data provided.");
     return;
   }
@@ -239,23 +239,23 @@ const displayDrink = function (drinks) {
   card.style.opacity = "1";
 
   const photo = document.createElement("img");
-  photo.src = drinks.strDrinkThumb || "./assets/images/placeholder.jpg"; // Fallback to a placeholder image
+  photo.src = drink.strDrinkThumb || "./assets/images/placeholder.jpg"; // Fallback to a placeholder image
   photo.className = "card-img-top mt-3";
   photo.style.width = "200px"; // Set size of the image
 
   const cardTitle = document.createElement("h1");
   cardTitle.className = "card-title";
-  cardTitle.textContent = drinks.strDrink || "No drink name available";
+  cardTitle.textContent = drink.strDrink || "No drink name available";
 
   const cardIngredients = document.createElement("ul"); // Create <ul> element
   cardIngredients.className = "ingredients";
 
   // Iterate over each ingredient and create a <li> element for it
   [
-    drinks.strIngredient1,
-    drinks.strIngredient2,
-    drinks.strIngredient3,
-    drinks.strIngredient4,
+    drink.strIngredient1,
+    drink.strIngredient2,
+    drink.strIngredient3,
+    drink.strIngredient4,
   ]
     .filter(Boolean)
     .forEach(function (ingredient) {
@@ -276,7 +276,7 @@ const displayDrink = function (drinks) {
 
   const cardHowTo = document.createElement("p");
   cardHowTo.className = "how-to";
-  cardHowTo.textContent = "Instructions: " + drinks.strInstructions;
+  cardHowTo.textContent = "Instructions: " + drink.strInstructions;
 
   adviceButton.addEventListener("click", function () {
     card.classList.toggle("open");
