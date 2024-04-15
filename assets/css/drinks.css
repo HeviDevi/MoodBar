@@ -1,174 +1,177 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #0d0d0d;
-    background-image: url(../images/drinkFinal.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-color: #0d0d0d;
+  background-image: url(../images/drinkFinal.png);
+  background-repeat: repeat;
+  background-size: cover;
 }
 
 /* Navbar */
 .navbar {
-    background-color: #0d0d0d;
-
+  background-color: #0d0d0d;
 }
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 a:link {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
-    text-decoration-color: #cc99ff;
+  text-decoration: underline;
+  text-decoration-color: #cc99ff;
 }
 
-
-/* Drink Background */
-.drinkBackground {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-}
-
-/* Face Background */
 .background-faces {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    min-height: 100vh;
-    overflow: hidden;
-} 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 /* Happy Face Icons */
 .happy {
-    position: absolute;
-    color:#0d0d0d;
+  position: absolute;
+  color: #0d0d0d;
 }
 
 .happy::before {
-    font-family: "Font Awesome 6 Pro";
-    content: '\f118';
-    font-weight: 100;
+  font-family: "Font Awesome 6 Pro";
+  content: "\f118";
+  font-weight: 100;
 }
 
 .happy.animate {
-    color: #e3c760;
+  color: #e3c760;
 }
 
 /* Happy Cards */
 .cardHappy {
-    background-color: #e3c760;
+  background-color: #e3c760;
 }
 
 .optionHappy {
-    border: 4px solid #e3c760;
+  border: 4px solid #e3c760;
 }
 
 /* Sad Face Icons */
 .sad {
-    position: absolute;
-    color: #0d0d0d;
+  position: absolute;
+  color: #0d0d0d;
 }
 
 .sad::before {
-    font-family: "Font Awesome 6 Pro";
-    content: '\e376';
-    font-weight: 100;
+  font-family: "Font Awesome 6 Pro";
+  content: "\e376";
+  font-weight: 100;
 }
 
 .sad.animate {
-    color: #2f9db7;
+  color: #2f9db7;
 }
 
 /* Sad Cards */
 .cardSad {
-    background-color: #2f9db7;
+  background-color: #2f9db7;
 }
 
 .optionSad {
-    border: 4px solid #2f9db7;
+  border: 4px solid #2f9db7;
 }
 
 /* Angry Face Icons */
 .angry {
-    position: absolute;
-    color: #0d0d0d;
+  position: absolute;
+  color: #0d0d0d;
 }
 
 .angry::before {
-    font-family: "Font Awesome 6 Pro";
-    content: '\f556';
-    font-weight: 100;
+  font-family: "Font Awesome 6 Pro";
+  content: "\f556";
+  font-weight: 100;
 }
 
 .angry.animate {
-    color: #914949;
+  color: #914949;
 }
 
 /* Angry Cards */
 .cardAngry {
-    background-color: #914949;
+  background-color: #914949;
 }
 
 .optionAngry {
-    border: 4px solid #914949;
+  border: 4px solid #914949;
 }
 
 /* Exhausted Face Icons */
 .exhausted {
-    position: absolute;
-    color: #0d0d0d;
+  position: absolute;
+  color: #0d0d0d;
 }
 
 .exhausted::before {
-    font-family: "Font Awesome 6 Pro";
-    content: '\e39e';
-    font-weight: 100;
+  font-family: "Font Awesome 6 Pro";
+  content: "\e39e";
+  font-weight: 100;
 }
 
 .exhausted.animate {
-    color: gray;
+  color: gray;
 }
 
 /* Exhausted Cards */
 .cardExhausted {
-    background-color: gray;
+  background-color: gray;
 }
 
 .optionExhausted {
-    border: 4px solid gray;
+  border: 4px solid gray;
 }
 
 /* In Love Face */
 .inLove {
-    position: absolute;
-    color: #0d0d0d;
+  position: absolute;
+  color: #0d0d0d;
 }
 
 .inLove::before {
-    font-family: "Font Awesome 6 Pro";
-    content: '\e390';
-    font-weight: 100;
+  font-family: "Font Awesome 6 Pro";
+  content: "\e390";
+  font-weight: 100;
 }
 
 .inLove.animate {
-    color: #efb0ba;
+  color: #efb0ba;
 }
 
 /* In Love Cards */
 .cardInLove {
-    background-color: #efb0ba;
+  background-color: #efb0ba;
 }
 
 .optionInLove {
-    border: 4px solid #efb0ba;
+  border: 4px solid #efb0ba;
 }
 
-/* .mainCard  */
+.mainCard {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
