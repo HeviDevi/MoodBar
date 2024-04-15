@@ -353,7 +353,6 @@ const displayDrink = function (drink) {
 
   // Fetch a random quote after displaying the drink
   fetchAndDisplayQuote();
-  chooseRandomCocktail();
 };
 
 
