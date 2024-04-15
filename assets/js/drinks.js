@@ -128,9 +128,6 @@ switchMood(localStorage.getItem("userMood"));
 
 document.addEventListener("DOMContentLoaded", function () {
   // Retrieve stored inputs
-  let userMood = localStorage.getItem("userMood");
-  let userSpirit = localStorage.getItem("userSpirit");
-
   if (userMood && userSpirit) {
     // Fetch drink data and display card
     chooseRandomCocktail(userSpirit, userMood);
@@ -139,28 +136,82 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-function chooseRandomCocktail(spirit, mood) {
-  fetch(
-    `https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=${spirit},${mood}`
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.drinks && data.drinks.length > 0) {
-        displayCard(data.drinks[0]);
-        displayDrink(data.drinks[0]); // Display the first drink details
-      } else {
-        console.error("No drinks found for the selected mood and spirit.");
-        alert(
-          "No drinks available for the selected options. Please try again."
-        );
-      }
+//// CocktailDB API MANIPULATION////
+
+let userMood = localStorage.getItem("userMood");
+let userSpirit = localStorage.getItem("userSpirit");
+
+function spiritParameter(){
+   
+
+    let spiritCategory = ''
+
+    if (userSpirit === 'gin') {
+        spiritCategory = 'Gin'
+} else if (userSpirit === 'rum') {
+        spiritCategory = 'light_rum'
+}  else if (userSpirit === 'vodka'){
+        spiritCategory = 'Vodka'
+} else if (userSpirit === 'tequila') {
+        spiritCategory = 'Tequila'
+}
+
+//returns spiritCategory as output of function so we can use it later in the ajax api call
+return spiritCategory
+};
+
+
+function ingredientParameter(){
+
+    let ingredientCategory = ''
+  
+    if (userMood === 'Happy') {
+        ingredientCategory = 'orange_juice'
+    } else if (userMood === 'Sad') {
+        ingredientCategory = 'triple_sec'
+    } else if (userMood === 'Angry') {
+        ingredientCategory = 'lemon_juice'
+    } else if (userMood === 'Exhausted') {
+        let exhaustedArray = ['coca-cola', 'grenadine','powdered_sugar'] 
+        let randomIndex = Math.floor(Math.random() * exhaustedArray.length)
+        ingredientCategory = exhaustedArray[randomIndex]
+    } else if (userMood === 'In Love') {
+        ingredientCategory = 'lime_juice'
+    }
+    return ingredientCategory
+};
+
+let chosenSpirit = spiritParameter();
+let chosenIngredient = ingredientParameter();
+
+function chooseRandomCocktail() {
+ 
+  ingredientParameter();
+  fetch('https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=' + chosenSpirit + ',' + chosenIngredient)
+    
+    .then(response => {
+      return response.json();
+})
+    .then(result => {
+      let randomDrink = Math.floor(Math.random() * result.drinks.length);
+      // sets drinkId as the id of the randomly chosen drink
+      let drinkId = result.drinks[randomDrink].idDrink
+      //just logs the name of the drink
+      console.log(result.drinks[randomDrink].strDrink)
+      //passes the Id of the chosen drink to the DrinkDetails function
+      getDrinkDetails(drinkId);
     })
-    .catch((error) => {
-      console.error("Failed to fetch drinks:", error);
-      alert(
-        "Failed to load drinks. Please check your internet connection and try again."
-      );
-    });
+}
+
+function getDrinkDetails(drinkId){
+  
+  fetch('https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=' + drinkId,)
+  .then(response => {
+      return response.json();
+  })
+  .then(result=> {              
+      displayDrink(result.drinks[0]);
+  })
 }
 
 // Main Drink Card
