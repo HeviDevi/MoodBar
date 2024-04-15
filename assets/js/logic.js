@@ -250,6 +250,7 @@ return quoteCategory
 //STYLE TEAM: add "bartender's advice" button to drinks.html
 //CODE TEAM: event listener for quote button aaand a function that will display the quote on the page.. some kind of appendChild thing??
 
+
 function fetchAndDisplayQuote() {
     let quoteCategory = quoteParameter(); // Ensure this is the updated category each time
 
@@ -264,7 +265,7 @@ function fetchAndDisplayQuote() {
                 const adviceContent = document.querySelector(".advice-content");
                 if (adviceContent) {
                     adviceContent.textContent = result[0].author + ' once said: "' + result[0].quote + '"';
-                    adviceContent.style.display = "none"; // Make sure it's visible
+                    adviceContent.style.display = "none"; // Hide the content initially
                 }
             } else {
                 console.log("No quotes found for this category.");

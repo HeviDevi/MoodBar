@@ -223,7 +223,7 @@ const displayDrink = function (drink) {
       break;
     default:
       // Default background color
-      card.style.backgroundColor = "#0d0d0d"; // Set default background color
+      card.style.backgroundColor = "#0d0d0d";
   }
 
   // Make the background color solid
@@ -238,7 +238,7 @@ const displayDrink = function (drink) {
   adviceButton.textContent = "Bartender's Advice";
 
   const photo = document.createElement("img");
-  photo.src = drink.strDrinkThumb || "placeholder.jpg"; // Fallback to a placeholder image
+  photo.src = drink.strDrinkThumb || "placeholder.jpg"; // Fallback to a placeholder image - not working currently
   photo.alt = "Drink Photo";
   photo.className = "card-img-top";
 

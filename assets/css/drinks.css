@@ -53,16 +53,16 @@ a:hover {
 }
 
 .happy.animate {
-  color: #e3c760;
+  color: #ebd38a;
 }
 
 /* Happy Cards */
 .cardHappy {
-  background-color: #e3c760;
+  background-color: #ebd38a;
 }
 
 .optionHappy {
-  border: 4px solid #e3c760;
+  border: 4px solid #ebd38a;
 }
 
 /* Sad Face Icons */
@@ -78,16 +78,16 @@ a:hover {
 }
 
 .sad.animate {
-  color: #2f9db7;
+  color: #98bcce;
 }
 
 /* Sad Cards */
 .cardSad {
-  background-color: #2f9db7;
+  background-color: #98bcce;
 }
 
 .optionSad {
-  border: 4px solid #2f9db7;
+  border: 4px solid #98bcce;
 }
 
 /* Angry Face Icons */
@@ -128,16 +128,16 @@ a:hover {
 }
 
 .exhausted.animate {
-  color: gray;
+  color: #a8a9a5;
 }
 
 /* Exhausted Cards */
 .cardExhausted {
-  background-color: gray;
+  background-color: #a8a9a5;
 }
 
 .optionExhausted {
-  border: 4px solid gray;
+  border: 4px solid #a8a9a5;
 }
 
 /* In Love Face */
