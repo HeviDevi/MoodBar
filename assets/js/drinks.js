@@ -136,9 +136,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+//// CocktailDB API MANIPULATION////
+
 let userMood = localStorage.getItem("userMood");
 let userSpirit = localStorage.getItem("userSpirit");
-//// CocktailDB API MANIPULATION////
+
 function spiritParameter(){
    
 
@@ -180,9 +182,10 @@ function ingredientParameter(){
 };
 
 let chosenSpirit = spiritParameter();
+let chosenIngredient = ingredientParameter();
 
 function chooseRandomCocktail() {
-  let chosenIngredient = ingredientParameter();
+ 
   ingredientParameter();
   fetch('https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=' + chosenSpirit + ',' + chosenIngredient)
     
@@ -201,15 +204,15 @@ function chooseRandomCocktail() {
 }
 
 function getDrinkDetails(drinkId){
+  
   fetch('https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=' + drinkId,)
   .then(response => {
       return response.json();
   })
-  .then(result=> {           
+  .then(result=> {              
       displayDrink(result.drinks[0]);
   })
 }
-
 
 const displayDrink = function (drink) {
   if (!drink) {
