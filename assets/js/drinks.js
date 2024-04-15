@@ -301,19 +301,15 @@ const displayDrink = function (drink) {
   const cardIngredients = document.createElement("ul"); // Create <ul> element
   cardIngredients.className = "ingredients";
 
-  // Iterate over each ingredient and create a <li> element for it
-  [
-    drink.strIngredient1,
-    drink.strIngredient2,
-    drink.strIngredient3,
-    drink.strIngredient4,
-  ]
-    .filter(Boolean)
-    .forEach(function (ingredient) {
+  // Create a for loop for ingredients and make it a list with <li> element
+  for (let i = 0; i <= 20; i++) {
+    const ingredient = drink["strIngredient" + i];
+    if (ingredient) {
       const listItem = document.createElement("li");
       listItem.textContent = ingredient;
       cardIngredients.appendChild(listItem);
-    });
+    }
+  }
 
   // If no ingredients are present, display a placeholder message
   if (cardIngredients.children.length === 0) {
