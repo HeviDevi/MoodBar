@@ -6,58 +6,58 @@ eraseAge.addEventListener('click', function(){
     window.location.href = 'index.html';
 });
 
-//// CocktailDB API MANIPULATION////
-let spiritInput = localStorage.getItem('userSpirit');
+// //// CocktailDB API MANIPULATION////
+// let spiritInput = localStorage.getItem('userSpirit');
 
-function spiritParameter(){
+// function spiritParameter(){
    
-   //sets spirit category as blank, to be altered by user input 
-    let spiritCategory = ''
+//    //sets spirit category as blank, to be altered by user input 
+//     let spiritCategory = ''
 
-    //TODO: collect user input
+//     //TODO: collect user input
    
     
-  // Here the user's chosen input is assigned to a Spirit 
-  //We be adding this new value to the end of the URL in our ajax API call
-  //TODO: We need to look at our options for spirits in the API and assign them accordingly
-    if (spiritInput === 'gin') {
-        spiritCategory = 'Gin'
-} else if (spiritInput === 'rum') {
-        spiritCategory = 'light_rum'
-}  else if (spiritInput === 'vodka'){
-        spiritCategory = 'Vodka'
-} else if (spiritInput === 'tequila') {
-        spiritCategory = 'Tequila'
-}
+//   // Here the user's chosen input is assigned to a Spirit 
+//   //We be adding this new value to the end of the URL in our ajax API call
+//   //TODO: We need to look at our options for spirits in the API and assign them accordingly
+//     if (spiritInput === 'gin') {
+//         spiritCategory = 'Gin'
+// } else if (spiritInput === 'rum') {
+//         spiritCategory = 'light_rum'
+// }  else if (spiritInput === 'vodka'){
+//         spiritCategory = 'Vodka'
+// } else if (spiritInput === 'tequila') {
+//         spiritCategory = 'Tequila'
+// }
 
-//returns spiritCategory as output of function so we can use it later in the ajax api call
-return spiritCategory
-};
+// //returns spiritCategory as output of function so we can use it later in the ajax api call
+// return spiritCategory
+// };
 
-///assigns an ingredient based on the user's chosen mood
-let moodInput = localStorage.getItem('userMood');
+// ///assigns an ingredient based on the user's chosen mood
+// let moodInput = localStorage.getItem('userMood');
 
-function ingredientParameter(){
-    // sets category as blank
-    let ingredientCategory = ''
+// function ingredientParameter(){
+//     // sets category as blank
+//     let ingredientCategory = ''
   
 
 
-    if (moodInput === 'Happy') {
-        ingredientCategory = 'orange_juice'
-    } else if (moodInput === 'Sad') {
-        ingredientCategory = 'triple_sec'
-    } else if (moodInput === 'Angry') {
-        ingredientCategory = 'lemon_juice'
-    } else if (moodInput === 'Exhausted') {
-        let exhaustedArray = ['coca-cola', 'grenadine','powdered_sugar'] 
-        let randomIndex = Math.floor(Math.random() * exhaustedArray.length)
-        ingredientCategory = exhaustedArray[randomIndex]
-    } else if (moodInput === 'In Love') {
-        ingredientCategory = 'lime_juice'
-    }
-    return ingredientCategory
-};
+//     if (moodInput === 'Happy') {
+//         ingredientCategory = 'orange_juice'
+//     } else if (moodInput === 'Sad') {
+//         ingredientCategory = 'triple_sec'
+//     } else if (moodInput === 'Angry') {
+//         ingredientCategory = 'lemon_juice'
+//     } else if (moodInput === 'Exhausted') {
+//         let exhaustedArray = ['coca-cola', 'grenadine','powdered_sugar'] 
+//         let randomIndex = Math.floor(Math.random() * exhaustedArray.length)
+//         ingredientCategory = exhaustedArray[randomIndex]
+//     } else if (moodInput === 'In Love') {
+//         ingredientCategory = 'lime_juice'
+//     }
+//     return ingredientCategory
+// };
     
     //OLD CODE FOR FOR RANDOMIZED INGREDIENTS (FAILED)
     // let chosenIngredientArray;
@@ -95,62 +95,62 @@ function ingredientParameter(){
 
 
 // Sets spiritCategory as the output of the spiritParameter function does likewise for the ingredientCategory ... or at least it should??
-let chosenSpirit = spiritParameter();
+// let chosenSpirit = spiritParameter();
 
-function chooseRandomCocktailOne () {
-    let chosenIngredient = ingredientParameter();
-    ingredientParameter();
-    fetch ('https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=' + chosenSpirit + ',' +  chosenIngredient)
-    .then(response => {
-        return response.json();
-    })
+// function chooseRandomCocktailOne () {
+//     let chosenIngredient = ingredientParameter();
+//     ingredientParameter();
+//     fetch ('https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=' + chosenSpirit + ',' +  chosenIngredient)
+//     .then(response => {
+//         return response.json();
+//     })
 
     
-    .then(result =>{
-            let randomDrink = Math.floor(Math.random() * result.drinks.length);
-                // sets drinkId as the id of the randomly chosen drink
-                let drinkId = result.drinks[randomDrink].idDrink
-                //just logs the name of the drink
-                console.log(result.drinks[randomDrink].strDrink)
-                //passes the Id of the chosen drink to the DrinkDetails function
-                getDrinkDetails(drinkId);
-                return drinkId
-    })
-}
-    function getDrinkDetails(drinkId){
-        fetch('https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=' + drinkId,)
-        .then(response => {
-            return response.json();
-        })
-        .then(result=> {
+//     .then(result =>{
+//             let randomDrink = Math.floor(Math.random() * result.drinks.length);
+//                 // sets drinkId as the id of the randomly chosen drink
+//                 let drinkId = result.drinks[randomDrink].idDrink
+//                 //just logs the name of the drink
+//                 console.log(result.drinks[randomDrink].strDrink)
+//                 //passes the Id of the chosen drink to the DrinkDetails function
+//                 getDrinkDetails(drinkId);
+//                 return drinkId
+//     })
+// }
+//     function getDrinkDetails(drinkId){
+//         fetch('https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=' + drinkId,)
+//         .then(response => {
+//             return response.json();
+//         })
+//         .then(result=> {
                         
-            // let drinkName = (result.drinks[randomDrink].strDrink);
-            // let drinkItructions = (result.drinks[randomDrink].strDrink)
-            // let drinkIng1 = (result.drinks[0].strIngredient1)
-            // let drinkIng2 = (result.drinks[0].strIngredient1)
-            // let drinkIng3 = (result.drinks[0].strIngredient3)
-            // let drinkIng4 = (result.drinks[0].strIngredient4)
+//             // let drinkName = (result.drinks[randomDrink].strDrink);
+//             // let drinkItructions = (result.drinks[randomDrink].strDrink)
+//             // let drinkIng1 = (result.drinks[0].strIngredient1)
+//             // let drinkIng2 = (result.drinks[0].strIngredient1)
+//             // let drinkIng3 = (result.drinks[0].strIngredient3)
+//             // let drinkIng4 = (result.drinks[0].strIngredient4)
 
-                        console.log(result.drinks[0].strInstructions)
-                        console.log(result.drinks[0].strIngredient1)
-                        console.log(result.drinks[0].strIngredient2)
-                        console.log(result.drinks[0].strIngredient3)
-                        console.log(result.drinks[0].strIngredient4)
+//                         console.log(result.drinks[0].strInstructions)
+//                         console.log(result.drinks[0].strIngredient1)
+//                         console.log(result.drinks[0].strIngredient2)
+//                         console.log(result.drinks[0].strIngredient3)
+//                         console.log(result.drinks[0].strIngredient4)
 
-        // TODO: review the HTML to let it appear
-        // const drinkInfoHTML = `
-        //         <H2>${drinkName}</H2> 
-        //         <p>${drinkInstructions}</p>
-        //         <ul>
-        //             <li>${drinkIng1}</li>
-        //             <li>${drinkIng2}</li>
-        //             <li>${drinkIng3}</li>
-        //             <li>${drinkIng4}</li>
-        //         </ul>`;
-        // const drinkInfoElement = document.getElementById('drinkInfoHTML');
-        // drinkInfoElement.innerHTML = drinkInfoHTML;
-        })
-    }
+//         // TODO: review the HTML to let it appear
+//         // const drinkInfoHTML = `
+//         //         <H2>${drinkName}</H2> 
+//         //         <p>${drinkInstructions}</p>
+//         //         <ul>
+//         //             <li>${drinkIng1}</li>
+//         //             <li>${drinkIng2}</li>
+//         //             <li>${drinkIng3}</li>
+//         //             <li>${drinkIng4}</li>
+//         //         </ul>`;
+//         // const drinkInfoElement = document.getElementById('drinkInfoHTML');
+//         // drinkInfoElement.innerHTML = drinkInfoHTML;
+//         })
+//     }
 
 
     //ATTEMPT AT AJAX INSTEAD OF FETCH (FAILED)
@@ -241,8 +241,6 @@ function quoteParameter(){
 //returns quoteCategory as output so we can use it later in the ajax api call
 return quoteCategory
 }
-
-// Sets quoteCategory as the output of the quoteParameter function... or at least it should??
 
 // ajax api call to pull a quote from the api based on category
 //TODO// 
