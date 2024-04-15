@@ -243,25 +243,46 @@ return quoteCategory
 }
 
 // Sets quoteCategory as the output of the quoteParameter function... or at least it should??
-let quoteCategory = quoteParameter();
 
 // ajax api call to pull a quote from the api based on category
 //TODO// 
 //STYLE TEAM: create an HTML element to display the quote on the page.
 //STYLE TEAM: add "bartender's advice" button to drinks.html
 //CODE TEAM: event listener for quote button aaand a function that will display the quote on the page.. some kind of appendChild thing??
-$.ajax({
-    method: 'GET',
-    url: 'https://api.api-ninjas.com/v1/quotes?category=' + quoteCategory,
-    headers: { 'X-Api-Key': 'lbuDF/d/4FN0Qtt3UdYKZw==0Y6n8GL3b39NEA5m'},
-    contentType: 'application/json',
-    success: function(result) {
-        ///Display function goes here
-        console.log(result[0].author + ' once said ' + '"' + result[0].quote + '"')
-    },
-    error: function ajaxError(jqXHR) {
-        console.error('Error: ', jqXHR.responseText);
-    }
+
+function fetchAndDisplayQuote() {
+    let quoteCategory = quoteParameter(); // Ensure this is the updated category each time
+
+    $.ajax({
+        method: 'GET',
+        url: 'https://api.api-ninjas.com/v1/quotes?category=' + encodeURIComponent(quoteCategory),
+        headers: { 'X-Api-Key': 'lbuDF/d/4FN0Qtt3UdYKZw==0Y6n8GL3b39NEA5m'},
+        contentType: 'application/json',
+        success: function(result) {
+            if (result && result.length > 0) {
+                // Assuming the advice content div already exists
+                const adviceContent = document.querySelector(".advice-content");
+                if (adviceContent) {
+                    adviceContent.textContent = result[0].author + ' once said: "' + result[0].quote + '"';
+                    adviceContent.style.display = "none"; // Make sure it's visible
+                }
+            } else {
+                console.log("No quotes found for this category.");
+            }
+        },
+        error: function ajaxError(jqXHR) {
+            console.error('Error :', jqXHR.responseText);
+            const adviceContent = document.querySelector(".advice-content");
+            if (adviceContent) {
+                adviceContent.textContent = "Failed to load quote.";
+            }
+        }
+    });
+}
+
+// Call this function when needed, e.g., after a user action or on page load
+document.addEventListener('DOMContentLoaded', function() {
+    fetchAndDisplayQuote();
 });
 
 
