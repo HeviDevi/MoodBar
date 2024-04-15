@@ -248,6 +248,7 @@ return quoteCategory
 //STYLE TEAM: add "bartender's advice" button to drinks.html
 //CODE TEAM: event listener for quote button aaand a function that will display the quote on the page.. some kind of appendChild thing??
 
+
 function fetchAndDisplayQuote() {
     let quoteCategory = quoteParameter(); // Ensure this is the updated category each time
 
@@ -258,11 +259,10 @@ function fetchAndDisplayQuote() {
         contentType: 'application/json',
         success: function(result) {
             if (result && result.length > 0) {
-                // Assuming the advice content div already exists
                 const adviceContent = document.querySelector(".advice-content");
                 if (adviceContent) {
                     adviceContent.textContent = result[0].author + ' once said: "' + result[0].quote + '"';
-                    adviceContent.style.display = "none"; // Make sure it's visible
+                    adviceContent.style.display = "none"; // Hide the content initially
                 }
             } else {
                 console.log("No quotes found for this category.");
@@ -290,7 +290,6 @@ const bartender = document.querySelector('.theBartender');
 function bartenderRandomizer() {
     const bartenderImages = [
         './assets/images/Alex.png',
-        './assets/images/Alex.png',
         './assets/images/Clarissa.png',
         './assets/images/Devon.png',
         './assets/images/Eddie.png',
@@ -301,9 +300,5 @@ function bartenderRandomizer() {
 }
 
 const RandomBartender = bartenderRandomizer();
-bartender.src = RandomBartender;
 
 
-
-
-// 

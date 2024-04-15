@@ -214,6 +214,7 @@ function getDrinkDetails(drinkId){
   })
 }
 
+// Main Drink Card
 const displayDrink = function (drink) {
   if (!drink) {
     console.error("No drink data provided.");
@@ -255,31 +256,6 @@ const displayDrink = function (drink) {
   adviceContentWrapper.style.borderRadius = "10px"; // Add border radius
   adviceContentWrapper.style.color = "#ffffff"; // Set font color to white
 
-  //   Background color based on mood
-  switch (localStorage.getItem("userMood")) {
-    case "Happy":
-      card.classList.add("cardHappy");
-      break;
-    case "Sad":
-      card.classList.add("cardSad"); 
-      break;
-    case "Angry":
-      card.classList.add("cardAngry");
-      break;
-    case "Exhausted":
-      card.classList.add("cardExhausted");
-      break;
-    case "In Love":
-      card.classList.add("cardInLove"); 
-      break;
-    default:
-      // Default background color
-      card.style.backgroundColor = "#0d0d0d"; // Set default background color
-  }
-
-  // Make the background color solid
-  card.style.opacity = "1";
-
   const adviceContent = document.createElement("div");
   adviceContent.className = "advice-content";
   adviceContent.style.display = "none"; // Initially hide the advice content
@@ -288,14 +264,39 @@ const displayDrink = function (drink) {
   adviceButton.className = "btn btn-dark mt-1";
   adviceButton.textContent = "Bartender's Advice";
 
+  //   Background color based on mood
+  switch (localStorage.getItem("userMood")) {
+    case "Happy":
+      card.classList.add("cardHappy");
+      break;
+    case "Sad":
+      card.classList.add("cardSad");
+      break;
+    case "Angry":
+      card.classList.add("cardAngry");
+      break;
+    case "Exhausted":
+      card.classList.add("cardExhausted");
+      break;
+    case "In Love":
+      card.classList.add("cardInLove");
+      break;
+    default:
+      // Default background color
+      card.style.backgroundColor = "#0d0d0d";
+  }
+
+  // Make the background color solid
+  card.style.opacity = "1";
+
   const photo = document.createElement("img");
-  photo.src = drink.strDrinkThumb || "placeholder.jpg"; // Fallback to a placeholder image
-  photo.alt = "Drink Photo";
-  photo.className = "card-img-top";
+  photo.src = drink.strDrinkThumb || "./assets/images/placeholder.jpg"; // Fallback to a placeholder image
+  photo.className = "card-img-top mt-3";
+  photo.style.width = "200px"; // Set size of the image
 
   const cardTitle = document.createElement("h1");
   cardTitle.className = "card-title";
-  cardTitle.textContent = drink.strDrink;
+  cardTitle.textContent = drink.strDrink || "No drink name available";
 
   const cardIngredients = document.createElement("ul"); // Create <ul> element
   cardIngredients.className = "ingredients";
@@ -321,11 +322,14 @@ const displayDrink = function (drink) {
     cardIngredients.appendChild(listItem);
   }
 
+  // Append cardIngredients to cardBody
+  cardBody.appendChild(cardIngredients);
+
   const cardHowTo = document.createElement("p");
   cardHowTo.className = "how-to";
   cardHowTo.textContent = "Instructions: " + drink.strInstructions;
 
-  adviceButton.addEventListener("click", function () {
+  adviceButton.addEventListener("click", function (event) {
     card.classList.toggle("open");
 
     // Toggle the visibility of the bartender image and the advice content
@@ -378,3 +382,5 @@ function displayCard(drink) {
   card.appendChild(cardBody);
   optionCards.appendChild(card);
 }
+
+
