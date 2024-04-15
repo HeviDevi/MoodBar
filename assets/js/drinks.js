@@ -1,3 +1,4 @@
+
 // For Happy Face
 for (let i = 0; i <= 75; i++) {
   let happyFace = document.createElement("div");
@@ -89,92 +90,6 @@ function animateInLove() {
 // setInterval(animateExhausted, 50);
 // setInterval(animateInLove, 50);
 
-const displayCard = function () {
-  const mainCard = document.querySelector(".mainCard");
-  mainCard.innerHTML = "";
-
-  for (let i = 0; i < 1; i++) {
-    const drinkPhoto = ""; //call for drink photo goes here
-    const cardAdvice = ""; //call for drink advice goes here
-    const cardDrinkName = ""; //call for drink name goes here
-    const cardIngredientsText = ""; //call for drink ingredients goes here
-    const cardHowToText = ""; //call for drink instructions goes here
-
-    const card = document.createElement("div");
-    card.classList.add("card", "m-3");
-    card.style.width = "48rem";
-
-    const cardBody = document.createElement("div");
-    cardBody.classList.add("card-body");
-
-    const adviceButton = document.createElement("button");
-    adviceButton.classList.add("btn", "btn-primary");
-    adviceButton.textContent = "Bartender's Advice";
-
-    const adviceContent = document.createElement("div");
-    adviceContent.classList.add("advice-content");
-    adviceContent.style.display = "none";
-    adviceContent.textContent = cardAdvice;
-
-    const photo = document.createElement("img");
-    photo.src = drinkPhoto;
-    photo.alt = "Drink Photo";
-
-    const cardTitle = document.createElement("h1");
-    cardTitle.classList.add("card-title");
-    cardTitle.textContent = cardDrinkName;
-
-    const cardIngredients = document.createElement("p");
-    cardIngredients.classList.add("ingredients");
-    cardIngredients.textContent = cardIngredientsText;
-
-    const cardHowTo = document.createElement("p");
-    cardHowTo.classList.add("how-to");
-    cardHowTo.textContent = cardHowToText;
-
-    adviceButton.addEventListener("click", function () {
-      card.classList.toggle("open");
-      adviceContent.style.display === "none" ? "block" : "none";
-    });
-
-    cardBody.appendChild(adviceButton);
-    cardBody.appendChild(drinkPhoto);
-    cardBody.appendChild(cardTitle);
-    cardBody.appendChild(cardIngredients);
-    cardBody.appendChild(cardHowTo);
-    cardBody.appendChild(adviceContent);
-    card.appendChild(cardBody);
-    mainCard.appendChild(card);
-  }
-};
-
-displayCard();
-
-// const optionCard = function () {
-//   const drinkOptions = document.querySelector(".drinkOptionCards");
-//   drinkOptions.innerHTML = "";
-
-//   for (let i = 0; i < 4; i++) {
-//     const drinkPhoto2 = ""; //call for drink photo goes here
-
-//     const card = document.createElement("div");
-//     card.classList.add("cardOptions", "m-3");
-//     card.style.width = "10rem";
-
-//     const cardBody = document.createElement("div");
-//     cardBody.classList.add("card-body2");
-
-//     const photo2 = document.createElement("img");
-//     photo2.src = drinkPhoto2;
-//     photo2.alt = "Drink Photo";
-
-//     cardBody.appendChild(photo2);
-//     card.appendChild(cardBody);
-//     drinkOptions.appendChild(card);
-//   }
-// };
-
-// optionCard();
 
 
 // let url = 'https://api.api-ninjas.com/v1/quotes?category='
@@ -219,9 +134,10 @@ function chooseRandomCocktail(spirit, mood) {
   });
 
 
+
 function displayCard(drink) {
-  const mainCard = document.querySelector(".mainCard");
-  mainCard.innerHTML = '';
+  const optionCards = document.querySelector(".drinkOptionCards");
+  optionCards.innerHTML = '';
 
   const card = document.createElement("div");
   card.classList.add("card", "m-3");
@@ -242,7 +158,7 @@ function displayCard(drink) {
   cardBody.appendChild(photo);
   cardBody.appendChild(cardTitle);
   card.appendChild(cardBody);
-  mainCard.appendChild(card);
+  optionCards.appendChild(card);
 }
 }
 
@@ -291,6 +207,3 @@ function switchMood(mood) {
 
 // Call switchMood with the mood from local storage
 switchMood(localStorage.getItem('userMood'));
-
-
-
