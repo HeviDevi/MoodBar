@@ -302,7 +302,7 @@ const displayDrink = function (drink) {
   cardIngredients.className = "ingredients";
 
   // Create a for loop for ingredients and make it a list with <li> element
-  for (let i = 1; i <= 20; i++) {
+  for (let i = 0; i <= 20; i++) {
     const ingredient = drink["strIngredient" + i];
     if (ingredient) {
       const listItem = document.createElement("li");
