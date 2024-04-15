@@ -163,6 +163,7 @@ function chooseRandomCocktail(spirit, mood) {
     });
 }
 
+// Main Drink Card
 const displayDrink = function (drink) {
   if (!drink) {
     console.error("No drink data provided.");
@@ -204,13 +205,21 @@ const displayDrink = function (drink) {
   adviceContentWrapper.style.borderRadius = "10px"; // Add border radius
   adviceContentWrapper.style.color = "#ffffff"; // Set font color to white
 
+  const adviceContent = document.createElement("div");
+  adviceContent.className = "advice-content";
+  adviceContent.style.display = "none"; // Initially hide the advice content
+
+  const adviceButton = document.createElement("button");
+  adviceButton.className = "btn btn-dark mt-1";
+  adviceButton.textContent = "Bartender's Advice";
+
   //   Background color based on mood
   switch (localStorage.getItem("userMood")) {
     case "Happy":
       card.classList.add("cardHappy");
       break;
     case "Sad":
-      card.classList.add("cardSad"); 
+      card.classList.add("cardSad");
       break;
     case "Angry":
       card.classList.add("cardAngry");
@@ -219,7 +228,7 @@ const displayDrink = function (drink) {
       card.classList.add("cardExhausted");
       break;
     case "In Love":
-      card.classList.add("cardInLove"); 
+      card.classList.add("cardInLove");
       break;
     default:
       // Default background color
@@ -228,14 +237,6 @@ const displayDrink = function (drink) {
 
   // Make the background color solid
   card.style.opacity = "1";
-
-  const adviceContent = document.createElement("div");
-  adviceContent.className = "advice-content";
-  adviceContent.style.display = "none"; // Initially hide the advice content
-
-  const adviceButton = document.createElement("button");
-  adviceButton.className = "btn btn-dark mt-1";
-  adviceButton.textContent = "Bartender's Advice";
 
   const photo = document.createElement("img");
   photo.src = drink.strDrinkThumb || "placeholder.jpg"; // Fallback to a placeholder image - not working currently
