@@ -312,7 +312,6 @@ const displayDrink = function (drink) {
   detailsContainer.appendChild(cardTitle);
   detailsContainer.appendChild(cardIngredients);
   detailsContainer.appendChild(cardHowTo);
-  cardBodyWrapper.appendChild(photoContainer);
   cardBodyWrapper.appendChild(detailsContainer);
   cardBody.appendChild(cardBodyWrapper);
   card.appendChild(cardBody);
