@@ -126,6 +126,7 @@ function switchMood(mood) {
 // Call switchMood with the mood from local storage
 switchMood(localStorage.getItem("userMood"));
 
+
 document.addEventListener("DOMContentLoaded", function () {
   // Retrieve stored inputs
   let userMood = localStorage.getItem("userMood");
@@ -146,7 +147,7 @@ function chooseRandomCocktail(spirit, mood) {
     .then((response) => response.json())
     .then((data) => {
       if (data.drinks && data.drinks.length > 0) {
-        displayCard(data.drinks[0]); // Display the first drink
+        displayCard(data.drinks[0]);
         displayDrink(data.drinks[0]); // Display the first drink details
       } else {
         console.error("No drinks found for the selected mood and spirit.");
@@ -163,6 +164,7 @@ function chooseRandomCocktail(spirit, mood) {
     });
 }
 
+// Main Drink Card
 const displayDrink = function (drink) {
   if (!drink) {
     console.error("No drink data provided.");
@@ -204,13 +206,21 @@ const displayDrink = function (drink) {
   adviceContentWrapper.style.borderRadius = "10px"; // Add border radius
   adviceContentWrapper.style.color = "#ffffff"; // Set font color to white
 
+  const adviceContent = document.createElement("div");
+  adviceContent.className = "advice-content";
+  adviceContent.style.display = "none"; // Initially hide the advice content
+
+  const adviceButton = document.createElement("button");
+  adviceButton.className = "btn btn-dark mt-1";
+  adviceButton.textContent = "Bartender's Advice";
+
   //   Background color based on mood
   switch (localStorage.getItem("userMood")) {
     case "Happy":
       card.classList.add("cardHappy");
       break;
     case "Sad":
-      card.classList.add("cardSad"); 
+      card.classList.add("cardSad");
       break;
     case "Angry":
       card.classList.add("cardAngry");
@@ -219,7 +229,7 @@ const displayDrink = function (drink) {
       card.classList.add("cardExhausted");
       break;
     case "In Love":
-      card.classList.add("cardInLove"); 
+      card.classList.add("cardInLove");
       break;
     default:
       // Default background color
@@ -229,22 +239,14 @@ const displayDrink = function (drink) {
   // Make the background color solid
   card.style.opacity = "1";
 
-  const adviceContent = document.createElement("div");
-  adviceContent.className = "advice-content";
-  adviceContent.style.display = "none"; // Initially hide the advice content
-
-  const adviceButton = document.createElement("button");
-  adviceButton.className = "btn btn-dark mt-1";
-  adviceButton.textContent = "Bartender's Advice";
-
   const photo = document.createElement("img");
-  photo.src = drink.strDrinkThumb || "placeholder.jpg"; // Fallback to a placeholder image - not working currently
-  photo.alt = "Drink Photo";
-  photo.className = "card-img-top";
+  photo.src = drink.strDrinkThumb || "./assets/images/placeholder.jpg"; // Fallback to a placeholder image
+  photo.className = "card-img-top mt-3";
+  photo.style.width = "200px"; // Set size of the image
 
   const cardTitle = document.createElement("h1");
   cardTitle.className = "card-title";
-  cardTitle.textContent = drink.strDrink;
+  cardTitle.textContent = drink.strDrink || "No drink name available";
 
   const cardIngredients = document.createElement("ul"); // Create <ul> element
   cardIngredients.className = "ingredients";
@@ -274,7 +276,7 @@ const displayDrink = function (drink) {
   cardHowTo.className = "how-to";
   cardHowTo.textContent = "Instructions: " + drink.strInstructions;
 
-  adviceButton.addEventListener("click", function () {
+  adviceButton.addEventListener("click", function (event) {
     card.classList.toggle("open");
 
     // Toggle the visibility of the bartender image and the advice content
@@ -327,3 +329,5 @@ function displayCard(drink) {
   card.appendChild(cardBody);
   optionCards.appendChild(card);
 }
+
+

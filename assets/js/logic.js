@@ -261,7 +261,6 @@ function fetchAndDisplayQuote() {
         contentType: 'application/json',
         success: function(result) {
             if (result && result.length > 0) {
-                // Assuming the advice content div already exists
                 const adviceContent = document.querySelector(".advice-content");
                 if (adviceContent) {
                     adviceContent.textContent = result[0].author + ' once said: "' + result[0].quote + '"';
@@ -293,7 +292,6 @@ const bartender = document.querySelector('.theBartender');
 function bartenderRandomizer() {
     const bartenderImages = [
         './assets/images/Alex.png',
-        './assets/images/Alex.png',
         './assets/images/Clarissa.png',
         './assets/images/Devon.png',
         './assets/images/Eddie.png',
@@ -304,9 +302,5 @@ function bartenderRandomizer() {
 }
 
 const RandomBartender = bartenderRandomizer();
-bartender.src = RandomBartender;
 
 
-
-
-// 
