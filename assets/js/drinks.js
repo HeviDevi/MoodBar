@@ -329,7 +329,7 @@ const displayDrink = function (drink) {
   cardHowTo.className = "how-to";
   cardHowTo.textContent = "Instructions: " + drink.strInstructions;
 
-  adviceButton.addEventListener("click", function (event) {
+  adviceButton.addEventListener("click", function () {
     card.classList.toggle("open");
 
     // Toggle the visibility of the bartender image and the advice content
@@ -353,9 +353,9 @@ const displayDrink = function (drink) {
 
   // Fetch a random quote after displaying the drink
   fetchAndDisplayQuote();
+  chooseRandomCocktail();
 };
 
-displayDrink();
 
 function displayCard(drink) {
   const optionCards = document.querySelector(".drinkOptionCards");
