@@ -126,7 +126,6 @@ function switchMood(mood) {
 // Call switchMood with the mood from local storage
 switchMood(localStorage.getItem("userMood"));
 
-
 document.addEventListener("DOMContentLoaded", function () {
   // Retrieve stored inputs
   let userMood = localStorage.getItem("userMood");
@@ -271,6 +270,9 @@ const displayDrink = function (drink) {
     listItem.textContent = "No ingredients available";
     cardIngredients.appendChild(listItem);
   }
+
+  // Append cardIngredients to cardBody
+  cardBody.appendChild(cardIngredients);
 
   const cardHowTo = document.createElement("p");
   cardHowTo.className = "how-to";
