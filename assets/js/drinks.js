@@ -223,7 +223,7 @@ const displayDrink = function (drink) {
       break;
     default:
       // Default background color
-      card.style.backgroundColor = "#0d0d0d"; // Set default background color
+      card.style.backgroundColor = "#0d0d0d";
   }
 
   // Make the background color solid

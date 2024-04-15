@@ -250,6 +250,7 @@ return quoteCategory
 //STYLE TEAM: add "bartender's advice" button to drinks.html
 //CODE TEAM: event listener for quote button aaand a function that will display the quote on the page.. some kind of appendChild thing??
 
+
 function fetchAndDisplayQuote() {
     let quoteCategory = quoteParameter(); // Ensure this is the updated category each time
 
