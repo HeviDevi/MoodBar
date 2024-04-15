@@ -238,7 +238,7 @@ const displayDrink = function (drink) {
   adviceButton.textContent = "Bartender's Advice";
 
   const photo = document.createElement("img");
-  photo.src = drink.strDrinkThumb || "placeholder.jpg"; // Fallback to a placeholder image
+  photo.src = drink.strDrinkThumb || "placeholder.jpg"; // Fallback to a placeholder image - not working currently
   photo.alt = "Drink Photo";
   photo.className = "card-img-top";
 

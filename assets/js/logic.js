@@ -265,7 +265,7 @@ function fetchAndDisplayQuote() {
                 const adviceContent = document.querySelector(".advice-content");
                 if (adviceContent) {
                     adviceContent.textContent = result[0].author + ' once said: "' + result[0].quote + '"';
-                    adviceContent.style.display = "none"; // Make sure it's visible
+                    adviceContent.style.display = "none"; // Hide the content initially
                 }
             } else {
                 console.log("No quotes found for this category.");
