@@ -261,7 +261,7 @@ const displayDrink = function (drink) {
 
   const cardTitle = document.createElement("h1");
   cardTitle.className = "card-title";
-  cardTitle.textContent = drink.strDrink;
+  cardTitle.textContent = drink.strDrink || "No drink name available";
 
   const cardIngredients = document.createElement("ul"); // Create <ul> element
   cardIngredients.className = "ingredients";
