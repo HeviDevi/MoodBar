@@ -239,9 +239,9 @@ const displayDrink = function (drink) {
   card.style.opacity = "1";
 
   const photo = document.createElement("img");
-  photo.src = drink.strDrinkThumb || "placeholder.jpg"; // Fallback to a placeholder image - not working currently
-  photo.alt = "Drink Photo";
-  photo.className = "card-img-top";
+  photo.src = drink.strDrinkThumb || "./assets/images/placeholder.jpg"; // Fallback to a placeholder image
+  photo.className = "card-img-top mt-3";
+  photo.style.width = "200px"; // Set size of the image
 
   const cardTitle = document.createElement("h1");
   cardTitle.className = "card-title";
