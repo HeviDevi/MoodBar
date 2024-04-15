@@ -241,12 +241,17 @@ const displayDrink = function (drink) {
   const cardBodyWrapper = document.createElement("div");
   cardBodyWrapper.className = "card-body-wrapper";
   cardBodyWrapper.style.display = "flex";
-  cardBodyWrapper.style.flexDirection = "column";
+  cardBodyWrapper.style.flexDirection = "row";
+  
+  const photoContainer = document.createElement("div");
+  photoContainer.style.flex = "1";
 
   const photo = document.createElement("img");
   photo.src = drink.strDrinkThumb || "./assets/images/placeholder.jpg"; // Fallback to a placeholder image
   photo.className = "card-img-top mt-3";
   photo.style.width = "200px"; // Set size of the image
+  photo.style.height = "auto";// Set height to auto
+  photoContainer.appendChild(photo);
 
   const cardTitle = document.createElement("h1");
   cardTitle.className = "card-title";
@@ -295,7 +300,7 @@ const displayDrink = function (drink) {
   adviceContentWrapper.appendChild(adviceContent);
   cardBody.appendChild(adviceContentWrapper);
   cardBody.appendChild(adviceButton);
-  cardBodyWrapper.appendChild(photo);
+  cardBodyWrapper.appendChild(photoContainer);
   cardBodyWrapper.appendChild(cardTitle);
   cardBodyWrapper.appendChild(cardIngredients);
   cardBodyWrapper.appendChild(cardHowTo);
