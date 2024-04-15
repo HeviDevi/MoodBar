@@ -244,7 +244,7 @@ const displayDrink = function (drink) {
   cardBodyWrapper.style.flexDirection = "row";
   
   const photoContainer = document.createElement("div");
-  photoContainer.style.flex = "1";
+  photoContainer.style.flex = ".5";
 
   const photo = document.createElement("img");
   photo.src = drink.strDrinkThumb || "./assets/images/placeholder.jpg"; // Fallback to a placeholder image
@@ -252,6 +252,12 @@ const displayDrink = function (drink) {
   photo.style.width = "200px"; // Set size of the image
   photo.style.height = "auto";// Set height to auto
   photoContainer.appendChild(photo);
+
+  const detailsContainer = document.createElement("div");
+  detailsContainer.style.flex = "2";
+  detailsContainer.style.display = "flex";
+  detailsContainer.style.flexDirection = "column";
+  detailsContainer.style.padding = "0 15px";
 
   const cardTitle = document.createElement("h1");
   cardTitle.className = "card-title";
@@ -281,9 +287,11 @@ const displayDrink = function (drink) {
     cardIngredients.appendChild(listItem);
   }
 
+
   const cardHowTo = document.createElement("p");
   cardHowTo.className = "how-to";
   cardHowTo.textContent = "Instructions: " + drink.strInstructions;
+
 
   adviceButton.addEventListener("click", function () {
     card.classList.toggle("open");
@@ -301,9 +309,11 @@ const displayDrink = function (drink) {
   cardBody.appendChild(adviceContentWrapper);
   cardBody.appendChild(adviceButton);
   cardBodyWrapper.appendChild(photoContainer);
-  cardBodyWrapper.appendChild(cardTitle);
-  cardBodyWrapper.appendChild(cardIngredients);
-  cardBodyWrapper.appendChild(cardHowTo);
+  detailsContainer.appendChild(cardTitle);
+  detailsContainer.appendChild(cardIngredients);
+  detailsContainer.appendChild(cardHowTo);
+  cardBodyWrapper.appendChild(photoContainer);
+  cardBodyWrapper.appendChild(detailsContainer);
   cardBody.appendChild(cardBodyWrapper);
   card.appendChild(cardBody);
   mainCard.appendChild(card);
