@@ -84,12 +84,38 @@ function animateInLove() {
   allInLove[num].classList.toggle("animate");
 }
 
-// setInterval(animateHappy, 50);
-// setInterval(animateSad, 50);
-// setInterval(animateAngry, 50);
-// setInterval(animateExhausted, 50);
-// setInterval(animateInLove, 50);
+// mood switch method
+// const moodSelection = document.querySelector('.background-faces');---- intervals within if/elseIf will cause animation to activate
+const cardMood = document.querySelector(".cardMood");
+const optionMood = document.querySelector(".optionEmotion");
 
+function switchMood(mood) {
+  localStorage.setItem("userMood", mood); // will select the mood from local storage
+  // when functions pulls mood from local storage, it'll change the way its stored, i.e. "inLove = In Love"
+  if (mood === "Happy") {
+    setInterval(animateHappy, 50);
+    // moodSelection.className = 'cardHappy';  ---intervals will activate background.
+    optionMood.className = "optionHappy";
+  } else if (mood === "Sad") {
+    // moodSelection.className = 'cardSad';
+    setInterval(animateSad, 50);
+    optionMood.className = "optionSad";
+  } else if (mood === "Angry") {
+    // moodSelection.className = 'cardAngry';
+    setInterval(animateAngry, 50);
+    optionMood.className = "optionAngry";
+  } else if (mood === "Exhausted") {
+    // moodSelection.className = 'cardExhausted';
+    setInterval(animateExhausted, 50);
+    optionMood.className = "optionExhausted";
+  } else if (mood === "In Love") {
+    // moodSelection.className = 'cardInLove';
+    setInterval(animateInLove, 50);
+    optionMood.className = "optionInLove";
+  }
+}
+// Call switchMood with the mood from local storage
+switchMood(localStorage.getItem("userMood"));
 
 
 // let url = 'https://api.api-ninjas.com/v1/quotes?category='
@@ -161,49 +187,3 @@ function displayCard(drink) {
   optionCards.appendChild(card);
 }
 }
-
-
-// mood switch method
-
-// const moodSelection = document.querySelector('.background-faces');---- intervals within if/elseIf will cause animation to activate
-const cardMood = document.querySelector('.cardMood');
-const optionMood = document.querySelector('.optionEmotion');
-
-function switchMood(mood) {
-  localStorage.setItem('userMood', mood);  // will select the mood from local storage
-      // when functions pulls mood from local storage, it'll change the way its stored, i.e. "inLove = In Love"
-  if (mood === 'Happy') {
-      setInterval(animateHappy, 50);
-      // moodSelection.className = 'cardHappy';  ---intervals will activate background.
-      cardMood.className = 'cardHappy';
-      optionMood.className = 'optionHappy';
-
-    } else if (mood === 'Sad') {
-      // moodSelection.className = 'cardSad';
-      setInterval(animateSad, 50);
-      cardMood.className = 'cardSad';
-      optionMood.className = 'optionSad';
-
-    } else if (mood === 'Angry') {
-      // moodSelection.className = 'cardAngry';
-      setInterval(animateAngry, 50);
-      cardMood.className = 'cardAngry';
-      optionMood.className = 'optionAngry';
-
-    } else if (mood === 'Exhausted') {
-      // moodSelection.className = 'cardExhausted';
-      setInterval(animateExhausted, 50);
-      cardMood.className = 'cardExhausted';
-      optionMood.className = 'optionExhausted';
-
-    } else if (mood === 'In Love') {
-      // moodSelection.className = 'cardInLove';
-      setInterval(animateInLove, 50);
-      cardMood.className = 'cardInLove';
-      optionMood.className = 'optionInLove';
-
-  }
-}
-
-// Call switchMood with the mood from local storage
-switchMood(localStorage.getItem('userMood'));
