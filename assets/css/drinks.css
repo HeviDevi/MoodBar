@@ -171,20 +171,4 @@ a:hover {
     border: 4px solid #efb0ba;
 }
 
-/* bartender parameters */
-.theBartender {
-    width: 250px;
-    margin: 20px;
-    background-color: #151515;
-    color: #ffffff;
-    border-radius: 8px;
-    box-shadow: #cc99ff 0px 0px 15px,
-    #cc99ff 0px 0px 10px;
-    z-index: 1001;
-}
-
-.happy, .sad, .angry, .exhausted, .inLove {
-   z-index: 999;
-}
-
 /* .mainCard  */
