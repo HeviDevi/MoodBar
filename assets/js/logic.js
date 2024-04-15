@@ -293,7 +293,6 @@ const bartender = document.querySelector('.theBartender');
 function bartenderRandomizer() {
     const bartenderImages = [
         './assets/images/Alex.png',
-        './assets/images/Alex.png',
         './assets/images/Clarissa.png',
         './assets/images/Devon.png',
         './assets/images/Eddie.png',

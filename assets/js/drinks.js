@@ -238,22 +238,10 @@ const displayDrink = function (drink) {
   // Make the background color solid
   card.style.opacity = "1";
 
-  const cardBodyWrapper = document.createElement("div");
-  cardBodyWrapper.className = "card-body-wrapper";
-  cardBodyWrapper.style.display = "flex";
-  cardBodyWrapper.style.flexDirection = "row";
-
   const photo = document.createElement("img");
   photo.src = drink.strDrinkThumb || "./assets/images/placeholder.jpg"; // Fallback to a placeholder image
   photo.className = "card-img-top mt-3";
   photo.style.width = "200px"; // Set size of the image
-  photo.style.height = "auto"; // Set height to auto
-
-  const detailsContainer = document.createElement("div");
-  detailsContainer.style.flex = "2";
-  detailsContainer.style.display = "flex";
-  detailsContainer.style.flexDirection = "column";
-  detailsContainer.style.padding = "0 15px";
 
   const cardTitle = document.createElement("h1");
   cardTitle.className = "card-title";
@@ -287,7 +275,7 @@ const displayDrink = function (drink) {
   cardHowTo.className = "how-to";
   cardHowTo.textContent = "Instructions: " + drink.strInstructions;
 
-  adviceButton.addEventListener("click", function () {
+  adviceButton.addEventListener("click", function (event) {
     card.classList.toggle("open");
 
     // Toggle the visibility of the bartender image and the advice content
@@ -302,12 +290,10 @@ const displayDrink = function (drink) {
   adviceContentWrapper.appendChild(adviceContent);
   cardBody.appendChild(adviceContentWrapper);
   cardBody.appendChild(adviceButton);
-  cardBodyWrapper.appendChild(photo);
-  detailsContainer.appendChild(cardTitle);
-  detailsContainer.appendChild(cardIngredients);
-  detailsContainer.appendChild(cardHowTo);
-  cardBodyWrapper.appendChild(detailsContainer);
-  cardBody.appendChild(cardBodyWrapper);
+  cardBody.appendChild(photo);
+  cardBody.appendChild(cardTitle);
+  cardBody.appendChild(cardIngredients);
+  cardBody.appendChild(cardHowTo);
   card.appendChild(cardBody);
   mainCard.appendChild(card);
 
