@@ -238,6 +238,11 @@ const displayDrink = function (drink) {
   // Make the background color solid
   card.style.opacity = "1";
 
+  const cardBodyWrapper = document.createElement("div");
+  cardBodyWrapper.className = "card-body-wrapper";
+  cardBodyWrapper.style.display = "flex";
+  cardBodyWrapper.style.flexDirection = "column";
+
   const photo = document.createElement("img");
   photo.src = drink.strDrinkThumb || "./assets/images/placeholder.jpg"; // Fallback to a placeholder image
   photo.className = "card-img-top mt-3";
@@ -290,10 +295,11 @@ const displayDrink = function (drink) {
   adviceContentWrapper.appendChild(adviceContent);
   cardBody.appendChild(adviceContentWrapper);
   cardBody.appendChild(adviceButton);
-  cardBody.appendChild(photo);
-  cardBody.appendChild(cardTitle);
-  cardBody.appendChild(cardIngredients);
-  cardBody.appendChild(cardHowTo);
+  cardBodyWrapper.appendChild(photo);
+  cardBodyWrapper.appendChild(cardTitle);
+  cardBodyWrapper.appendChild(cardIngredients);
+  cardBodyWrapper.appendChild(cardHowTo);
+  cardBody.appendChild(cardBodyWrapper);
   card.appendChild(cardBody);
   mainCard.appendChild(card);
 
