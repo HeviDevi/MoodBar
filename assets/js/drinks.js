@@ -126,6 +126,7 @@ function switchMood(mood) {
 // Call switchMood with the mood from local storage
 switchMood(localStorage.getItem("userMood"));
 
+
 document.addEventListener("DOMContentLoaded", function () {
   // Retrieve stored inputs
   let userMood = localStorage.getItem("userMood");
@@ -146,7 +147,7 @@ function chooseRandomCocktail(spirit, mood) {
     .then((response) => response.json())
     .then((data) => {
       if (data.drinks && data.drinks.length > 0) {
-        displayCard(data.drinks[0]); // Display the first drink
+        displayCard(data.drinks[0]);
         displayDrink(data.drinks[0]); // Display the first drink details
       } else {
         console.error("No drinks found for the selected mood and spirit.");
@@ -328,3 +329,5 @@ function displayCard(drink) {
   card.appendChild(cardBody);
   optionCards.appendChild(card);
 }
+
+
