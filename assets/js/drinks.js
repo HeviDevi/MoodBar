@@ -141,77 +141,77 @@ document.addEventListener("DOMContentLoaded", function () {
 let userMood = localStorage.getItem("userMood");
 let userSpirit = localStorage.getItem("userSpirit");
 
-function spiritParameter(){
-   
+function spiritParameter() {
+  let spiritCategory = "";
 
-    let spiritCategory = ''
+  if (userSpirit === "gin") {
+    spiritCategory = "Gin";
+  } else if (userSpirit === "rum") {
+    spiritCategory = "light_rum";
+  } else if (userSpirit === "vodka") {
+    spiritCategory = "Vodka";
+  } else if (userSpirit === "tequila") {
+    spiritCategory = "Tequila";
+  }
 
-    if (userSpirit === 'gin') {
-        spiritCategory = 'Gin'
-} else if (userSpirit === 'rum') {
-        spiritCategory = 'light_rum'
-}  else if (userSpirit === 'vodka'){
-        spiritCategory = 'Vodka'
-} else if (userSpirit === 'tequila') {
-        spiritCategory = 'Tequila'
+  //returns spiritCategory as output of function so we can use it later in the ajax api call
+  return spiritCategory;
 }
 
-//returns spiritCategory as output of function so we can use it later in the ajax api call
-return spiritCategory
-};
+function ingredientParameter() {
+  let ingredientCategory = "";
 
-
-function ingredientParameter(){
-
-    let ingredientCategory = ''
-  
-    if (userMood === 'Happy') {
-        ingredientCategory = 'orange_juice'
-    } else if (userMood === 'Sad') {
-        ingredientCategory = 'triple_sec'
-    } else if (userMood === 'Angry') {
-        ingredientCategory = 'lemon_juice'
-    } else if (userMood === 'Exhausted') {
-        let exhaustedArray = ['coca-cola', 'grenadine','powdered_sugar'] 
-        let randomIndex = Math.floor(Math.random() * exhaustedArray.length)
-        ingredientCategory = exhaustedArray[randomIndex]
-    } else if (userMood === 'In Love') {
-        ingredientCategory = 'lime_juice'
-    }
-    return ingredientCategory
-};
+  if (userMood === "Happy") {
+    ingredientCategory = "orange_juice";
+  } else if (userMood === "Sad") {
+    ingredientCategory = "triple_sec";
+  } else if (userMood === "Angry") {
+    ingredientCategory = "lemon_juice";
+  } else if (userMood === "Exhausted") {
+    let exhaustedArray = ["coca-cola", "grenadine", "powdered_sugar"];
+    let randomIndex = Math.floor(Math.random() * exhaustedArray.length);
+    ingredientCategory = exhaustedArray[randomIndex];
+  } else if (userMood === "In Love") {
+    ingredientCategory = "lime_juice";
+  }
+  return ingredientCategory;
+}
 
 let chosenSpirit = spiritParameter();
 let chosenIngredient = ingredientParameter();
 
 function chooseRandomCocktail() {
- 
   ingredientParameter();
-  fetch('https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=' + chosenSpirit + ',' + chosenIngredient)
-    
-    .then(response => {
+  fetch(
+    "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=" +
+      chosenSpirit +
+      "," +
+      chosenIngredient
+  )
+    .then((response) => {
       return response.json();
-})
-    .then(result => {
+    })
+    .then((result) => {
       let randomDrink = Math.floor(Math.random() * result.drinks.length);
       // sets drinkId as the id of the randomly chosen drink
-      let drinkId = result.drinks[randomDrink].idDrink
+      let drinkId = result.drinks[randomDrink].idDrink;
       //just logs the name of the drink
-      console.log(result.drinks[randomDrink].strDrink)
+      console.log(result.drinks[randomDrink].strDrink);
       //passes the Id of the chosen drink to the DrinkDetails function
       getDrinkDetails(drinkId);
-    })
+    });
 }
 
-function getDrinkDetails(drinkId){
-  
-  fetch('https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=' + drinkId,)
-  .then(response => {
+function getDrinkDetails(drinkId) {
+  fetch(
+    "https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=" + drinkId
+  )
+    .then((response) => {
       return response.json();
-  })
-  .then(result=> {              
+    })
+    .then((result) => {
       displayDrink(result.drinks[0]);
-  })
+    });
 }
 
 // Main Drink Card
@@ -335,6 +335,20 @@ const displayDrink = function (drink) {
       adviceContent.style.display === "none" ? "block" : "none";
   });
 
+  const favoritesButton = document.createElement("button");
+  favoritesButton.className = "btn btn-dark mt-1";
+  favoritesButton.textContent = "Favorite";
+
+  const favoritesContainer = document.createElement("div");
+  favoritesContainer.className = "favoritesContainer";
+  favoritesContainer.style.display = "flex";
+  favoritesContainer.style.justifyContent = "flex-end";
+  favoritesContainer.style.width = "100%";
+  favoritesContainer.appendChild(favoritesButton);
+
+  favoritesButton.addEventListener("click", function () {
+  })
+
   // Append elements to cardBody
   adviceContentWrapper.appendChild(bartenderImage);
   adviceContentWrapper.appendChild(adviceContent);
@@ -344,13 +358,13 @@ const displayDrink = function (drink) {
   cardBody.appendChild(cardTitle);
   cardBody.appendChild(cardIngredients);
   cardBody.appendChild(cardHowTo);
+  cardBody.appendChild(favoritesContainer);
   card.appendChild(cardBody);
   mainCard.appendChild(card);
 
   // Fetch a random quote after displaying the drink
   fetchAndDisplayQuote();
 };
-
 
 function displayCard(drink) {
   const optionCards = document.querySelector(".drinkOptionCards");
@@ -377,5 +391,3 @@ function displayCard(drink) {
   card.appendChild(cardBody);
   optionCards.appendChild(card);
 }
-
-
