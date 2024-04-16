@@ -301,7 +301,7 @@ const displayDrink = function (drink) {
   ingredientHowToWrapper.className = "ingredientHowToWrapper"; 
   ingredientHowToWrapper.style.display = "flex";
   ingredientHowToWrapper.style.justifyContent = "flex-start";
-  ingredientHowToWrapper.style.gap = "120px";
+  ingredientHowToWrapper.style.gap = "110px";
 
   const cardIngredients = document.createElement("ul"); // Create <ul> element
   cardIngredients.className = "ingredients mt-4";
