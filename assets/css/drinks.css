@@ -169,3 +169,12 @@ a:hover {
 .mainCard h1 {
   font-size: 70px;
 }
+
+.favoriteBtn {
+  background-color: transparent;
+  font-size: 40px;
+}
+
+.favoriteBtn:hover {
+  color: #cc99ff;
+}

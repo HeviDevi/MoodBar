@@ -338,8 +338,8 @@ const displayDrink = function (drink) {
   });
 
   const favoritesButton = document.createElement("button");
-  favoritesButton.className = "btn btn-dark mt-1";
-  favoritesButton.textContent = "Favorite";
+  favoritesButton.className = "favoriteBtn btn mt-1";
+  favoritesButton.innerHTML = '<i class="fa-regular fa-olive"></i>';
 
   const favoritesContainer = document.createElement("div");
   favoritesContainer.className = "favoritesContainer";
@@ -372,29 +372,3 @@ const displayDrink = function (drink) {
   // Fetch a random quote after displaying the drink
   fetchAndDisplayQuote();
 };
-
-// function displayCard(drink) {
-//   const optionCards = document.querySelector(".drinkOptionCards");
-//   optionCards.innerHTML = "";
-
-//   const card = document.createElement("div");
-//   card.classList.add("card", "m-3");
-//   card.style.width = "100%";
-
-//   const cardBody = document.createElement("div");
-//   cardBody.classList.add("card-body");
-
-//   const photo = document.createElement("img");
-//   photo.src = drink.strDrinkThumb;
-//   photo.alt = "Drink Photo";
-//   photo.classList.add("card-img-top");
-
-//   const cardTitle = document.createElement("h5");
-//   cardTitle.classList.add("card-title");
-//   cardTitle.textContent = drink.strDrink;
-
-//   cardBody.appendChild(photo);
-//   cardBody.appendChild(cardTitle);
-//   card.appendChild(cardBody);
-//   optionCards.appendChild(card);
-// }
