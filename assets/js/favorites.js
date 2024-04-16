@@ -13,34 +13,9 @@ function displayfavorites(favorites) {
     cardBody.style.display = "flex";
     cardBody.style.flexDirection = "column";
 
-    //   Background color based on mood
-
-    switch (localStorage.getItem("userMood")) {
-      case "Happy":
-        card.classList.add("cardHappy");
-        break;
-      case "Sad":
-        card.classList.add("cardSad");
-        break;
-      case "Angry":
-        card.classList.add("cardAngry");
-        break;
-      case "Exhausted":
-        card.classList.add("cardExhausted");
-        break;
-      case "In Love":
-        card.classList.add("cardInLove");
-        break;
-      default:
-        // Default background color
-        card.style.backgroundColor = "#0d0d0d";
-    }
-
-    // Make the background color solid
-    card.style.opacity = "1";
-
     const deleteButton = document.createElement("button");
-    deleteButton.className = "deleteBtn btn mt-1";
+    deleteButton.id = "delete-btn";
+    deleteButton.className = "btn mt-1";
     deleteButton.innerHTML = '<i class="fa-regular fa-trash"></i>';
 
     const deleteContainer = document.createElement("div");
@@ -49,6 +24,13 @@ function displayfavorites(favorites) {
     deleteContainer.style.justifyContent = "flex-end";
     deleteContainer.style.width = "100%";
     deleteContainer.appendChild(deleteButton);
+
+    const photoTitleWrapper = document.createElement("div");
+    photoTitleWrapper.className = "photoTitleWrapper";
+    photoTitleWrapper.style.display = "flex";
+    photoTitleWrapper.style.alignItems = "center";
+    photoTitleWrapper.style.justifyContent = "flex-start";
+    photoTitleWrapper.style.gap = "20px";
 
     const photo = document.createElement("img");
     photo.src = drink.strDrinkThumb || "./assets/images/placeholder.jpg"; // Fallback to a placeholder image
@@ -59,8 +41,18 @@ function displayfavorites(favorites) {
     cardTitle.className = "card-title";
     cardTitle.textContent = drink.strDrink || "No drink name available";
 
+    const ingredientHowToWrapper = document.createElement("div");
+    ingredientHowToWrapper.className = "ingredientHowToWrapper";
+    ingredientHowToWrapper.style.display = "flex";
+    ingredientHowToWrapper.style.justifyContent = "flex-start";
+    ingredientHowToWrapper.style.gap = "70px";
+
     const cardIngredients = document.createElement("ul"); // Create <ul> element
-    cardIngredients.className = "ingredients";
+    cardIngredients.className = "ingredients mt-4";
+
+    const header = document.createElement("h3");
+    header.textContent = "Ingredients:";
+    cardIngredients.appendChild(header);
 
     // Create a for loop for ingredients and make it a list with <li> element
     for (let i = 0; i <= 20; i++) {
@@ -76,22 +68,25 @@ function displayfavorites(favorites) {
     if (cardIngredients.children.length === 0) {
       const listItem = document.createElement("li");
       listItem.textContent = "No ingredients available";
-      cardIngredients.appendChild(listItem);
     }
-
-    // Append cardIngredients to cardBody
-    cardBody.appendChild(cardIngredients);
 
     const cardHowTo = document.createElement("p");
     cardHowTo.className = "how-to";
-    cardHowTo.textContent = "Instructions: " + drink.strInstructions;
+    cardHowTo.textContent = drink.strInstructions;
+
+    const instructionHeader = document.createElement("h3");
+    instructionHeader.className = "instructionHeader mt-4";
+    instructionHeader.textContent = "Instructions:";
+    cardHowTo.prepend(instructionHeader);
 
     // Append elements to cardBody
     cardBody.appendChild(deleteContainer);
-    cardBody.appendChild(photo);
-    cardBody.appendChild(cardTitle);
-    cardBody.appendChild(cardIngredients);
-    cardBody.appendChild(cardHowTo);
+    cardBody.appendChild(photoTitleWrapper);
+    photoTitleWrapper.appendChild(photo);
+    photoTitleWrapper.appendChild(cardTitle);
+    cardBody.appendChild(ingredientHowToWrapper);
+    ingredientHowToWrapper.appendChild(cardIngredients);
+    ingredientHowToWrapper.appendChild(cardHowTo);
 
     card.appendChild(cardBody);
     favoritesCard.appendChild(card);
