@@ -1,7 +1,48 @@
+// BACKGROUND FACE ANIMATIONS//
+
+// For Happy Face Background Animation
+for (let  i= 0;  i<=50; i++) {
+  let happyFace = document.createElement('div');
+  happyFace.classList.add('happy');
+  let size = Math.random() * 15;
+  happyFace.style.fontSize = 3 + size + 'px';
+  happyFace.style.right = Math.random() * + innerWidth + 'px';
+  happyFace.style.top = Math.random() * + innerHeight + 'px';
+  document.querySelector('.background-faces').appendChild(happyFace);
+}
+
+function animateHappy() {
+  let allHappy = document.querySelectorAll('.happy');
+  let num = Math.floor(Math.random()* allHappy.length);
+  allHappy[num].classList.toggle('animate');
+}
+
+// For Sad Face Background Animation
+for(let i=0; i<=50; i++) {
+  let sadFace = document.createElement('div');
+  sadFace.classList.add('sad');
+  let size = Math.random() * 15;
+  sadFace.style.fontSize = 3 + size + 'px';
+  sadFace.style.right = Math.random() * + innerWidth + 'px';
+  sadFace.style.top = Math.random() * + innerHeight + 'px';
+  document.querySelector('.background-faces').appendChild(sadFace);
+}
+
+
+function animateSad() {
+  let allSad = document.querySelectorAll('.sad');
+  let num2 = Math.floor(Math.random()*allSad.length);
+  allSad[num2].classList.toggle('animate');
+}
+
+setInterval(animateHappy, 50);
+setInterval(animateSad, 50);
+
+
 let favorites = JSON.parse(localStorage.getItem("savedDrinks")) || [];
 
 function displayfavorites(favorites) {
-  const mainCard = document.querySelector(".mainCard");
+  const favoritesCard = document.querySelector(".favoritesCard");
 
   favorites.forEach((drink) => {
     const card = document.createElement("div");
@@ -12,32 +53,6 @@ function displayfavorites(favorites) {
     cardBody.className = "card-body";
     cardBody.style.display = "flex";
     cardBody.style.flexDirection = "column";
-
-    //   Background color based on mood
-
-    switch (localStorage.getItem("userMood")) {
-      case "Happy":
-        card.classList.add("cardHappy");
-        break;
-      case "Sad":
-        card.classList.add("cardSad");
-        break;
-      case "Angry":
-        card.classList.add("cardAngry");
-        break;
-      case "Exhausted":
-        card.classList.add("cardExhausted");
-        break;
-      case "In Love":
-        card.classList.add("cardInLove");
-        break;
-      default:
-        // Default background color
-        card.style.backgroundColor = "#0d0d0d";
-    }
-
-    // Make the background color solid
-    card.style.opacity = "1";
 
     const deleteButton = document.createElement("button");
     deleteButton.id = "deleteBtn";
@@ -52,17 +67,34 @@ function displayfavorites(favorites) {
     deleteContainer.style.width = "100%";
     deleteContainer.appendChild(deleteButton);
 
+    const photoTitleWrapper = document.createElement("div");
+    photoTitleWrapper.className = "photoTitleWrapper";
+    photoTitleWrapper.style.display = "flex";
+    photoTitleWrapper.style.alignItems = "center";
+    photoTitleWrapper.style.justifyContent = "flex-start";
+    photoTitleWrapper.style.gap = "20px";
+
     const photo = document.createElement("img");
     photo.src = drink.strDrinkThumb || "./assets/images/placeholder.jpg"; // Fallback to a placeholder image
     photo.className = "card-img-top mt-3";
-    photo.style.width = "200px"; // Set size of the image
+    photo.style.width = "220px"; // Set size of the image
 
     const cardTitle = document.createElement("h1");
     cardTitle.className = "card-title";
     cardTitle.textContent = drink.strDrink || "No drink name available";
 
+    const ingredientHowToWrapper = document.createElement("div");
+    ingredientHowToWrapper.className = "ingredientHowToWrapper";
+    ingredientHowToWrapper.style.display = "flex";
+    ingredientHowToWrapper.style.justifyContent = "flex-start";
+    ingredientHowToWrapper.style.gap = "100px";
+
     const cardIngredients = document.createElement("ul"); // Create <ul> element
-    cardIngredients.className = "ingredients";
+    cardIngredients.className = "ingredients mt-4";
+
+    const header = document.createElement("h3");
+    header.textContent = "Ingredients:";
+    cardIngredients.appendChild(header);
 
     // Create a for loop for ingredients and make it a list with <li> element
     for (let i = 0; i <= 20; i++) {
@@ -78,25 +110,28 @@ function displayfavorites(favorites) {
     if (cardIngredients.children.length === 0) {
       const listItem = document.createElement("li");
       listItem.textContent = "No ingredients available";
-      cardIngredients.appendChild(listItem);
     }
-
-    // Append cardIngredients to cardBody
-    cardBody.appendChild(cardIngredients);
 
     const cardHowTo = document.createElement("p");
     cardHowTo.className = "how-to";
-    cardHowTo.textContent = "Instructions: " + drink.strInstructions;
+    cardHowTo.textContent = drink.strInstructions;
+
+    const instructionHeader = document.createElement("h3");
+    instructionHeader.className = "instructionHeader mt-4";
+    instructionHeader.textContent = "Instructions:";
+    cardHowTo.prepend(instructionHeader);
 
     // Append elements to cardBody
     cardBody.appendChild(deleteContainer);
-    cardBody.appendChild(photo);
-    cardBody.appendChild(cardTitle);
-    cardBody.appendChild(cardIngredients);
-    cardBody.appendChild(cardHowTo);
+    cardBody.appendChild(photoTitleWrapper);
+    photoTitleWrapper.appendChild(photo);
+    photoTitleWrapper.appendChild(cardTitle);
+    cardBody.appendChild(ingredientHowToWrapper);
+    ingredientHowToWrapper.appendChild(cardIngredients);
+    ingredientHowToWrapper.appendChild(cardHowTo);
 
     card.appendChild(cardBody);
-    mainCard.appendChild(card);
+    favoritesCard.appendChild(card);
   });
 }
 
