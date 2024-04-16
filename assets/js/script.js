@@ -59,6 +59,11 @@ document.addEventListener('DOMContentLoaded', function () {
     $(document).ready(function() {
         $('#submit').click(function(event) {
             event.preventDefault();
+
+            var audio = document.getElementById('buttonClickSound');
+            audio.currentTime = 0; // Rewind to the start if already playing
+            audio.play()
+            
             let userMood = $('#userMood').val();
             let userSpirit = $('#userSpirit').val();
             
