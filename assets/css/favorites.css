@@ -79,12 +79,12 @@ a:hover {
   color:rgb(217, 221, 117);
 }
 
-#delete-btn {
-  font-size: 30px;
+.deleteBtn {
+  font-size: 20px;
   color: #f9f6ec;
 }
 
-#delete-btn:hover {
+.deleteBtn:hover {
   color: #914949;
 }
 
