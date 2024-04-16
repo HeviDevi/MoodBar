@@ -61,9 +61,10 @@ document.addEventListener('DOMContentLoaded', function () {
             event.preventDefault();
 
             var audio = document.getElementById('buttonClickSound');
-            audio.currentTime = 0; // Rewind to the start if already playing
+            audio.currentTime = 0;
+            audio.volume = 0.5;
             audio.play()
-            
+
             let userMood = $('#userMood').val();
             let userSpirit = $('#userSpirit').val();
             
