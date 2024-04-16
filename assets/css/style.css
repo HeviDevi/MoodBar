@@ -9,6 +9,7 @@ body {
         background-image: url(../images/drinkFinal.png);
         background-repeat: repeat;
         background-size: cover;
+        overflow-y: auto;
 }
 
 
@@ -73,7 +74,7 @@ body {
 
 /* Navbar */
 .navbar {
-    background-color: #0d0d0d;
+    background-color:
 }
 
 ul {
