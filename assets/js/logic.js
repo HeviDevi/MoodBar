@@ -255,7 +255,7 @@ function fetchAndDisplayQuote() {
     $.ajax({
         method: 'GET',
         url: 'https://api.api-ninjas.com/v1/quotes?category=' + encodeURIComponent(quoteCategory),
-        headers: { 'X-Api-Key': 'lbuDF/d/4FN0Qtt3UdYKZw==0Y6n8GL3b39NEA5m'},
+        headers: { 'X-Api-Key': 'QHvUKMLC0CIq94vTFp7sNw==BSmeNtqXhYs1KNhl'},
         contentType: 'application/json',
         success: function(result) {
             if (result && result.length > 0) {
