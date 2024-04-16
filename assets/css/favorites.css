@@ -18,3 +18,30 @@
   p {
     font-family: "Roboto", sans-serif;
   }
+
+  /* NAVBAR */
+ul {
+  list-style-type: none;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-color: #cc99ff;
+}
+
+.background-faces {
+  position: relativ;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
