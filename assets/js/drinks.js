@@ -290,7 +290,7 @@ const displayDrink = function (drink) {
   const photo = document.createElement("img");
   photo.src = drink.strDrinkThumb || "./assets/images/placeholder.jpg"; // Fallback to a placeholder image
   photo.className = "card-img-top mt-3";
-  photo.style.width = "200px"; // Set size of the image
+  photo.style.width = "250px"; // Set size of the image
 
   const cardTitle = document.createElement("h1");
   cardTitle.className = "card-title";
@@ -298,6 +298,10 @@ const displayDrink = function (drink) {
 
   const cardIngredients = document.createElement("ul"); // Create <ul> element
   cardIngredients.className = "ingredients";
+
+  const header = document.createElement("h3");
+  header.textContent = "Ingredients:";
+  cardIngredients.appendChild(header);
 
   // Create a for loop for ingredients and make it a list with <li> element
   for (let i = 0; i <= 20; i++) {
@@ -334,8 +338,8 @@ const displayDrink = function (drink) {
   });
 
   const favoritesButton = document.createElement("button");
-  favoritesButton.className = "btn btn-dark mt-1";
-  favoritesButton.textContent = "Favorite";
+  favoritesButton.className = "favoriteBtn btn mt-1";
+  favoritesButton.innerHTML = '<i class="fa-regular fa-olive"></i>';
 
   const favoritesContainer = document.createElement("div");
   favoritesContainer.className = "favoritesContainer";
@@ -368,29 +372,3 @@ const displayDrink = function (drink) {
   // Fetch a random quote after displaying the drink
   fetchAndDisplayQuote();
 };
-
-// function displayCard(drink) {
-//   const optionCards = document.querySelector(".drinkOptionCards");
-//   optionCards.innerHTML = "";
-
-//   const card = document.createElement("div");
-//   card.classList.add("card", "m-3");
-//   card.style.width = "100%";
-
-//   const cardBody = document.createElement("div");
-//   cardBody.classList.add("card-body");
-
-//   const photo = document.createElement("img");
-//   photo.src = drink.strDrinkThumb;
-//   photo.alt = "Drink Photo";
-//   photo.classList.add("card-img-top");
-
-//   const cardTitle = document.createElement("h5");
-//   cardTitle.classList.add("card-title");
-//   cardTitle.textContent = drink.strDrink;
-
-//   cardBody.appendChild(photo);
-//   cardBody.appendChild(cardTitle);
-//   card.appendChild(cardBody);
-//   optionCards.appendChild(card);
-// }
