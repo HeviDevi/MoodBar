@@ -198,6 +198,7 @@ function chooseRandomCocktail() {
       //just logs the name of the drink
       console.log(result.drinks[randomDrink].strDrink);
       //passes the Id of the chosen drink to the DrinkDetails function
+     
       getDrinkDetails(drinkId);
     });
 }
@@ -226,6 +227,8 @@ const displayDrink = function (drink) {
     console.error("Main card element not found.");
     return;
   }
+
+  sessionStorage.setItem("drink", JSON.stringify(drink));
 
   mainCard.innerHTML = ""; // Clears previous content
 
@@ -347,7 +350,12 @@ const displayDrink = function (drink) {
   favoritesContainer.appendChild(favoritesButton);
 
   favoritesButton.addEventListener("click", function () {
-  })
+    let favorites = JSON.parse(localStorage.getItem("savedDrinks")) || [];
+    let newDrink = JSON.parse(sessionStorage.getItem("drink"));
+    favorites.push(newDrink);
+    localStorage.setItem("savedDrinks", JSON.stringify(favorites));
+  });
+
 
   // Append elements to cardBody
   adviceContentWrapper.appendChild(bartenderImage);
