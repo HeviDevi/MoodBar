@@ -103,23 +103,18 @@ function switchMood(mood) {
   if (mood === "Happy") {
     setInterval(animateHappy, 50);
     // moodSelection.className = 'cardHappy';  ---intervals will activate background.
-    optionMood.className = "optionHappy";
   } else if (mood === "Sad") {
     // moodSelection.className = 'cardSad';
     setInterval(animateSad, 50);
-    optionMood.className = "optionSad";
   } else if (mood === "Angry") {
     // moodSelection.className = 'cardAngry';
     setInterval(animateAngry, 50);
-    optionMood.className = "optionAngry";
-  } else if (mood === "Exhausted") {
+     } else if (mood === "Exhausted") {
     // moodSelection.className = 'cardExhausted';
     setInterval(animateExhausted, 50);
-    optionMood.className = "optionExhausted";
   } else if (mood === "In Love") {
     // moodSelection.className = 'cardInLove';
     setInterval(animateInLove, 50);
-    optionMood.className = "optionInLove";
   }
 }
 
@@ -366,28 +361,28 @@ const displayDrink = function (drink) {
   fetchAndDisplayQuote();
 };
 
-function displayCard(drink) {
-  const optionCards = document.querySelector(".drinkOptionCards");
-  optionCards.innerHTML = "";
+// function displayCard(drink) {
+//   const optionCards = document.querySelector(".drinkOptionCards");
+//   optionCards.innerHTML = "";
 
-  const card = document.createElement("div");
-  card.classList.add("card", "m-3");
-  card.style.width = "100%";
+//   const card = document.createElement("div");
+//   card.classList.add("card", "m-3");
+//   card.style.width = "100%";
 
-  const cardBody = document.createElement("div");
-  cardBody.classList.add("card-body");
+//   const cardBody = document.createElement("div");
+//   cardBody.classList.add("card-body");
 
-  const photo = document.createElement("img");
-  photo.src = drink.strDrinkThumb;
-  photo.alt = "Drink Photo";
-  photo.classList.add("card-img-top");
+//   const photo = document.createElement("img");
+//   photo.src = drink.strDrinkThumb;
+//   photo.alt = "Drink Photo";
+//   photo.classList.add("card-img-top");
 
-  const cardTitle = document.createElement("h5");
-  cardTitle.classList.add("card-title");
-  cardTitle.textContent = drink.strDrink;
+//   const cardTitle = document.createElement("h5");
+//   cardTitle.classList.add("card-title");
+//   cardTitle.textContent = drink.strDrink;
 
-  cardBody.appendChild(photo);
-  cardBody.appendChild(cardTitle);
-  card.appendChild(cardBody);
-  optionCards.appendChild(card);
-}
+//   cardBody.appendChild(photo);
+//   cardBody.appendChild(cardTitle);
+//   card.appendChild(cardBody);
+//   optionCards.appendChild(card);
+// }
