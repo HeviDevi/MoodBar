@@ -11,9 +11,8 @@ body {
   overflow-y: auto;
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6{
   font-family: "Oleo Script", system-ui;
-  font-size: 70px;
 } 
 
 p {
@@ -21,7 +20,7 @@ p {
 }
 
 
-Navbar
+/* Navbar */
 .navbar {
   background-color: #0d0d0d;
 }
@@ -165,4 +164,8 @@ a:hover {
   display: flex;
   justify-content: center; 
   align-items: center;
+}
+
+.mainCard h1 {
+  font-size: 70px;
 }

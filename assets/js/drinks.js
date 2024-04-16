@@ -290,7 +290,7 @@ const displayDrink = function (drink) {
   const photo = document.createElement("img");
   photo.src = drink.strDrinkThumb || "./assets/images/placeholder.jpg"; // Fallback to a placeholder image
   photo.className = "card-img-top mt-3";
-  photo.style.width = "200px"; // Set size of the image
+  photo.style.width = "250px"; // Set size of the image
 
   const cardTitle = document.createElement("h1");
   cardTitle.className = "card-title";
@@ -298,6 +298,10 @@ const displayDrink = function (drink) {
 
   const cardIngredients = document.createElement("ul"); // Create <ul> element
   cardIngredients.className = "ingredients";
+
+  const header = document.createElement("h3");
+  header.textContent = "Ingredients:";
+  cardIngredients.appendChild(header);
 
   // Create a for loop for ingredients and make it a list with <li> element
   for (let i = 0; i <= 20; i++) {
