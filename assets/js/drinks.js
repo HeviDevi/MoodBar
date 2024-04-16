@@ -353,6 +353,7 @@ const displayDrink = function (drink) {
     let newDrink = JSON.parse(sessionStorage.getItem("drink"));
     favorites.push(newDrink);
     localStorage.setItem("savedDrinks", JSON.stringify(favorites));
+    window.location.href = 'favorites.html'
   });
 
 
