@@ -21,9 +21,7 @@ p {
 
 
 /* Navbar */
-.navbar {
-  background-color: #0d0d0d;
-}
+
 ul {
   list-style-type: none;
 }
@@ -170,6 +168,16 @@ a:hover {
 
 .mainCard h1 {
   font-size: 70px;
+}
+
+.advice-content-wrapper {
+  display: none;
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+  background-color: #0d0d0d;
+  border-radius: 10px;
+  color: #ffffff;
 }
 
 .favoriteBtn {
