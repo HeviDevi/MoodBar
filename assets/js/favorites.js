@@ -86,7 +86,7 @@ function displayfavorites(favorites) {
     ingredientHowToWrapper.className = "ingredientHowToWrapper";
     ingredientHowToWrapper.style.display = "flex";
     ingredientHowToWrapper.style.justifyContent = "flex-start";
-    ingredientHowToWrapper.style.gap = "85px";
+    ingredientHowToWrapper.style.gap = "100px";
 
     const cardIngredients = document.createElement("ul"); // Create <ul> element
     cardIngredients.className = "ingredients mt-4";
