@@ -1,7 +1,7 @@
 let favorites = JSON.parse(localStorage.getItem("savedDrinks")) || [];
 
 function displayfavorites(favorites) {
-  const mainCard = document.querySelector(".mainCard");
+  const favoritesCard = document.querySelector(".favoritesCard");
 
   favorites.forEach((drink) => {
     const card = document.createElement("div");
@@ -94,7 +94,7 @@ function displayfavorites(favorites) {
     cardBody.appendChild(cardHowTo);
 
     card.appendChild(cardBody);
-    mainCard.appendChild(card);
+    favoritesCard.appendChild(card);
   });
 }
 
