@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let today = dayjs();
     const minAge = today.subtract(21, 'year').format('MM-DD-YYYY');
     let submitEl = document.getElementById('btn');
-    let storedUserAge = JSON.parse(localStorage.getItem('storedAge')) || []; 
+    let storedUserAge = JSON.parse(sessionStorage.getItem('storedAge')) || []; 
 
     /// Function that closes the Modal, we can call this function later so we have DRY code
     function acceptAge(){
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
             invalidMessageElement.innerHTML += `<span style="color: red;"> Invalid Date </span>`;
         } else {
             storedUserAge.push(enteredAge.format('MM-DD-YYYY'));
-            localStorage.setItem('storedAge', JSON.stringify(storedUserAge));
+            sessionStorage.setItem('storedAge', JSON.stringify(storedUserAge));
             acceptAge(); // Calls function to close modal if minAge is met
         }
     }
