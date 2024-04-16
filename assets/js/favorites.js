@@ -55,10 +55,9 @@ function displayfavorites(favorites) {
     cardBody.style.flexDirection = "column";
 
     const deleteButton = document.createElement("button");
-    deleteButton.id = "deleteBtn";
     deleteButton.className = "deleteBtn btn mt-1";
     deleteButton.innerHTML = '<i class="fa-regular fa-trash"></i>';
-    deleteButton.addEventListener("click", handleDeleteTask);
+    deleteButton.addEventListener("click", handleDeleteFavorite);
 
     const deleteContainer = document.createElement("div");
     deleteContainer.className = "deleteContainer";
@@ -139,18 +138,15 @@ addEventListener("DOMContentLoaded", function () {
   displayfavorites(favorites);
 });
 
-function handleDeleteTask() {
+function handleDeleteFavorite() {
  console.log('Delete button clicked');
 
- let deletedDrink = this.cardtitle.textContent;
+ let deletedDrink = this.parentElement.parentElement.querySelector(".card-title").textContent;
   console.log(deletedDrink);
 
- favorites.forEach((drink) => {
-    if (drink.strDrink === deletedDrink) {
-      favorites.filter((drink) => drink.strDrink !== deletedDrink);
-    }
-  })
-  this.parentElement.remove;
+  favorites = favorites.filter((drink) => drink.strDrink !== deletedDrink);
+    
+  this.parentElement.parentElement.parentElement.remove();
   localStorage.setItem("savedDrinks", JSON.stringify(favorites));
 }
 
