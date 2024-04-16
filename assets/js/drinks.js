@@ -246,13 +246,6 @@ const displayDrink = function (drink) {
 
   const adviceContentWrapper = document.createElement("div");
   adviceContentWrapper.className = "advice-content-wrapper";
-  adviceContentWrapper.style.display = "none"; // Initially hide the advice content wrapper
-  adviceContentWrapper.style.display = "flex"; // Set display to flex
-  adviceContentWrapper.style.alignItems = "center"; // Align items vertically
-  adviceContentWrapper.style.marginLeft = "15px"; // Add some space between the image and advice
-  adviceContentWrapper.style.backgroundColor = "#0d0d0d"; // Set the background color
-  adviceContentWrapper.style.borderRadius = "10px"; // Add border radius
-  adviceContentWrapper.style.color = "#ffffff"; // Set font color to white
 
   const adviceContent = document.createElement("div");
   adviceContent.className = "advice-content";
@@ -287,7 +280,13 @@ const displayDrink = function (drink) {
   // Make the background color solid
   card.style.opacity = "1";
 
-  const photo = document.createElement("img");
+  const photoTitleWrapper = document.createElement("div");
+  photoTitleWrapper.style.display = "flex";
+  photoTitleWrapper.style.alignItems = "center";
+  photoTitleWrapper.style.justifyContent = "flex-start";
+  photoTitleWrapper.style.gap = "10px";
+
+  const photo = document.createElement("img");  
   photo.src = drink.strDrinkThumb || "./assets/images/placeholder.jpg"; // Fallback to a placeholder image
   photo.className = "card-img-top mt-3";
   photo.style.width = "250px"; // Set size of the image
@@ -364,6 +363,7 @@ const displayDrink = function (drink) {
   cardBody.appendChild(adviceButton);
   cardBody.appendChild(photo);
   cardBody.appendChild(cardTitle);
+  cardBody.appendChild(photoTitleWrapper);
   cardBody.appendChild(cardIngredients);
   cardBody.appendChild(cardHowTo);
   cardBody.appendChild(favoritesContainer);
