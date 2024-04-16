@@ -71,7 +71,7 @@ body {
     opacity: 1 !important;
     }
 
-    
+
 /* Navbar */
 ul {
     list-style-type: none;
@@ -85,14 +85,6 @@ a:link {
 a:hover {
     text-decoration: underline;
     text-decoration-color: #cc99ff;
-}
-
-
-/* Drink Background */
-.drinkBackground {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
 }
 
 /* Face Background */
