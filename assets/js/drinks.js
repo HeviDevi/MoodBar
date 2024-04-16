@@ -351,10 +351,19 @@ const displayDrink = function (drink) {
   favoritesButton.addEventListener("click", function () {
     let favorites = JSON.parse(localStorage.getItem("savedDrinks")) || [];
     let newDrink = JSON.parse(sessionStorage.getItem("drink"));
-    favorites.push(newDrink);
-    localStorage.setItem("savedDrinks", JSON.stringify(favorites));
-    window.location.href = 'favorites.html'
-  });
+    let duplicate = false;
+    favorites.forEach(drink => {
+      if (drink.idDrink === newDrink.idDrink){
+        duplicate = true;
+        return;
+    }}); 
+    if (duplicate){
+      return;
+    } else if (!duplicate) {
+      favorites.push(newDrink);
+      localStorage.setItem("savedDrinks", JSON.stringify(favorites));
+      window.location.href = 'favorites.html'
+}});
 
 
   // Append elements to cardBody
