@@ -297,8 +297,14 @@ const displayDrink = function (drink) {
   cardTitle.className = "card-title";
   cardTitle.textContent = drink.strDrink || "No drink name available";
 
+  const ingredientHowToWrapper = document.createElement("div");
+  ingredientHowToWrapper.className = "ingredientHowToWrapper"; 
+  ingredientHowToWrapper.style.display = "flex";
+  ingredientHowToWrapper.style.justifyContent = "flex-start";
+  ingredientHowToWrapper.style.gap = "120px";
+
   const cardIngredients = document.createElement("ul"); // Create <ul> element
-  cardIngredients.className = "ingredients";
+  cardIngredients.className = "ingredients mt-4";
 
   const header = document.createElement("h3");
   header.textContent = "Ingredients:";
@@ -318,15 +324,16 @@ const displayDrink = function (drink) {
   if (cardIngredients.children.length === 0) {
     const listItem = document.createElement("li");
     listItem.textContent = "No ingredients available";
-    cardIngredients.appendChild(listItem);
   }
-
-  // Append cardIngredients to cardBody
-  cardBody.appendChild(cardIngredients);
 
   const cardHowTo = document.createElement("p");
   cardHowTo.className = "how-to";
-  cardHowTo.textContent = "Instructions: " + drink.strInstructions;
+  cardHowTo.textContent = drink.strInstructions;
+
+  const instructionHeader = document.createElement("h3");
+  instructionHeader.className = "instructionHeader mt-4";
+  instructionHeader.textContent = "Instructions:";
+  cardHowTo.prepend(instructionHeader);
 
   adviceButton.addEventListener("click", function () {
     card.classList.toggle("open");
@@ -375,8 +382,9 @@ const displayDrink = function (drink) {
   photoTitleWrapper.appendChild(photo);
   photoTitleWrapper.appendChild(cardTitle);
   cardBody.appendChild(photoTitleWrapper);
-  cardBody.appendChild(cardIngredients);
-  cardBody.appendChild(cardHowTo);
+  cardBody.appendChild(ingredientHowToWrapper);
+  ingredientHowToWrapper.appendChild(cardIngredients);
+  ingredientHowToWrapper.appendChild(cardHowTo);
   cardBody.appendChild(favoritesContainer);
   card.appendChild(cardBody);
   mainCard.appendChild(card);
