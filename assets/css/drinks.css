@@ -163,6 +163,11 @@ a:hover {
   align-items: center;
 }
 
+.card-body {
+  border-radius: 10px;
+  box-shadow: 0 0 10px white, 0 0 15px white;
+}
+
 .mainCard h1 {
   font-size: 50px;
 }
