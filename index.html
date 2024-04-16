@@ -1,182 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://kit.fontawesome.com/18edf71f99.css"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Mood Bar</title>
-  </head>
 
-  <body>
-    <main>
-      <!-- Navbar -->
-      <div
-        class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
-        <div class="p-2">
-          <ul>
-            <li><a class="text-body" href="index.html">HOME</a></li>
-            <li><a class="text-body" href="author.html">CONTRIBUTORS</a></li>
-            <li><a class="text-body" id="eraseAge" href="index.html">LEAVE THE BAR</a></li>
-            </ul>            
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://kit.fontawesome.com/18edf71f99.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>Mood Bar</title>
+</head>
+
+<body>
+  <main>
+    <!-- Navbar -->
+    <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
+      <div class="p-2">
+        <ul>
+          <li><a class="text-body" href="index.html">HOME</a></li>
+          <li><a class="text-body" href="author.html">CONTRIBUTORS</a></li>
+          <li><a class="text-body" id="eraseAge" href="index.html">LEAVE THE BAR</a></li>
+        </ul>
       </div>
-      <nav class="navbar">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
+    </div>
+    <nav class="navbar">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
     </nav>
 
-      <!-- Modal -->
-      <section class="container-fluid">
-        <div class="modal" tabindex="-1" id="dobModal">
-          <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-              <!-- Modal Header -->
-              <div class="modal-header justify-content-center">
-                <h1 class="modal-title">ID Please.</h1>
-              </div>
+    <!-- Modal -->
+    <section class="container-fluid">
+      <div class="modal" tabindex="-1" id="dobModal">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header justify-content-center">
+              <h1 class="modal-title">ID Please.</h1>
+            </div>
 
-              <!-- Modal Body -->
-              <div class="modal-body">
-                <div class="row justify-content-center">
-                  <div class="col-md-6">
-                    <div class="mb-3">
-                      <label for="dobDate" class="col-form-label just"
-                        >Date of Birth</label
-                      >
-                      <input
-                        autocomplete="off"
-                        type="text"
-                        placeholder="MM-DD-YYYY"
-                        id="ageSelector"
-                        class="form-control"
-                        min="2000-01-01"
-                      />
-                      <div class="invalid"></div>
-                    </div>
+            <!-- Modal Body -->
+            <div class="modal-body">
+              <div class="row justify-content-center">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="dobDate" class="col-form-label just">Date of Birth</label>
+                    <input autocomplete="off" type="text" placeholder="MM-DD-YYYY" id="ageSelector" class="form-control"
+                      min="2000-01-01" />
+                    <div class="invalid"></div>
                   </div>
                 </div>
               </div>
+            </div>
 
-              <!-- Modal Button -->
-              <div class="modal-footer justify-content-center">
-                <button type="button" class="btn btn-dark btnModal" id="btn">
-                  Submit
+            <!-- Modal Button -->
+            <div class="modal-footer justify-content-center">
+              <button type="button" class="btn btn-dark btnModal" id="btn">
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Smiley Background - ANYTHING ADDED TO THIS PAGE NEEDS TO INSIDE THIS SECTION -->
+    <section id="home">
+      <section class="background">
+        <!--Please create new class instead of adding to this one-->
+
+        <!-- Container -->
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="mood-container text-center p-4">
+                <h1 class="mb-4">Mood Bar</h1>
+
+                <!-- Mood Prompt and Selection -->
+                <p>How are you feeling today?</p>
+                <select id="userMood" class="form-select mb-3" aria-label="Mood selection">
+                  <option selected>Select your mood</option>
+                  <option value="Happy">Happy</option>
+                  <option value="Sad">Sad</option>
+                  <option value="Angry">Angry</option>
+                  <option value="Exhausted">Exhausted</option>
+                  <option value="In Love">In Love</option>
+                </select>
+                <!-- Drink Inquiry -->
+                <p class="mt-3">What's your soul feeling?</p>
+                <select id="userSpirit" class="form-select mb-3" aria-label="Drink selection">
+                  <option selected>Select your Spirit</option>
+                  <option value="gin">Gin</option>
+                  <option value="vodka">Vodka</option>
+                  <option value="tequila">Tequila</option>
+                  <option value="rum">Rum</option>
+                </select>
+                <button type="submit" class="btn btn-dark mt-2 btnSubmit" id="submit">
+                  Shake
                 </button>
+                <div class="invalidDrink"></div>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Shaker Animation -->
+
+        <div class="loading">
+          <img class="animate__animated animate__shakeY animate__delay-10s shaker" src="./assets/images/shaker6.png"
+            alt="cocktail shaker" />
+        </div>
       </section>
+      <!-- End Background Section -->
+    </section>
+  </main>
 
-      <!-- Smiley Background - ANYTHING ADDED TO THIS PAGE NEEDS TO INSIDE THIS SECTION -->
-      <section id="home">
-        <section class="background">
-          <!--Please create new class instead of adding to this one-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/logic.js"></script>
+</body>
 
-          <!-- Container -->
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-md-8">
-                <div class="mood-container text-center p-4">
-                  <h1 class="mb-4">Mood Bar</h1>
-
-                  <!-- Mood Prompt and Selection -->
-                  <p>How are you feeling today?</p>
-                  <select
-                    id="userMood"
-                    class="form-select mb-3"
-                    aria-label="Mood selection"
-                  >
-                    <option selected>Select your mood</option>
-                    <option value="Happy">Happy</option>
-                    <option value="Sad">Sad</option>
-                    <option value="Angry">Angry</option>
-                    <option value="Exhausted">Exhausted</option>
-                    <option value="In Love">In Love</option>
-                  </select>
-                  <!-- Drink Inquiry -->
-                  <p class="mt-3">What's your soul feeling?</p>
-                  <select
-                    id="userSpirit"
-                    class="form-select mb-3"
-                    aria-label="Drink selection"
-                  >
-                    <option selected>Select your Spirit</option>
-                    <option value="gin">Gin</option>
-                    <option value="vodka">Vodka</option>
-                    <option value="tequila">Tequila</option>
-                    <option value="rum">Rum</option>
-                  </select>
-                  <button
-                    type="submit"
-                    class="btn btn-dark mt-2 btnSubmit"
-                    id="submit"
-                  >
-                    Shake
-                  </button>
-                  <div class="invalidDrink"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Shaker Animation -->
-
-          <div class="loading">
-            <img
-              class="animate__animated animate__shakeY animate__delay-10s shaker"
-              src="./assets/images/shaker6.png"
-              alt="cocktail shaker"
-            />
-          </div>
-        </section>
-        <!-- End Background Section -->
-      </section>
-    </main>
-
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-      crossorigin="anonymous"
-    ></script>
-    <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/logic.js"></script>
-  </body>
 </html>
