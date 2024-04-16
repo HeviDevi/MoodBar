@@ -76,13 +76,13 @@ document.addEventListener('DOMContentLoaded', function () {
             $('.mood-container, .container').fadeOut(600, function() {
                 $(this).hide();
                 $('.loading').show();
-                $('.shaker').addClass('animate__animated animate__shakeY').css('animation-duration', '4s');
+                $('.shaker').addClass('animate__animated animate__shakeY').css('animation-duration', '3s');
     //stores selection, and redirects after animation
                 setTimeout(function () {
                     localStorage.setItem('userMood', userMood);
                     localStorage.setItem('userSpirit', userSpirit);
                     window.location.href = 'Drinks.html';
-                }, 4000);  // Ensure this matches the duration of animations
+                }, 3000);  // Ensure this matches the duration of animations
             });
         });
     });
