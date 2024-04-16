@@ -167,14 +167,23 @@ a:hover {
   font-size: 50px;
 }
 
+.card-body {
+  border-radius: 10px;
+  box-shadow: 0 0 10px white, 0 0 15px white;
+}
+
 .advice-content-wrapper {
   display: none;
   display: flex;
   align-items: center;
-  margin-left: 15px;
   background-color: #0d0d0d;
   border-radius: 10px;
   color: #ffffff;
+  box-shadow: 0 0 10px white;
+}
+
+.card-img-top {
+  border-radius: 10px;
 }
 
 .favoriteBtn {
@@ -185,3 +194,28 @@ a:hover {
 .favoriteBtn:hover {
   color: #cc99ff;
 }
+
+@media screen and (max-width: 650px) {
+  .ingredientHowToWrapper {
+    gap: 0 !important; 
+  }
+  .mainCard {
+    width: 50%;
+    display: flex;
+  }
+  
+  .card-body {
+    padding: 0; 
+    margin: 0; 
+  }
+
+  .card-body * {
+    max-width: 100%; 
+    margin: 0; 
+    padding: 2px;
+    box-sizing: border-box; 
+    flex-direction: column;
+  }
+
+}
+
