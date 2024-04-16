@@ -200,6 +200,7 @@ a:hover {
     gap: 0 !important; 
   }
   .mainCard {
+    padding-top: 200px;
     width: 50%;
     display: flex;
   }
@@ -216,6 +217,7 @@ a:hover {
     box-sizing: border-box; 
     flex-direction: column;
   }
+
 
 }
 
