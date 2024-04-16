@@ -365,12 +365,12 @@ const displayDrink = function (drink) {
         duplicate = true;
         return;
     }}); 
+
     if (duplicate){
       return;
     } else if (!duplicate) {
       favorites.push(newDrink);
       localStorage.setItem("savedDrinks", JSON.stringify(favorites));
-      window.location.href = 'favorites.html'
 }});
 
 
