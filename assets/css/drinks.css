@@ -190,3 +190,36 @@ a:hover {
 .favoriteBtn:hover {
   color: #cc99ff;
 }
+
+@media screen and (max-width: 650px) {
+  .ingredientHowToWrapper {
+    gap: 0 !important; 
+  }
+  .mainCard {
+    width: 50%;
+    display: flex;
+
+  }
+  .card-body {
+    width: 100%; 
+    padding: 0; 
+    margin: 0; 
+    box-sizing: border-box; 
+    gap: 0;
+  }
+
+  .card-body * {
+    max-width: 100%; 
+    margin: 0; 
+    padding: 2px;
+    box-sizing: border-box; 
+    flex-direction: column;
+  }
+
+  .advice-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
