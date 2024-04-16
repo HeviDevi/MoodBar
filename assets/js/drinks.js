@@ -229,7 +229,7 @@ const displayDrink = function (drink) {
 
   const card = document.createElement("div");
   card.className = "card m-3";
-  card.style.width = "48rem";
+  card.style.width = "42rem";
 
   const cardBody = document.createElement("div");
   cardBody.className = "card-body";
@@ -281,22 +281,30 @@ const displayDrink = function (drink) {
   card.style.opacity = "1";
 
   const photoTitleWrapper = document.createElement("div");
+  photoTitleWrapper.className = "photoTitleWrapper";
   photoTitleWrapper.style.display = "flex";
   photoTitleWrapper.style.alignItems = "center";
   photoTitleWrapper.style.justifyContent = "flex-start";
-  photoTitleWrapper.style.gap = "10px";
+  photoTitleWrapper.style.gap = "20px";
 
   const photo = document.createElement("img");  
   photo.src = drink.strDrinkThumb || "./assets/images/placeholder.jpg"; // Fallback to a placeholder image
   photo.className = "card-img-top mt-3";
   photo.style.width = "250px"; // Set size of the image
+  photoTitleWrapper.appendChild(photo);
 
   const cardTitle = document.createElement("h1");
   cardTitle.className = "card-title";
   cardTitle.textContent = drink.strDrink || "No drink name available";
 
+  const ingredientHowToWrapper = document.createElement("div");
+  ingredientHowToWrapper.className = "ingredientHowToWrapper"; 
+  ingredientHowToWrapper.style.display = "flex";
+  ingredientHowToWrapper.style.justifyContent = "flex-start";
+  ingredientHowToWrapper.style.gap = "110px";
+
   const cardIngredients = document.createElement("ul"); // Create <ul> element
-  cardIngredients.className = "ingredients";
+  cardIngredients.className = "ingredients mt-4";
 
   const header = document.createElement("h3");
   header.textContent = "Ingredients:";
@@ -316,15 +324,16 @@ const displayDrink = function (drink) {
   if (cardIngredients.children.length === 0) {
     const listItem = document.createElement("li");
     listItem.textContent = "No ingredients available";
-    cardIngredients.appendChild(listItem);
   }
-
-  // Append cardIngredients to cardBody
-  cardBody.appendChild(cardIngredients);
 
   const cardHowTo = document.createElement("p");
   cardHowTo.className = "how-to";
-  cardHowTo.textContent = "Instructions: " + drink.strInstructions;
+  cardHowTo.textContent = drink.strInstructions;
+
+  const instructionHeader = document.createElement("h3");
+  instructionHeader.className = "instructionHeader mt-4";
+  instructionHeader.textContent = "Instructions:";
+  cardHowTo.prepend(instructionHeader);
 
   adviceButton.addEventListener("click", function () {
     card.classList.toggle("open");
@@ -370,11 +379,12 @@ const displayDrink = function (drink) {
   adviceContentWrapper.appendChild(adviceContent);
   cardBody.appendChild(adviceContentWrapper);
   cardBody.appendChild(adviceButton);
-  cardBody.appendChild(photo);
-  cardBody.appendChild(cardTitle);
+  photoTitleWrapper.appendChild(photo);
+  photoTitleWrapper.appendChild(cardTitle);
   cardBody.appendChild(photoTitleWrapper);
-  cardBody.appendChild(cardIngredients);
-  cardBody.appendChild(cardHowTo);
+  cardBody.appendChild(ingredientHowToWrapper);
+  ingredientHowToWrapper.appendChild(cardIngredients);
+  ingredientHowToWrapper.appendChild(cardHowTo);
   cardBody.appendChild(favoritesContainer);
   card.appendChild(cardBody);
   mainCard.appendChild(card);
