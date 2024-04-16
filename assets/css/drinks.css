@@ -164,7 +164,9 @@ a:hover {
 }
 
 .mainCard h1 {
-  font-size: 70px;
+  font-size: 50px;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .advice-content-wrapper {

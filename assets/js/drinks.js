@@ -229,7 +229,7 @@ const displayDrink = function (drink) {
 
   const card = document.createElement("div");
   card.className = "card m-3";
-  card.style.width = "48rem";
+  card.style.width = "42rem";
 
   const cardBody = document.createElement("div");
   cardBody.className = "card-body";
@@ -281,15 +281,17 @@ const displayDrink = function (drink) {
   card.style.opacity = "1";
 
   const photoTitleWrapper = document.createElement("div");
+  photoTitleWrapper.className = "photoTitleWrapper";
   photoTitleWrapper.style.display = "flex";
   photoTitleWrapper.style.alignItems = "center";
   photoTitleWrapper.style.justifyContent = "flex-start";
-  photoTitleWrapper.style.gap = "10px";
+  photoTitleWrapper.style.gap = "20px";
 
   const photo = document.createElement("img");  
   photo.src = drink.strDrinkThumb || "./assets/images/placeholder.jpg"; // Fallback to a placeholder image
   photo.className = "card-img-top mt-3";
   photo.style.width = "250px"; // Set size of the image
+  photoTitleWrapper.appendChild(photo);
 
   const cardTitle = document.createElement("h1");
   cardTitle.className = "card-title";
@@ -372,6 +374,8 @@ const displayDrink = function (drink) {
   cardBody.appendChild(adviceButton);
   cardBody.appendChild(photo);
   cardBody.appendChild(cardTitle);
+  photoTitleWrapper.appendChild(photo);
+  photoTitleWrapper.appendChild(cardTitle);
   cardBody.appendChild(photoTitleWrapper);
   cardBody.appendChild(cardIngredients);
   cardBody.appendChild(cardHowTo);
