@@ -105,6 +105,6 @@ function handleDeleteTask(){
 
     let deleteById = this.parentElement.id; 
 
-    allProjects = allProjects.filter(project=> project.title !== deleteById);
+    favorites = favorites.filter(project=> project.title !== deleteById);
     localStorage.setItem('projects', JSON.stringify(allProjects));
 }
