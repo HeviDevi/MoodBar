@@ -41,16 +41,6 @@
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -63,7 +53,10 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![image](https://github.com/EddieHinojosa/TheMoodBar/assets/156026228/5d513194-b005-47cb-adae-85b0ea73f2d6)
+<div align="center">
+<img src="https://github.com/EddieHinojosa/TheMoodBar/assets/156026228/5d513194-b005-47cb-adae-85b0ea73f2d6" >
+</div>
+
 ![firefox_MQRH2L6alk](https://github.com/EddieHinojosa/TheMoodBar/assets/156026228/37a8f735-cfca-482f-9b37-7b993be22568)
 
 
@@ -84,10 +77,6 @@ Use the `BLANK_README.md` to get started.
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
-* [![Next][Next.js]][Next-url]
-* [![Vue][Vue.js]][Vue-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![JQuery][JQuery.com]][JQuery-url]
 
@@ -101,15 +90,15 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+If our project sparks your interest, please welcome yourself to contributing to our project. An open source community contributing is what builds inspiration and creativity. Any contributions you may make are greatly appreciated.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+If you have a suggestion that would help make this better, feel free to fork the repo and create a pull request. You can also simply open an issue with the tag "SuggestionX".
+Please do not forget to give the project a star! Thanks again!
 
 1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
+2. Create your Feature Branch (`git checkout -b feature/SuggestionX`)
+3. Commit your Changes (`git commit -m 'Add this suggestion please'`)
+4. Push to the Branch (`git push origin feature/SuggestionX`)
 5. Open a Pull Request
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -128,8 +117,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
 Project Link: [https://github.com/EddieHinojosa/TheMoodBar](https://github.com/EddieHinojosa/TheMoodBar)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -141,14 +128,10 @@ Project Link: [https://github.com/EddieHinojosa/TheMoodBar](https://github.com/E
 
 Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
 * [Img Shields](https://shields.io)
 * [GitHub Pages](https://pages.github.com)
 * [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -167,10 +150,6 @@ Use this space to list resources you find helpful and would like to give credit 
 [license-shield]: https://img.shields.io/github/license/EddieHinojosa/TheMoodBar.svg?style=for-the-badge
 [license-url]: https://github.com/EddieHinojosa/TheMoodBar/LICENSE.txt
 [product-screenshot]: images/screenshot.png
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Next-url]: https://nextjs.org/
-[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/ 
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
