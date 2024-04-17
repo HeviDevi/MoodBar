@@ -333,7 +333,7 @@ const displayDrink = function (drink) {
   // Create card how to element
   const cardHowTo = document.createElement("p");
   cardHowTo.className = "how-to";
-  cardHowTo.textContent = drink.strInstructions;
+  cardHowTo.textContent = drink.strInstructions || "No instructions available";
   ingredientHowToWrapper.appendChild(cardHowTo); // Append card how to to ingredient how to wrapper
 
   // Create instruction header

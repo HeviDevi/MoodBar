@@ -221,8 +221,9 @@ a:hover {
 /* Wrapper for drink photo and drink name */
 .photoTitleWrapper {
   display: flex;
-  align-items:center;
+  align-items: center;
   justify-content: flex-start;
+  margin-left: 20px;
   gap: 40px;
 }
 
@@ -238,7 +239,7 @@ a:hover {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 100px;
+  gap: 110px;
 }
 
 .favoritesContainer {
