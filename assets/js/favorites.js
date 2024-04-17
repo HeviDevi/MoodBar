@@ -40,59 +40,58 @@ setInterval(animateSad, 50);
 
 let favorites = JSON.parse(localStorage.getItem("savedDrinks")) || [];
 
+
+// Favorites Cards
 function displayfavorites(favorites) {
   const favoritesCard = document.querySelector(".favoritesCard");
 
   favorites.forEach((drink) => {
     const card = document.createElement("div");
     card.className = "card m-3";
-    card.style.width = "48rem";
 
     const cardBody = document.createElement("div");
     cardBody.className = "card-body";
-    cardBody.style.display = "flex";
-    cardBody.style.flexDirection = "column";
 
+    // Delete button
     const deleteButton = document.createElement("button");
     deleteButton.className = "deleteBtn btn mt-1";
     deleteButton.innerHTML = '<i class="fa-regular fa-trash"></i>';
     deleteButton.addEventListener("click", handleDeleteFavorite);
 
+    // Delete button container
     const deleteContainer = document.createElement("div");
     deleteContainer.className = "deleteContainer";
-    deleteContainer.style.display = "flex";
-    deleteContainer.style.justifyContent = "flex-end";
-    deleteContainer.style.width = "100%";
-    deleteContainer.appendChild(deleteButton);
+    deleteContainer.appendChild(deleteButton);// Append the delete button to the delete container
 
+    // Photo and title wrapper
     const photoTitleWrapper = document.createElement("div");
     photoTitleWrapper.className = "photoTitleWrapper";
-    photoTitleWrapper.style.display = "flex";
-    photoTitleWrapper.style.alignItems = "center";
-    photoTitleWrapper.style.justifyContent = "flex-start";
-    photoTitleWrapper.style.gap = "20px";
 
+    // Create photo element
     const photo = document.createElement("img");
     photo.src = drink.strDrinkThumb || "./assets/images/placeholder.jpg"; // Fallback to a placeholder image
     photo.className = "card-img-top mt-3";
-    photo.style.width = "220px"; // Set size of the image
+    photoTitleWrapper.appendChild(photo);// Append the photo to the photoTitleWrapper
 
+    // Create title/drink name element
     const cardTitle = document.createElement("h1");
     cardTitle.className = "card-title";
     cardTitle.textContent = drink.strDrink || "No drink name available";
+    photoTitleWrapper.appendChild(cardTitle);// Append the title to the photoTitleWrapper
 
+    // Ingredients and How To wrapper
     const ingredientHowToWrapper = document.createElement("div");
     ingredientHowToWrapper.className = "ingredientHowToWrapper";
-    ingredientHowToWrapper.style.display = "flex";
-    ingredientHowToWrapper.style.justifyContent = "flex-start";
-    ingredientHowToWrapper.style.gap = "100px";
 
+    // Create ingredients list element
     const cardIngredients = document.createElement("ul"); // Create <ul> element
     cardIngredients.className = "ingredients mt-4";
+    ingredientHowToWrapper.appendChild(cardIngredients);// Append ingredients to the wrapper
 
+    // Create header for ingredients
     const header = document.createElement("h3");
     header.textContent = "Ingredients:";
-    cardIngredients.appendChild(header);
+    cardIngredients.appendChild(header);// Append the header to the ingredients
 
     // Create a for loop for ingredients and make it a list with <li> element
     for (let i = 0; i <= 20; i++) {
@@ -110,24 +109,24 @@ function displayfavorites(favorites) {
       listItem.textContent = "No ingredients available";
     }
 
+    ingredientHowToWrapper.appendChild(cardIngredients);// Append ingredients to the wrapper
+
+    // Create how to make the drink element
     const cardHowTo = document.createElement("p");
     cardHowTo.className = "how-to";
-    cardHowTo.textContent = drink.strInstructions;
+    cardHowTo.textContent = drink.strInstructions || "No instructions available";
+    ingredientHowToWrapper.appendChild(cardHowTo);// Append how to make the drink to the wrapper
 
+    // Create header for instructions
     const instructionHeader = document.createElement("h3");
     instructionHeader.className = "instructionHeader mt-4";
     instructionHeader.textContent = "Instructions:";
-    cardHowTo.prepend(instructionHeader);
+    cardHowTo.prepend(instructionHeader);// Prepend the header to the instructions
 
     // Append elements to cardBody
     cardBody.appendChild(deleteContainer);
     cardBody.appendChild(photoTitleWrapper);
-    photoTitleWrapper.appendChild(photo);
-    photoTitleWrapper.appendChild(cardTitle);
     cardBody.appendChild(ingredientHowToWrapper);
-    ingredientHowToWrapper.appendChild(cardIngredients);
-    ingredientHowToWrapper.appendChild(cardHowTo);
-
     card.appendChild(cardBody);
     favoritesCard.appendChild(card);
   });

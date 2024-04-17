@@ -55,7 +55,7 @@ a:hover {
 
 .happy::before {
   font-family: "Font Awesome 6 Pro";
-  content: '\f118';
+  content: "\f118";
   font-weight: 100;
 }
 
@@ -71,14 +71,16 @@ a:hover {
 
 .sad::before {
   font-family: "Font Awesome 6 Pro";
-  content: '\e376';
+  content: "\e376";
   font-weight: 100;
 }
 
 .sad.animate {
-  color:rgb(217, 221, 117);
+  color: rgb(217, 221, 117);
 }
 
+
+/* Card Delete Button */
 .deleteBtn {
   font-size: 20px;
   color: #f9f6ec;
@@ -88,6 +90,11 @@ a:hover {
   color: #914949;
 }
 
+.deleteContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .favoritesCard {
   display: flex;
   flex-wrap: wrap;
@@ -95,9 +102,16 @@ a:hover {
   border-radius: 10px;
 }
 
+.card {
+  width: 48rem;
+}
+
 .card-body {
+  display: flex;
+  flex-direction: column;
   z-index: 1;
-  background-color: #222;
+  background-color: #0d0d0d;
+  filter:opacity(0.9);
   color: #f9f6ec;
   stroke: 4px #050505;
   text-shadow: 0 0 10px black;
@@ -109,10 +123,24 @@ a:hover {
   font-size: 50px;
 }
 
+/* Drink Image */
 .card-img-top {
+  width: 220px;
   border-radius: 10px;
 }
 
+/* Photo and drink name wrapper */
 .photoTitleWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
   margin-left: 20px;
+}
+
+/* Ingredients and how to wrapper */
+.ingredientHowToWrapper {
+  display: flex;
+  justify-content: flex-start;
+  gap: 100px;
 }

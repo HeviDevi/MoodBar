@@ -190,8 +190,6 @@ function chooseRandomCocktail() {
       let randomDrink = Math.floor(Math.random() * result.drinks.length);
       // sets drinkId as the id of the randomly chosen drink
       let drinkId = result.drinks[randomDrink].idDrink;
-      //just logs the name of the drink
-      console.log(result.drinks[randomDrink].strDrink);
       //passes the Id of the chosen drink to the DrinkDetails function
      
       getDrinkDetails(drinkId);
@@ -212,51 +210,35 @@ function getDrinkDetails(drinkId) {
 
 // Main Drink Card
 const displayDrink = function (drink) {
+
+  // Check if drink data is provided
   if (!drink) {
     console.error("No drink data provided.");
     return;
   }
-
+  // Create mainCard variable and check if main card element is available
   const mainCard = document.querySelector(".mainCard");
   if (!mainCard) {
     console.error("Main card element not found.");
     return;
   }
 
+  // Store the drink data in session storage
   sessionStorage.setItem("drink", JSON.stringify(drink));
 
-  mainCard.innerHTML = ""; // Clears previous content
+  // Clears previous content
+  mainCard.innerHTML = "";
 
+  // Create card elements
   const card = document.createElement("div");
   card.className = "card m-3";
-  card.style.width = "42rem";
 
+  // Create card body elements
   const cardBody = document.createElement("div");
   cardBody.className = "card-body";
-  cardBody.style.display = "flex";
-  cardBody.style.flexDirection = "column";
 
-  const bartenderImage = document.createElement("img");
-  bartenderImage.src = bartenderRandomizer();
-  bartenderImage.alt = "Bartender";
-  bartenderImage.className = "bartender-image";
-  bartenderImage.style.width = "300px"; // Set width
-  bartenderImage.style.height = "300px"; // Set height
-  bartenderImage.style.display = "none"; // Initially hide the bartender image
-
-  const adviceContentWrapper = document.createElement("div");
-  adviceContentWrapper.className = "advice-content-wrapper";
-
-  const adviceContent = document.createElement("div");
-  adviceContent.className = "advice-content";
-  adviceContent.style.display = "none"; // Initially hide the advice content
-
-  const adviceButton = document.createElement("button");
-  adviceButton.className = "btn btn-dark mt-1";
-  adviceButton.textContent = "Bartender's Advice";
-
-  //   Background color based on mood
-  switch (localStorage.getItem("userMood")) {
+   //   Background color based on mood
+   switch (localStorage.getItem("userMood")) {
     case "Happy":
       card.classList.add("cardHappy");
       break;
@@ -277,35 +259,54 @@ const displayDrink = function (drink) {
       card.style.backgroundColor = "#0d0d0d";
   }
 
-  // Make the background color solid
-  card.style.opacity = "1";
+  // Create wrapper for photo and advice content
+  const adviceContentWrapper = document.createElement("div");
+  adviceContentWrapper.className = "advice-content-wrapper";
 
+  // Create bartender image
+  const bartenderImage = document.createElement("img");
+  bartenderImage.src = bartenderRandomizer();
+  bartenderImage.alt = "Bartender";
+  bartenderImage.className = "bartender-image";
+  bartenderImage.style.display = "none"; // Initially hide the bartender image
+  adviceContentWrapper.appendChild(bartenderImage); // Append bartender image to advice content wrapper
+
+  // Create advice/quote content
+  const adviceContent = document.createElement("div");
+  adviceContent.className = "advice-content";
+  adviceContent.style.display = "none"; // Initially hide the advice content
+  adviceContentWrapper.appendChild(adviceContent); // Append advice content to advice content wrapper
+
+  // Create advice button
+  const adviceButton = document.createElement("button");
+  adviceButton.className = "btn mt-1 adviceBtn";
+  adviceButton.textContent = "Bartender's Advice";
+
+  //Create wrapper for photo and title
   const photoTitleWrapper = document.createElement("div");
   photoTitleWrapper.className = "photoTitleWrapper";
-  photoTitleWrapper.style.display = "flex";
-  photoTitleWrapper.style.alignItems = "center";
-  photoTitleWrapper.style.justifyContent = "flex-start";
-  photoTitleWrapper.style.gap = "20px";
 
+  // Create photo element
   const photo = document.createElement("img");  
   photo.src = drink.strDrinkThumb || "./assets/images/placeholder.jpg"; // Fallback to a placeholder image
   photo.className = "card-img-top mt-3";
-  photo.style.width = "250px"; // Set size of the image
-  photoTitleWrapper.appendChild(photo);
+  photoTitleWrapper.appendChild(photo);// Append photo to photo to photo title wrapper
 
+  // Create card title/drink name
   const cardTitle = document.createElement("h1");
-  cardTitle.className = "card-title";
+  cardTitle.className = "card-title mt-3";
   cardTitle.textContent = drink.strDrink || "No drink name available";
+  photoTitleWrapper.appendChild(cardTitle); // Append card title to photo title wrapper
 
+  // Create wrapper for ingredients and how to
   const ingredientHowToWrapper = document.createElement("div");
   ingredientHowToWrapper.className = "ingredientHowToWrapper"; 
-  ingredientHowToWrapper.style.display = "flex";
-  ingredientHowToWrapper.style.justifyContent = "flex-start";
-  ingredientHowToWrapper.style.gap = "110px";
 
+  // Create card ingredients element
   const cardIngredients = document.createElement("ul"); // Create <ul> element
   cardIngredients.className = "ingredients mt-4";
 
+  // Create header for ingredients
   const header = document.createElement("h3");
   header.textContent = "Ingredients:";
   cardIngredients.appendChild(header);
@@ -322,19 +323,26 @@ const displayDrink = function (drink) {
 
   // If no ingredients are present, display a placeholder message
   if (cardIngredients.children.length === 0) {
-    const listItem = document.createElement("li");
-    listItem.textContent = "No ingredients available";
+    const invalidListItem = document.createElement("li");
+    invalidListItem.textContent = "No ingredients available";
+    cardIngredients.appendChild(invalidListItem);
   }
 
+  ingredientHowToWrapper.appendChild(cardIngredients);// Append card ingredients to ingredient how to wrapper
+
+  // Create card how to element
   const cardHowTo = document.createElement("p");
   cardHowTo.className = "how-to";
-  cardHowTo.textContent = drink.strInstructions;
+  cardHowTo.textContent = drink.strInstructions || "No instructions available";
+  ingredientHowToWrapper.appendChild(cardHowTo); // Append card how to to ingredient how to wrapper
 
+  // Create instruction header
   const instructionHeader = document.createElement("h3");
   instructionHeader.className = "instructionHeader mt-4";
   instructionHeader.textContent = "Instructions:";
-  cardHowTo.prepend(instructionHeader);
+  cardHowTo.prepend(instructionHeader);// Prepend instruction header to card how to
 
+  // Add event listener to advice button
   adviceButton.addEventListener("click", function () {
     card.classList.toggle("open");
 
@@ -345,15 +353,14 @@ const displayDrink = function (drink) {
       adviceContent.style.display === "none" ? "block" : "none";
   });
 
+  // Create favorites button
   const favoritesButton = document.createElement("button");
   favoritesButton.className = "favoriteBtn btn mt-1";
   favoritesButton.innerHTML = '<i class="fa-regular fa-olive"></i>';
 
+  // Create favorites container for button
   const favoritesContainer = document.createElement("div");
   favoritesContainer.className = "favoritesContainer";
-  favoritesContainer.style.display = "flex";
-  favoritesContainer.style.justifyContent = "flex-end";
-  favoritesContainer.style.width = "100%";
   favoritesContainer.appendChild(favoritesButton);
 
   favoritesButton.addEventListener("click", function () {
@@ -375,16 +382,10 @@ const displayDrink = function (drink) {
 
 
   // Append elements to cardBody
-  adviceContentWrapper.appendChild(bartenderImage);
-  adviceContentWrapper.appendChild(adviceContent);
   cardBody.appendChild(adviceContentWrapper);
   cardBody.appendChild(adviceButton);
-  photoTitleWrapper.appendChild(photo);
-  photoTitleWrapper.appendChild(cardTitle);
   cardBody.appendChild(photoTitleWrapper);
   cardBody.appendChild(ingredientHowToWrapper);
-  ingredientHowToWrapper.appendChild(cardIngredients);
-  ingredientHowToWrapper.appendChild(cardHowTo);
   cardBody.appendChild(favoritesContainer);
   card.appendChild(cardBody);
   mainCard.appendChild(card);
