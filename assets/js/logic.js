@@ -1,10 +1,10 @@
 // Erase stored age from local storage
-const eraseAge =document.getElementById('eraseAge');
-eraseAge.addEventListener('click', function(){
-    localStorage.removeItem('storedAge');
-    location.reload();
-    window.location.href = 'index.html';
-});
+// const eraseAge =document.getElementById('eraseAge');
+// eraseAge.addEventListener('click', function(){
+//     localStorage.removeItem('storedAge');
+//     location.reload();
+//     window.location.href = 'index.html';
+// });
 
 /////////QUOTE API//////////////
 
