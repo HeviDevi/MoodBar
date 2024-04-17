@@ -11,12 +11,11 @@ body {
         overflow-y: auto;
 }
 
-
   h1 {
     font-family: "Oleo Script", system-ui;
 } 
   
-  p {
+p {
     font-family: "Roboto", sans-serif;
 }
 

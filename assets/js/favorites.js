@@ -28,7 +28,6 @@ for(let i=0; i<=50; i++) {
   document.querySelector('.background-faces').appendChild(sadFace);
 }
 
-
 function animateSad() {
   let allSad = document.querySelectorAll('.sad');
   let num2 = Math.floor(Math.random()*allSad.length);

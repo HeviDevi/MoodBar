@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
             let userSpirit = $('#userSpirit').val();
             
             if (userMood === "Select your mood" || userSpirit === "Select your Spirit") {
-                document.querySelector('.invalidDrink').innerHTML = '<span style="color: red;">Please select a mood and spirit.</span>';
+                document.querySelector('.invalidDrink').innerHTML = '<span style="color: red;"></br>Please select a mood and spirit.</span>';
                 return;
             }
 //hides containers and starts animation

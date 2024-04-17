@@ -99,7 +99,8 @@ a:hover {
   z-index: 1;
   background-color: #222;
   color: #f9f6ec;
-  stroke: 1px #050505;
+  stroke: 4px #050505;
+  text-shadow: 0 0 10px black;
   border-radius: 10px;
   box-shadow: 0 0 15px #cc99ff, 0 0 10px #cc99ff;
 }
