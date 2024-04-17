@@ -190,12 +190,13 @@ a:hover {
   height: 300px;
 }
 
-/* Wrapper for photo and advice content */
+/* Wrapper for bartender photo and advice content */
 .advice-content-wrapper {
   display: none;
   display: flex;
   align-items: center;
   background-color: #0d0d0d;
+  gap: 10px;
   border-radius: 10px;
   color: #ffffff;
   box-shadow: 0 0 10px white , 0 0 15px white;
@@ -214,6 +215,7 @@ a:hover {
   color: #222;
 }
 
+/* Wrapper for drink photo and drink name */
 .photoTitleWrapper {
   display: flex;
   align-items:center;
@@ -221,13 +223,14 @@ a:hover {
   gap: 40px;
 }
 
-
+/* Drink Photo */
 .card-img-top {
   width: 220px;
   height: auto;
   border-radius: 10px;
 }
 
+/* Wrapper for ingredients and instructions */
 .ingredientHowToWrapper {
   display: flex;
   flex-direction: row;
@@ -235,6 +238,7 @@ a:hover {
   gap: 100px;
 }
 
+/* Olive favorite button */
 .favoriteBtn {
   background-color: transparent;
   font-size: 40px;

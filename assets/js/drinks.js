@@ -279,7 +279,7 @@ const displayDrink = function (drink) {
 
   // Create advice button
   const adviceButton = document.createElement("button");
-  adviceButton.className = "btn btn-dark mt-1 adviceBtn";
+  adviceButton.className = "btn mt-1 adviceBtn";
   adviceButton.textContent = "Bartender's Advice";
 
   //Create wrapper for photo and title
@@ -292,6 +292,7 @@ const displayDrink = function (drink) {
   photo.className = "card-img-top mt-3";
   photoTitleWrapper.appendChild(photo);// Append photo to photo to photo title wrapper
 
+  // Create card title/drink name
   const cardTitle = document.createElement("h1");
   cardTitle.className = "card-title mt-3";
   cardTitle.textContent = drink.strDrink || "No drink name available";
@@ -319,8 +320,9 @@ const displayDrink = function (drink) {
 
   // If no ingredients are present, display a placeholder message
   if (cardIngredients.children.length === 0) {
-    const listItem = document.createElement("li");
-    listItem.textContent = "No ingredients available";
+    const invalidListItem = document.createElement("li");
+    invalidListItem.textContent = "No ingredients available";
+    cardIngredients.appendChild(invalidListItem);
   }
 
   const cardHowTo = document.createElement("p");
