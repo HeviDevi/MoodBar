@@ -63,6 +63,7 @@ a:hover {
 /* Happy Cards */
 .cardHappy {
   background-color: #ebd38a;
+  filter:opacity(0.9);
 }
 
 /* Sad Face Icons */
@@ -84,6 +85,7 @@ a:hover {
 /* Sad Cards */
 .cardSad {
   background-color: #98bcce;
+  filter:opacity(0.9);
 }
 
 /* Angry Face Icons */
@@ -105,6 +107,7 @@ a:hover {
 /* Angry Cards */
 .cardAngry {
   background-color: #914949;
+  filter:opacity(0.9);
 }
 
 /* Exhausted Face Icons */
@@ -126,6 +129,7 @@ a:hover {
 /* Exhausted Cards */
 .cardExhausted {
   background-color: #a8a9a5;
+  filter:opacity(0.9);
 }
 
 /* In Love Face */
@@ -147,6 +151,7 @@ a:hover {
 /* In Love Cards */
 .cardInLove {
   background-color: #efb0ba;
+  filter:opacity(0.9);
 }
 
 /* Main Card */
@@ -193,7 +198,7 @@ a:hover {
   background-color: #0d0d0d;
   border-radius: 10px;
   color: #ffffff;
-  box-shadow: 0 0 10px white;
+  box-shadow: 0 0 10px white , 0 0 15px white;
 }
 
 /* Advice Button */
