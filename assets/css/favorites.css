@@ -55,7 +55,7 @@ a:hover {
 
 .happy::before {
   font-family: "Font Awesome 6 Pro";
-  content: '\f118';
+  content: "\f118";
   font-weight: 100;
 }
 
@@ -71,12 +71,12 @@ a:hover {
 
 .sad::before {
   font-family: "Font Awesome 6 Pro";
-  content: '\e376';
+  content: "\e376";
   font-weight: 100;
 }
 
 .sad.animate {
-  color:rgb(217, 221, 117);
+  color: rgb(217, 221, 117);
 }
 
 .deleteBtn {

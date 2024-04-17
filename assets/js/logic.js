@@ -48,29 +48,28 @@ return quoteCategory
 
 
 function fetchAndDisplayQuote() {
-    let quoteCategory = quoteParameter(); // Ensure this is the updated category each time
+    let quoteCategory = quoteParameter(); 
 
     $.ajax({
         method: 'GET',
-        url: 'https://api.api-ninjas.com/v1/quotes?category=' + encodeURIComponent(quoteCategory),
+        url: 'https://api.api-ninjas.com/v1/quotes?category=' + quoteCategory,
         headers: { 'X-Api-Key': 'QHvUKMLC0CIq94vTFp7sNw==BSmeNtqXhYs1KNhl'},
         contentType: 'application/json',
         success: function(result) {
             if (result && result.length > 0) {
                 const adviceContent = document.querySelector(".advice-content");
                 if (adviceContent) {
-                    adviceContent.textContent = result[0].author + ' once said: "' + result[0].quote + '"';
-                    adviceContent.style.display = "none"; // Hide the content initially
+                    adviceContent.textContent = result[0].author + ' once said: "' + result[0].quote + '"'; //Updates the advice content on the card with quote
                 }
             } else {
-                console.log("No quotes found for this category.");
+                console.log("No quotes found for this category."); //Logs to console if no quotes are found
             }
         },
         error: function ajaxError(jqXHR) {
             console.error('Error :', jqXHR.responseText);
             const adviceContent = document.querySelector(".advice-content");
             if (adviceContent) {
-                adviceContent.textContent = "Failed to load quote.";
+                adviceContent.textContent = "Failed to load quote."; //Updates the advice content on the card with error message if quote fails to load
             }
         }
     });
