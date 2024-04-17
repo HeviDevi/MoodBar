@@ -190,8 +190,6 @@ function chooseRandomCocktail() {
       let randomDrink = Math.floor(Math.random() * result.drinks.length);
       // sets drinkId as the id of the randomly chosen drink
       let drinkId = result.drinks[randomDrink].idDrink;
-      //just logs the name of the drink
-      console.log(result.drinks[randomDrink].strDrink);
       //passes the Id of the chosen drink to the DrinkDetails function
      
       getDrinkDetails(drinkId);
@@ -212,51 +210,35 @@ function getDrinkDetails(drinkId) {
 
 // Main Drink Card
 const displayDrink = function (drink) {
+
+  // Check if drink data is provided
   if (!drink) {
     console.error("No drink data provided.");
     return;
   }
-
+  // Create mainCard variable and check if main card element is available
   const mainCard = document.querySelector(".mainCard");
   if (!mainCard) {
     console.error("Main card element not found.");
     return;
   }
 
+  // Store the drink data in session storage
   sessionStorage.setItem("drink", JSON.stringify(drink));
 
-  mainCard.innerHTML = ""; // Clears previous content
+  // Clears previous content
+  mainCard.innerHTML = "";
 
+  // Create card elements
   const card = document.createElement("div");
   card.className = "card m-3";
-  card.style.width = "42rem";
 
+  // Create card body elements
   const cardBody = document.createElement("div");
   cardBody.className = "card-body";
-  cardBody.style.display = "flex";
-  cardBody.style.flexDirection = "column";
 
-  const bartenderImage = document.createElement("img");
-  bartenderImage.src = bartenderRandomizer();
-  bartenderImage.alt = "Bartender";
-  bartenderImage.className = "bartender-image";
-  bartenderImage.style.width = "300px"; // Set width
-  bartenderImage.style.height = "300px"; // Set height
-  bartenderImage.style.display = "none"; // Initially hide the bartender image
-
-  const adviceContentWrapper = document.createElement("div");
-  adviceContentWrapper.className = "advice-content-wrapper";
-
-  const adviceContent = document.createElement("div");
-  adviceContent.className = "advice-content";
-  adviceContent.style.display = "none"; // Initially hide the advice content
-
-  const adviceButton = document.createElement("button");
-  adviceButton.className = "btn btn-dark mt-1";
-  adviceButton.textContent = "Bartender's Advice";
-
-  //   Background color based on mood
-  switch (localStorage.getItem("userMood")) {
+   //   Background color based on mood
+   switch (localStorage.getItem("userMood")) {
     case "Happy":
       card.classList.add("cardHappy");
       break;
@@ -277,8 +259,28 @@ const displayDrink = function (drink) {
       card.style.backgroundColor = "#0d0d0d";
   }
 
-  // Make the background color solid
-  card.style.opacity = "1";
+  // Create wrapper for photo and advice content
+  const adviceContentWrapper = document.createElement("div");
+  adviceContentWrapper.className = "advice-content-wrapper";
+
+  // Create bartender image
+  const bartenderImage = document.createElement("img");
+  bartenderImage.src = bartenderRandomizer();
+  bartenderImage.alt = "Bartender";
+  bartenderImage.className = "bartender-image";
+  bartenderImage.style.display = "none"; // Initially hide the bartender image
+  adviceContentWrapper.appendChild(bartenderImage); // Append bartender image to advice content wrapper
+
+  // Create advice/quote content
+  const adviceContent = document.createElement("div");
+  adviceContent.className = "advice-content";
+  adviceContent.style.display = "none"; // Initially hide the advice content
+  adviceContentWrapper.appendChild(adviceContent); // Append advice content to advice content wrapper
+
+
+  const adviceButton = document.createElement("button");
+  adviceButton.className = "btn btn-dark mt-1 adviceBtn";
+  adviceButton.textContent = "Bartender's Advice";
 
   const photoTitleWrapper = document.createElement("div");
   photoTitleWrapper.className = "photoTitleWrapper";
@@ -375,8 +377,6 @@ const displayDrink = function (drink) {
 
 
   // Append elements to cardBody
-  adviceContentWrapper.appendChild(bartenderImage);
-  adviceContentWrapper.appendChild(adviceContent);
   cardBody.appendChild(adviceContentWrapper);
   cardBody.appendChild(adviceButton);
   photoTitleWrapper.appendChild(photo);
