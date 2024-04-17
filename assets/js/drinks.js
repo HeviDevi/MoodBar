@@ -277,33 +277,28 @@ const displayDrink = function (drink) {
   adviceContent.style.display = "none"; // Initially hide the advice content
   adviceContentWrapper.appendChild(adviceContent); // Append advice content to advice content wrapper
 
-
+  // Create advice button
   const adviceButton = document.createElement("button");
   adviceButton.className = "btn btn-dark mt-1 adviceBtn";
   adviceButton.textContent = "Bartender's Advice";
 
+  //Create wrapper for photo and title
   const photoTitleWrapper = document.createElement("div");
   photoTitleWrapper.className = "photoTitleWrapper";
-  photoTitleWrapper.style.display = "flex";
-  photoTitleWrapper.style.alignItems = "center";
-  photoTitleWrapper.style.justifyContent = "flex-start";
-  photoTitleWrapper.style.gap = "20px";
 
+  // Create photo element
   const photo = document.createElement("img");  
   photo.src = drink.strDrinkThumb || "./assets/images/placeholder.jpg"; // Fallback to a placeholder image
   photo.className = "card-img-top mt-3";
-  photo.style.width = "250px"; // Set size of the image
-  photoTitleWrapper.appendChild(photo);
+  photoTitleWrapper.appendChild(photo);// Append photo to photo to photo title wrapper
 
   const cardTitle = document.createElement("h1");
-  cardTitle.className = "card-title";
+  cardTitle.className = "card-title mt-3";
   cardTitle.textContent = drink.strDrink || "No drink name available";
+  photoTitleWrapper.appendChild(cardTitle); // Append card title to photo title wrapper
 
   const ingredientHowToWrapper = document.createElement("div");
   ingredientHowToWrapper.className = "ingredientHowToWrapper"; 
-  ingredientHowToWrapper.style.display = "flex";
-  ingredientHowToWrapper.style.justifyContent = "flex-start";
-  ingredientHowToWrapper.style.gap = "110px";
 
   const cardIngredients = document.createElement("ul"); // Create <ul> element
   cardIngredients.className = "ingredients mt-4";
@@ -379,8 +374,6 @@ const displayDrink = function (drink) {
   // Append elements to cardBody
   cardBody.appendChild(adviceContentWrapper);
   cardBody.appendChild(adviceButton);
-  photoTitleWrapper.appendChild(photo);
-  photoTitleWrapper.appendChild(cardTitle);
   cardBody.appendChild(photoTitleWrapper);
   cardBody.appendChild(ingredientHowToWrapper);
   ingredientHowToWrapper.appendChild(cardIngredients);

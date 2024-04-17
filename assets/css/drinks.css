@@ -168,11 +168,11 @@ a:hover {
 
 /* Main Card Text */
 .mainCard h1 {
-  font-size: 50px;
+  font-size: 40px;
 }
 /* Card */
 .card {
-  width: 42rem;
+  width: 40rem;
 }
 
 
@@ -214,8 +214,25 @@ a:hover {
   color: #222;
 }
 
+.photoTitleWrapper {
+  display: flex;
+  align-items:center;
+  justify-content: flex-start;
+  gap: 40px;
+}
+
+
 .card-img-top {
+  width: 220px;
+  height: auto;
   border-radius: 10px;
+}
+
+.ingredientHowToWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 100px;
 }
 
 .favoriteBtn {
