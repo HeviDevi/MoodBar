@@ -1,11 +1,3 @@
-// Erase stored age from local storage
-// const eraseAge =document.getElementById('eraseAge');
-// eraseAge.addEventListener('click', function(){
-//     localStorage.removeItem('storedAge');
-//     location.reload();
-//     window.location.href = 'index.html';
-// });
-
 /////////QUOTE API//////////////
 
 // Decides what category the quote will be from based on which emotion
@@ -46,7 +38,6 @@ return quoteCategory
 //STYLE TEAM: add "bartender's advice" button to drinks.html
 //CODE TEAM: event listener for quote button aaand a function that will display the quote on the page.. some kind of appendChild thing??
 
-
 function fetchAndDisplayQuote() {
     let quoteCategory = quoteParameter(); 
 
@@ -79,7 +70,6 @@ function fetchAndDisplayQuote() {
 document.addEventListener('DOMContentLoaded', function() {
     fetchAndDisplayQuote();
 });
-
 
 //bartnder image randomizer
 const bartender = document.querySelector('.theBartender');
