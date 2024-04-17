@@ -60,11 +60,6 @@ document.addEventListener('DOMContentLoaded', function () {
         $('#submit').click(function(event) {
             event.preventDefault();
 
-            var audio = document.getElementById('buttonClickSound');
-            audio.currentTime = 0;
-            audio.volume = 0.5;
-            audio.play()
-
             let userMood = $('#userMood').val();
             let userSpirit = $('#userSpirit').val();
             
@@ -72,6 +67,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.querySelector('.invalidDrink').innerHTML = '<span style="color: red;"></br>Please select a mood and spirit.</span>';
                 return;
             }
+
+            var audio = document.getElementById('buttonClickSound');
+            audio.currentTime = 0;
+            audio.volume = 0.5;
+            audio.play()
+
 //hides containers and starts animation
             $('.mood-container, .container').fadeOut(600, function() {
                 $(this).hide();
@@ -87,7 +88,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
     });
-
 
 // BACKGROUND FACE ANIMATIONS//
 
@@ -118,7 +118,6 @@ for(let i=0; i<=50; i++) {
     sadFace.style.top = Math.random() * + innerHeight + 'px';
     document.querySelector('.background').appendChild(sadFace);
 }
-
 
 function animateSad() {
     let allSad = document.querySelectorAll('.sad');
