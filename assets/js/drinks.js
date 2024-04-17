@@ -298,12 +298,15 @@ const displayDrink = function (drink) {
   cardTitle.textContent = drink.strDrink || "No drink name available";
   photoTitleWrapper.appendChild(cardTitle); // Append card title to photo title wrapper
 
+  // Create wrapper for ingredients and how to
   const ingredientHowToWrapper = document.createElement("div");
   ingredientHowToWrapper.className = "ingredientHowToWrapper"; 
 
+  // Create card ingredients element
   const cardIngredients = document.createElement("ul"); // Create <ul> element
   cardIngredients.className = "ingredients mt-4";
 
+  // Create header for ingredients
   const header = document.createElement("h3");
   header.textContent = "Ingredients:";
   cardIngredients.appendChild(header);
@@ -325,15 +328,21 @@ const displayDrink = function (drink) {
     cardIngredients.appendChild(invalidListItem);
   }
 
+  ingredientHowToWrapper.appendChild(cardIngredients);// Append card ingredients to ingredient how to wrapper
+
+  // Create card how to element
   const cardHowTo = document.createElement("p");
   cardHowTo.className = "how-to";
   cardHowTo.textContent = drink.strInstructions;
+  ingredientHowToWrapper.appendChild(cardHowTo); // Append card how to to ingredient how to wrapper
 
+  // Create instruction header
   const instructionHeader = document.createElement("h3");
   instructionHeader.className = "instructionHeader mt-4";
   instructionHeader.textContent = "Instructions:";
-  cardHowTo.prepend(instructionHeader);
+  cardHowTo.prepend(instructionHeader);// Prepend instruction header to card how to
 
+  // Add event listener to advice button
   adviceButton.addEventListener("click", function () {
     card.classList.toggle("open");
 
@@ -344,15 +353,14 @@ const displayDrink = function (drink) {
       adviceContent.style.display === "none" ? "block" : "none";
   });
 
+  // Create favorites button
   const favoritesButton = document.createElement("button");
   favoritesButton.className = "favoriteBtn btn mt-1";
   favoritesButton.innerHTML = '<i class="fa-regular fa-olive"></i>';
 
+  // Create favorites container for button
   const favoritesContainer = document.createElement("div");
   favoritesContainer.className = "favoritesContainer";
-  favoritesContainer.style.display = "flex";
-  favoritesContainer.style.justifyContent = "flex-end";
-  favoritesContainer.style.width = "100%";
   favoritesContainer.appendChild(favoritesButton);
 
   favoritesButton.addEventListener("click", function () {
@@ -378,8 +386,6 @@ const displayDrink = function (drink) {
   cardBody.appendChild(adviceButton);
   cardBody.appendChild(photoTitleWrapper);
   cardBody.appendChild(ingredientHowToWrapper);
-  ingredientHowToWrapper.appendChild(cardIngredients);
-  ingredientHowToWrapper.appendChild(cardHowTo);
   cardBody.appendChild(favoritesContainer);
   card.appendChild(cardBody);
   mainCard.appendChild(card);
