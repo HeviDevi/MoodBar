@@ -60,16 +60,31 @@
 ![firefox_MQRH2L6alk](https://github.com/EddieHinojosa/TheMoodBar/assets/156026228/37a8f735-cfca-482f-9b37-7b993be22568)
 
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+<p>Welcome to The Mood Bar, your new favorite bar, where the perfect drink to match your mood is just a click away!
+We'll help you enbrace your mood and help transform it into a delightful concoction that will lift your 'spirits'! *wink* *wink* <br>
+The Mood Bar is a 21 & Over bar that welcomes everyone who is ready to take an adventure and discover their new favorite cocktail that is paired to how they are feeling. <br>
+our Moodie Bartenders will whip up a delicious treat, give you the ingredients in it, and a set of instructions on how to prepare your drink yourself if you are feeling daring.<br>
+Our moodie Bartender will also service you quotes to quench your thirst.</p>
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
+<h2>How It Works:</h2>
+<p>1. Enter a valid legal age to enter The Mood Bar </p>
+<p>2. Choose your mood 😀 | 😕 | 🤬 | 🥵 | 🥰 <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How are you feeling today? <br> 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Choose between Happy, Sad, Angry, Exhausted, or In Love </p>
+<p>3. Select your spirit 🧉 🍹 🥃 🍸 🍾 🍷 <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Which spirit will help lift your spirits? <br> 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select either Gin, Vodka, Tequila, or Rum.</p>
+<p>4. Shake it up! <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click "Shake" and one of our Moodie Bartenders will serve you a delicious cocktail you are sure to love! <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Along with some words of wiseful.</p>
 
-Use the `BLANK_README.md` to get started.
+<h2>Features:</h2>
+<p>Mood Selector<br>
+</p>
+
+
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
