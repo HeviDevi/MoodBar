@@ -62,7 +62,8 @@
 <img src="https://github.com/EddieHinojosa/TheMoodBar/assets/156026228/5d513194-b005-47cb-adae-85b0ea73f2d6" >
 </div>
 
-![firefox_MQRH2L6alk](https://github.com/EddieHinojosa/TheMoodBar/assets/156026228/37a8f735-cfca-482f-9b37-7b993be22568)
+![firefox_g9Axew5pm8](https://github.com/EddieHinojosa/TheMoodBar/assets/156026228/473e5744-028e-4729-aa22-73ac5d834ba6)
+
 
 
 <p>Welcome to The Mood Bar, your new favorite bar, where the perfect drink to match your mood is just a click away!
