@@ -11,7 +11,9 @@
 <br />
 <div align="center">
   <a href="https://github.com/EddieHinojosa/TheMoodBar">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <div align="center">
+<img src="https://github.com/EddieHinojosa/TheMoodBar/assets/156026228/5d513194-b005-47cb-adae-85b0ea73f2d6" >
+</div>
   </a>
 
   <h3 align="center">The Mood Bar</h3>
@@ -39,6 +41,8 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#features">Features</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     <li><a href="#contributing">Contributing</a></li>
@@ -67,7 +71,8 @@ our Moodie Bartenders will whip up a delicious treat, give you the ingredients i
 Our moodie Bartender will also service you quotes to quench your thirst.</p>
 
 
-<h2>How It Works:</h2>
+## How It Works:
+
 <p>1. Enter a valid legal age to enter The Mood Bar </p>
 <p>2. Choose your mood 😀 | 😕 | 🤬 | 🥵 | 🥰 <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How are you feeling today? <br> 
@@ -79,18 +84,18 @@ Our moodie Bartender will also service you quotes to quench your thirst.</p>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click "Shake" and one of our Moodie Bartenders will serve you a delicious cocktail you are sure to love! <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Along with some words of wiseful.</p>
 
-<h2>Features:</h2>
-<p>Mood Selector:<br>
-This selection will customize the viewport of the drinks.html page, it'll generate emojis dynamically in the background, the drink's card will have a corresponding color, and will influence the type of quote the barternder will provide (more on that later). </p>
+## Features:
+<h4><strong>Mood Selector:</strong><br></h4>
+<p>This selection will customize the viewport of the drinks.html page, it'll generate emojis dynamically in the background, the drink's card will have a corresponding color, and will influence the type of quote the barternder will provide (more on that later).</p>
 
-<p>Spirit Selector:<br>
-This Selection will filter the list of drinks by the spirit selected, and it'll randomly pull a cocktail from the API being utilized, it will also pull and display the name of the drink, an image of the cokctail, a list of ingredients, and instructions on how to prepare the drink.</p>
+<h4><strong>Spirit Selector:</strong><br></h4>
+<p>This Selection will filter the list of drinks by the spirit selected, and it'll randomly pull a cocktail from the API being utilized, it will also pull and display the name of the drink, an image of the cokctail, a list of ingredients, and instructions on how to prepare the drink.</p>
 
-<p>The Bartender's advice (Quote): <br>
-The drink's card, there will be a button to view the randomly generated quote pulled from the API that is linked to each corresponding mood that is selected in the main pag. </p>
+<h4><strong>The Bartender's advice (Quote):</strong><br></h4>
+<p>The drink's card, there will be a button to view the randomly generated quote pulled from the API that is linked to each corresponding mood that is selected in the main pag. </p>
 
-<p>Favorite's List:<br>
-Inside of the Drink's card, you will see an Olive icon, this will allow you to save the cocktail shown on screen to a "Favorite's List" that is stored to view at anytime.<br>
+<h4><strong>Favorite's List:</strong><br></h4>
+<p>Inside of the Drink's card, you will see an Olive icon, this will allow you to save the cocktail shown on screen to a "Favorite's List" that is stored to view at anytime.<br>
 The Favorite's list is located in the top menu of the page, and an added feature is it gives you the option to remove any drink card from the list by clicking the trashcan icon. </p>
 
 
@@ -99,7 +104,7 @@ The Favorite's list is located in the top menu of the page, and an added feature
 
 
 
-### Built With
+## Built With
 
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![JQuery][JQuery.com]][JQuery-url]
@@ -141,7 +146,8 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Project Link: [https://github.com/EddieHinojosa/TheMoodBar](https://github.com/EddieHinojosa/TheMoodBar)
+* Project Link: [https://github.com/EddieHinojosa/TheMoodBar](https://github.com/EddieHinojosa/TheMoodBar)
+* Live Demo Link: [https://eddiehinojosa.github.io/TheMoodBar](https://eddiehinojosa.github.io/TheMoodBar)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
