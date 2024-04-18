@@ -62,7 +62,8 @@
 <img src="https://github.com/EddieHinojosa/TheMoodBar/assets/156026228/5d513194-b005-47cb-adae-85b0ea73f2d6" >
 </div>
 
-![firefox_g9Axew5pm8](https://github.com/EddieHinojosa/TheMoodBar/assets/156026228/473e5744-028e-4729-aa22-73ac5d834ba6)
+
+![firefox_JGEFGlw2sS](https://github.com/EddieHinojosa/TheMoodBar/assets/156026228/f26fcb2a-3908-4196-af99-95622f76c0a9)
 
 
 
