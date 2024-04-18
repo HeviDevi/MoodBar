@@ -75,7 +75,7 @@ Our moodie Bartender will also service you quotes to quench your thirst.</p>
 <p>3. Select your spirit 🧉 🍹 🥃 🍸 🍾 🍷 <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Which spirit will help lift your spirits? <br> 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select either Gin, Vodka, Tequila, or Rum.</p>
-<p>4. Shake it up! <br>
+<p>4. Shake it up! 💃🏻<br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click "Shake" and one of our Moodie Bartenders will serve you a delicious cocktail you are sure to love! <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Along with some words of wiseful.</p>
 
