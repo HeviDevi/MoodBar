@@ -175,6 +175,9 @@ Use this space to list resources you find helpful and would like to give credit 
 * [GitHub Pages](https://pages.github.com)
 * [Font Awesome](https://fontawesome.com)
 * [Pixabay](https://pixabay.com)
+* [dayjs](https://day.js.org/)
+* [API Ninjas](https://api-ninjas.com/)
+* [TheCocktailDB](https://www.thecocktaildb.com/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
