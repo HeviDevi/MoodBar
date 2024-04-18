@@ -110,6 +110,9 @@ The Favorite's list is located in the top menu of the page, and an added feature
 
 ## Built With
 
+* HTML
+* CSS
+* JavaScript
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![JQuery][JQuery.com]][JQuery-url]
 
@@ -178,6 +181,7 @@ Use this space to list resources you find helpful and would like to give credit 
 * [dayjs](https://day.js.org/)
 * [API Ninjas](https://api-ninjas.com/)
 * [TheCocktailDB](https://www.thecocktaildb.com/)
+* [Google Fonts](https://fonts.google.com/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
