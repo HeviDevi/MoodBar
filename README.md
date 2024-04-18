@@ -80,9 +80,18 @@ Our moodie Bartender will also service you quotes to quench your thirst.</p>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Along with some words of wiseful.</p>
 
 <h2>Features:</h2>
-<p>Mood Selector<br>
-</p>
+<p>Mood Selector:<br>
+This selection will customize the viewport of the drinks.html page, it'll generate emojis dynamically in the background, the drink's card will have a corresponding color, and will influence the type of quote the barternder will provide (more on that later). </p>
 
+<p>Spirit Selector:<br>
+This Selection will filter the list of drinks by the spirit selected, and it'll randomly pull a cocktail from the API being utilized, it will also pull and display the name of the drink, an image of the cokctail, a list of ingredients, and instructions on how to prepare the drink.</p>
+
+<p>The Bartender's advice (Quote): <br>
+The drink's card, there will be a button to view the randomly generated quote pulled from the API that is linked to each corresponding mood that is selected in the main pag. </p>
+
+<p>Favorite's List:<br>
+Inside of the Drink's card, you will see an Olive icon, this will allow you to save the cocktail shown on screen to a "Favorite's List" that is stored to view at anytime.<br>
+The Favorite's list is located in the top menu of the page, and an added feature is it gives you the option to remove any drink card from the list by clicking the trashcan icon. </p>
 
 
 
