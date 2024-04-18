@@ -68,7 +68,7 @@
 
 
 <p>Welcome to The Mood Bar, your new favorite bar, where the perfect drink to match your mood is just a click away!
-We'll help you enbrace your mood and help transform it into a delightful concoction that will lift your 'spirits'! *wink* *wink* <br>
+We'll help you embrace your mood and help transform it into a delightful concoction that will lift your 'spirits'! *wink* *wink* <br>
 The Mood Bar is a 21 & Over bar that welcomes everyone who is ready to take an adventure and discover their new favorite cocktail that is paired to how they are feeling. <br>
 Our Moodie Bartenders will whip up a delicious treat, give you the ingredients in it, and a set of instructions on how to prepare your drink yourself if you are feeling daring.<br>
 Our moodie Bartender will also serve you quotes to quench your thirst.</p>
