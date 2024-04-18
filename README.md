@@ -24,7 +24,7 @@
     <a href="https://github.com/EddieHinojosa/TheMoodBar"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/EddieHinojosa/TheMoodBar">View Demo</a>
+    <a href="https://eddiehinojosa.github.io/TheMoodBar/">View Demo</a>
     ·
     <a href="https://github.com/EddieHinojosa/TheMoodBar/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
