@@ -48,6 +48,7 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="#project-links">Project Links</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
@@ -67,8 +68,8 @@
 <p>Welcome to The Mood Bar, your new favorite bar, where the perfect drink to match your mood is just a click away!
 We'll help you enbrace your mood and help transform it into a delightful concoction that will lift your 'spirits'! *wink* *wink* <br>
 The Mood Bar is a 21 & Over bar that welcomes everyone who is ready to take an adventure and discover their new favorite cocktail that is paired to how they are feeling. <br>
-our Moodie Bartenders will whip up a delicious treat, give you the ingredients in it, and a set of instructions on how to prepare your drink yourself if you are feeling daring.<br>
-Our moodie Bartender will also service you quotes to quench your thirst.</p>
+Our Moodie Bartenders will whip up a delicious treat, give you the ingredients in it, and a set of instructions on how to prepare your drink yourself if you are feeling daring.<br>
+Our moodie Bartender will also serve you quotes to quench your thirst.</p>
 
 
 ## How It Works:
@@ -81,7 +82,8 @@ Our moodie Bartender will also service you quotes to quench your thirst.</p>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Which spirit will help lift your spirits? <br> 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select either Gin, Vodka, Tequila, or Rum.</p>
 <p>4. Shake it up! 💃🏻<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click "Shake" and one of our Moodie Bartenders will serve you a delicious cocktail you are sure to love! <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click "Shake" <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our Moodie Bartenders will serve you a delicious cocktail you are sure to love! <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Along with some words of wiseful.</p>
 
 ## Features:
@@ -146,8 +148,17 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
+* Alex Happel: [https://github.com/AlexHappel](https://github.com/AlexHappel)
+* Clarissa Mobley: [https://github.com/ClarissaMobley](https://github.com/ClarissaMobley)
+* Devon Richard Smith Ross: [https://github.com/HeviDevi](https://github.com/HeviDevi)
+* Eddie Hinojosa: [https://github.com/EddieHinojosa](https://github.com/EddieHinojosa)
+* Roger Aponte: [https://github.com/rogretheekyogre](https://github.com/rogretheekyogre)
+
+## Project Links
+
 * Project Link: [https://github.com/EddieHinojosa/TheMoodBar](https://github.com/EddieHinojosa/TheMoodBar)
 * Live Demo Link: [https://eddiehinojosa.github.io/TheMoodBar](https://eddiehinojosa.github.io/TheMoodBar)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
